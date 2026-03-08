@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Полный анализ школ</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #f3f4f6; }
+        .sortable { cursor: pointer; user-select: none; position: relative; padding-right: 20px !important; }
+        .sortable .sort-icon { position: absolute; right: 8px; top: 50%; transform: translateY(-50%); opacity: 0.4; transition: opacity 0.2s, transform 0.2s; }
+        .sortable.sorted .sort-icon { opacity: 1; }
+        .sortable.asc .sort-icon { transform: translateY(-50%) rotate(180deg); }
+        th { text-align: left; }
+        #details-modal-content h3 { font-size: 1.125rem; font-weight: 600; color: #1f2937; margin-top: 1rem; margin-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.25rem; }
+        #details-modal-content p { margin-bottom: 0.25rem; }
+        #details-modal-content strong { color: #374151; }
+        #details-modal-content ul { list-style-position: inside; padding-left: 0.5rem; margin-top: 0.5rem; }
+        #details-modal-content li { margin-bottom: 0.5rem; }
+
+        @media (max-width: 1024px) {
+            #school-table thead { display: none; }
+            #school-table, #school-table tbody, #school-table tr, #school-table td { display: block; width: 100%; }
+            #school-table tr { margin-bottom: 1rem; border: 1px solid #e5e7eb; border-radius: 0.75rem; overflow: hidden; box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1); }
+            #school-table td { display: flex; justify-content: space-between; padding: 0.75rem 1rem; text-align: right; border-bottom: 1px solid #f3f4f6; }
+            #school-table td:last-child { border-bottom: none; }
+            #school-table td::before { content: attr(data-label); font-weight: 600; text-align: left; padding-right: 1rem; color: #374151; }
+            #school-table th[scope="row"] { background-color: #f9fafb; font-size: 1.125rem; line-height: 1.75rem; padding: 0.75rem 1rem; border-bottom: 1px solid #e5e7eb; }
+        }
+    </style>
+</head>
+<body class="p-4 sm:p-8">
+    <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-8">
+            <h1 class="text-3xl sm:text-4xl font-bold text-gray-800">Анализ школ по исходным данным за 2025</h1>
+            <p class="text-gray-500 mt-2">Используйте фильтры для поиска и нажимайте на заголовки для сортировки.</p>
+        </div>
+        
+        <div class="space-y-4 mb-6">
+            <div class="p-4 bg-white rounded-2xl shadow-md grid grid-cols-1 md:grid-cols-3 gap-4 items-center">
+                <div><input type="text" id="name-filter" placeholder="Поиск по названию..." class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"></div>
+                <div><select id="place-filter" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"><option value="all">Все локации</option></select></div>
+                <div><select id="type-filter" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"><option value="all">Все типы</option><option value="ОШ">Только ОШ</option><option value="Приватна ОШ">Только частные</option></select></div>
+            </div>
+            <div class="p-4 bg-white rounded-2xl shadow-md">
+                <h3 class="font-semibold text-gray-700 mb-3 text-center md:text-left">Фильтры для родительского спокойствия</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <div>
+                        <label for="safety-filter" class="block text-sm font-medium text-gray-600 mb-1">Уровень безопасности</label>
+                        <select id="safety-filter" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"><option value="all">Любой</option><option value="Высокий">Высокий</option><option value="Средний">Средний</option><option value="Требует внимания">Требует внимания</option></select>
+                    </div>
+                     <div>
+                        <label for="size-filter" class="block text-sm font-medium text-gray-600 mb-1">Размер школы</label>
+                        <select id="size-filter" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"><option value="all">Любой размер</option><option value="Камерная">Камерная (до 500)</option><option value="Средняя">Средняя (500-1200)</option><option value="Большая">Большая (более 1200)</option></select>
+                    </div>
+                    <div>
+                        <label for="infra-filter" class="block text-sm font-medium text-gray-600 mb-1">Инфраструктура</label>
+                        <select id="infra-filter" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"><option value="all">Любая</option><option value="new">Новая / Реконструированная</option></select>
+                    </div>
+                    <div>
+                        <label for="support-filter" class="block text-sm font-medium text-gray-600 mb-1">Поддержка и опыт</label>
+                        <select id="support-filter" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"><option value="all">Не важно</option><option value="foreigners">Опыт с иностранцами</option><option value="erasmus">Участие в Erasmus+</option></select>
+                    </div>
+                </div>
+            </div>
+            <div class="p-4 bg-white rounded-2xl shadow-md">
+                <h3 class="font-semibold text-gray-700 mb-3 text-center md:text-left">Фильтры по ребенку</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                     <div>
+                        <label for="child-type-filter" class="block text-sm font-medium text-gray-600 mb-1">Тип ребенка</label>
+                        <select id="child-type-filter" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"><option value="all">Любой</option><option value="Академический">Академический</option><option value="Активный">Активный / Спортивный</option><option value="Творческий">Творческий</option><option value="Инноватор">Инноватор / Технолог</option></select>
+                    </div>
+                    <div>
+                        <label for="interest-filter" class="block text-sm font-medium text-gray-600 mb-1">Увлечения</label>
+                        <select id="interest-filter" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"><option value="all">Все увлечения</option></select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="relative shadow-md rounded-2xl overflow-hidden">
+            <table id="school-table" class="w-full text-sm text-left text-gray-600">
+                <thead class="text-xs text-gray-700 uppercase bg-gray-50">
+                    <tr>
+                        <th class="px-2 py-3">Карта</th>
+                        <th scope="col" class="px-2 py-3 sortable" data-sort-key="rank" data-type="numeric">Топ <span class="sort-icon">▼</span></th>
+                        <th scope="col" class="px-2 py-3 sortable" data-sort-key="name" data-type="string">Название школы <span class="sort-icon">▼</span></th>
+                        <th scope="col" class="px-2 py-3 sortable" data-sort-key="finalRating" data-type="numeric">Рейтинг <span class="sort-icon">▼</span></th>
+                        <th scope="col" class="px-2 py-3 sortable hidden xl:table-cell" data-sort-key="academicScore" data-type="numeric">Академ. балл <span class="sort-icon">▼</span></th>
+                        <th scope="col" class="px-2 py-3 sortable hidden xl:table-cell" data-sort-key="reviewScore" data-type="numeric">Репутация <span class="sort-icon">▼</span></th>
+                        <th scope="col" class="px-2 py-3 sortable hidden xl:table-cell" data-sort-key="activityRating" data-type="numeric">Активности <span class="sort-icon">▼</span></th>
+                        <th class="px-2 py-3 text-center">Детали</th>
+                    </tr>
+                </thead>
+                <tbody id="table-body" class="bg-white">
+                    <tr><td colspan="8" class="p-8 text-center">Загрузка и обработка данных...</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div id="map-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 hidden z-50"><div class="bg-white rounded-lg shadow-2xl w-full max-w-4xl h-3/4 flex flex-col"><div class="flex justify-between items-center p-4 border-b"><h2 id="map-modal-title" class="text-lg font-semibold">Карта</h2><button id="map-modal-close" class="text-gray-500 hover:text-gray-800 text-2xl font-bold">×</button></div><div class="flex-grow"><iframe id="map-iframe" class="w-full h-full border-0" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div></div></div>
+    <div id="details-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 hidden z-50"><div class="bg-white rounded-lg shadow-2xl w-full max-w-2xl max-h-[90vh] flex flex-col"><div class="flex justify-between items-center p-4 border-b sticky top-0 bg-white z-10"><h2 id="details-modal-title" class="text-xl font-bold text-gray-800">Детальная информация</h2><button id="details-modal-close" class="text-gray-500 hover:text-gray-800 text-2xl font-bold">×</button></div><div id="details-modal-content" class="p-6 overflow-y-auto text-sm text-gray-700"></div></div></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            let fullSchoolData = [], displayedData = [], currentSort = { key: 'finalRating', direction: 'desc' };
+            const UIElements = {
+                tableBody: document.getElementById('table-body'),
+                headers: document.querySelectorAll('th.sortable'),
+                nameFilterInput: document.getElementById('name-filter'), typeFilterSelect: document.getElementById('type-filter'), placeFilterSelect: document.getElementById('place-filter'),
+                safetyFilter: document.getElementById('safety-filter'), sizeFilter: document.getElementById('size-filter'), infraFilter: document.getElementById('infra-filter'),
+                supportFilter: document.getElementById('support-filter'), childTypeFilter: document.getElementById('child-type-filter'), interestFilter: document.getElementById('interest-filter'),
+                mapModal: document.getElementById('map-modal'), mapModalTitle: document.getElementById('map-modal-title'), mapModalClose: document.getElementById('map-modal-close'), mapIframe: document.getElementById('map-iframe'),
+                detailsModal: document.getElementById('details-modal'), detailsModalTitle: document.getElementById('details-modal-title'), detailsModalContent: document.getElementById('details-modal-content'), detailsModalClose: document.getElementById('details-modal-close'),
+            };
+
+            async function loadAllData() {
+                try {
+                    const files = ['schools.json', 'addresses.json', 'students.json', 'AverageGrade.json', 'activity.json', 'review.json'];
+                    const promises = files.map(file => fetch(file).then(res => { if (!res.ok) throw new Error(file); return res.json(); }));
+                    const [schools, addresses, students, grades, activities, reviews] = await Promise.all(promises);
+                    return { schools, addresses, students, grades, activities, reviews };
+                } catch (error) {
+                    console.error("Data loading error:", error.message);
+                    UIElements.tableBody.innerHTML = `<tr><td colspan="8" class="text-center p-8 text-red-500"><strong>Ошибка загрузки данных:</strong> не удалось загрузить файл <strong>${error.message}</strong>. <br>Убедитесь, что все JSON файлы находятся в той же папке.</td></tr>`;
+                    return null;
+                }
+            }
+            
+            function getRenovationSummary(reviewInfo) {
+                if (!reviewInfo) return 'Нет данных о ремонте.';
+                const positiveText = (reviewInfo.positive_informations || "").toLowerCase();
+                if (positiveText.includes('полная реконструкция') || positiveText.includes('новое современное здание')) return 'Проведена полная реконструкция / Новое здание.';
+                if (positiveText.includes('реконструкция')) return 'Проведена реконструкция.';
+                if (positiveText.includes('новый спортзал')) return 'Построен новый спортзал.';
+                if (reviewInfo.negative?.infrastructure_issues?.some(i => i.text.toLowerCase().includes('отсутствие') && i.text.toLowerCase().includes('зала'))) return 'Давняя проблема: отсутствует спортзал.';
+                return 'Проводились текущие ремонтные работы.';
+            }
+
+            function processData({ schools, addresses, students, grades, activities, reviews }) {
+                const schoolActivitiesMap = new Map();
+                if (activities?.schoolActivitiesReport?.activityCategories) {
+                    activities.schoolActivitiesReport.activityCategories.forEach(c => {
+                        c.activities?.forEach(a => {
+                            a.participatingSchoolIds?.forEach(id => {
+                                if (!schoolActivitiesMap.has(id)) schoolActivitiesMap.set(id, { list: [], counts: { sports: 0, intellectual: 0, creative: 0, international: 0 } });
+                                const schoolEntry = schoolActivitiesMap.get(id);
+                                schoolEntry.list.push(a.activityName);
+                                if (c.categoryId === 1) schoolEntry.counts.intellectual++;
+                                if (c.categoryId === 2) schoolEntry.counts.creative++;
+                                if (c.categoryId === 3) schoolEntry.counts.international++;
+                                if (c.categoryId === 4) schoolEntry.counts.sports++;
+                            });
+                        });
+                    });
+                }
+                const addressesMap = new Map(addresses.map(a => [a.id, a.text]));
+                const reviewsMap = new Map(reviews.map(r => [r.id, r]));
+                const gradeData = grades[0]?.['data:'];
+                const gradesMap = new Map(Array.isArray(gradeData) ? gradeData.map(g => [g.crossId, g]) : []);
+                const studentsMap = new Map(students.map(s => [s.crossId, s]));
+
+                let tempProcessedSchools = schools.map(school => {
+                    const reviewInfo = reviewsMap.get(school.id);
+                    const gradeInfo = gradesMap.get(school.id);
+                    const studentInfo = studentsMap.get(school.id);
+                    const activityInfo = schoolActivitiesMap.get(school.id) || { list: [], counts: { sports: 0, intellectual: 0, creative: 0, international: 0 } };
+                    
+                    const academicScore = gradeInfo?.totalPoints || null;
+                    const studentCount = studentInfo?.students['2024/25'] || null;
+                    
+                    let studentCountScoreRaw = 2;
+                    if (studentCount !== null) {
+                        if (studentCount <= 500) studentCountScoreRaw = 1;
+                        else if (studentCount > 1200) studentCountScoreRaw = 3;
+                    }
+                    
+                    const reviewCategoryWeights = { bullying_violence: 5, staff_student_incidents: 5, security_vandalism: 4, infrastructure_issues: 3, strikes_protests: 1 };
+                    let rawReviewScore = 0, safetyLevel = 'Высокий', hasModernInfra = false, hasForeignerExperience = false;
+                    
+                    if (reviewInfo) {
+                        const positiveText = (reviewInfo.positive_informations || "").toLowerCase();
+                        if (positiveText.includes('реконструкц') || positiveText.includes('новый')) hasModernInfra = true;
+                        if (positiveText.includes('иностранных учеников')) hasForeignerExperience = true;
+                        
+                        rawReviewScore = reviewInfo.positive_count || 0;
+                        if (reviewInfo.negative) {
+                            let hasRecentSerious = false, hasAnySerious = false;
+                            for (const cat in reviewInfo.negative) {
+                                if (Array.isArray(reviewInfo.negative[cat])) {
+                                    const isSeriousCategory = cat === 'bullying_violence' || cat === 'staff_student_incidents';
+                                    if (isSeriousCategory) hasAnySerious = true;
+                                    
+                                    reviewInfo.negative[cat].forEach(incident => {
+                                        if (isSeriousCategory && (2025 - (incident.year || 2020)) <= 2) hasRecentSerious = true;
+                                        const decayFactor = 1 / ((2025 - (incident.year || 2020)) + 1);
+                                        rawReviewScore -= (reviewCategoryWeights[cat] || 1) * decayFactor;
+                                    });
+                                }
+                            }
+                            if (hasRecentSerious) safetyLevel = 'Требует внимания';
+                            else if (hasAnySerious) safetyLevel = 'Средний';
+                        }
+                    }
+
+                    const childTypes = [];
+                    if (academicScore > 85 || activityInfo.counts.intellectual > 4) childTypes.push('Академический');
+                    if (activityInfo.counts.sports > 3) childTypes.push('Активный');
+                    if (activityInfo.counts.creative > 5) childTypes.push('Творческий');
+                    if ((reviewInfo?.positive_informations || "").toLowerCase().includes('робот') || (reviewInfo?.positive_informations || "").toLowerCase().includes('инноваци')) childTypes.push('Инноватор');
+                    
+                    return {
+                        ...school, fullGradeInfo: gradeInfo, fullReviewInfo: reviewInfo, fullStudentInfo: studentInfo,
+                        addressText: addressesMap.get(school.id),
+                        renovationSummary: getRenovationSummary(reviewInfo),
+                        academicScore, studentCount, studentCountScoreRaw, rawReviewScore, safetyLevel,
+                        sizeCategory: studentCount ? (studentCount < 500 ? 'Камерная' : (studentCount <= 1200 ? 'Средняя' : 'Большая')) : null,
+                        hasModernInfra, hasForeignerExperience, hasErasmus: String(school.erasmus).toLowerCase() === 'да',
+                        childTypes, activitiesList: activityInfo.list,
+                    };
+                });
+                
+                const rawScores = tempProcessedSchools.map(s => s.rawReviewScore).filter(s => s != null);
+                const minReviewScore = Math.min(...rawScores), maxReviewScore = Math.max(...rawScores);
+
+                return tempProcessedSchools.map(school => {
+                    let reviewScore = 0.5;
+                    if (maxReviewScore > minReviewScore) {
+                        reviewScore = (school.rawReviewScore - minReviewScore) / (maxReviewScore - minReviewScore);
+                    }
+                    
+                    const totalActivities = school.activitiesList.length;
+                    const activityRating = Math.min(totalActivities / 28, 1);
+                    
+                    const studentScoreNormalized = (3 - school.studentCountScoreRaw) / 2;
+
+                    let finalRating = null;
+                    if (school.academicScore) {
+                        finalRating = (reviewScore * 0.50) + (school.academicScore / 100 * 0.25) + (studentScoreNormalized * 0.15) + (activityRating * 0.10);
+                    }
+                    
+                    return { ...school, finalRating, reviewScore, activityRating };
+                });
+            }
+            
+            function displaySchoolDetails(schoolId) {
+                const school = fullSchoolData.find(s => s.id === schoolId);
+                if (!school) return;
+                UIElements.detailsModalTitle.textContent = school.name;
+                let contentHTML = '<h3>Общая информация</h3>';
+                contentHTML += `<p><strong>ID:</strong> ${school.id}</p><p><strong>Тип:</strong> ${school.type||'N/A'}</p><p><strong>Адрес:</strong> ${school.place||''}, ${school.address||'N/A'}</p><p><strong>Телефон:</strong> ${school.phone||'N/A'}</p><p><strong>Email:</strong> ${school.email||'N/A'}</p><p><strong>Сайт:</strong> ${school.website?`<a href="${school.website.startsWith('http')?'':'https://'}${school.website}" target="_blank" class="text-blue-600 hover:underline">${school.website}</a>`:'N/A'}</p><p><strong>Языки обучения:</strong> ${school.languages?school.languages.join(', '):'N/A'}</p>`;
+                contentHTML += `<h3>Инфраструктура и ремонт</h3><p>${school.renovationSummary}</p>`;
+                contentHTML += `<h3>Прикрепленные адреса</h3><p>${school.addressText||'Информация не указана.'}</p>`;
+                if (school.fullStudentInfo) contentHTML += `<h3>Количество учеников</h3><p><strong>2024/25:</strong> ${school.fullStudentInfo.students['2024/25']||'N/A'}</p><p><strong>2023/24:</strong> ${school.fullStudentInfo.students['2023/24']||'N/A'}</p>`;
+                
+                // === ОБНОВЛЕННЫЙ БЛОК ===
+                if (school.fullGradeInfo) {
+                    // Получаем данные для расчета
+                    const eighthGraders = school.fullGradeInfo.eighthGradeStudentsCount || 0;
+                    const vukovci = school.fullGradeInfo.hasVukovaDiplomaStudentsCount || 0;
+                    
+                    // Рассчитываем процент, если ученики есть
+                    let vukPercentText = '';
+                    if (eighthGraders > 0) {
+                        vukPercentText = ` (${((vukovci / eighthGraders) * 100).toFixed(2)}%)`;
+                    }
+
+                    // Собираем HTML-блок с добавлением процента
+                    contentHTML += `<h3>Академические показатели (2025)</h3>` +
+                                   `<p><strong>Итоговый балл:</strong> ${school.fullGradeInfo.totalPoints?.toFixed(2)||'N/A'}</p>` +
+                                   `<p><strong>Учеников в 8 классе:</strong> ${eighthGraders}</p>` +
+                                   `<p><strong>С дипломом Вука:</strong> ${vukovci}${vukPercentText}</p>`;
+                }
+                // === КОНЕЦ ОБНОВЛЕННОГО БЛОКА ===
+
+                if (school.fullReviewInfo) {
+                    contentHTML += `<h3>Отзывы и репутация</h3><p><strong>Позитивные упоминания:</strong> ${school.fullReviewInfo.positive_count||'0'}</p>`;
+                    if(school.fullReviewInfo.positive_informations) contentHTML += `<div class="prose prose-sm">${school.fullReviewInfo.positive_informations.split('\n\n').map(i=>`<p>${i}</p>`).join('')}</div>`;
+                    if (school.fullReviewInfo.negative?.negative_count > 0) {
+                       contentHTML += `<p class="mt-2"><strong>Негативные упоминания:</strong> ${school.fullReviewInfo.negative.negative_count}</p><ul>`;
+                       for(const cat in school.fullReviewInfo.negative) if(Array.isArray(school.fullReviewInfo.negative[cat])) school.fullReviewInfo.negative[cat].forEach(inc => contentHTML += `<li><strong>${inc.year||'N/A'} (${cat.replace(/_/g,' ')}):</strong> ${inc.text}</li>`);
+                       contentHTML += `</ul>`;
+                    }
+                }
+                if (school.activitiesList.length > 0) contentHTML += `<h3>Внеклассные активности</h3><ul>${school.activitiesList.map(act=>`<li>${act}</li>`).join('')}</ul>`;
+                UIElements.detailsModalContent.innerHTML = contentHTML;
+                UIElements.detailsModal.classList.remove('hidden');
+            }
+
+            function populateFilters(activitiesData) {
+                const places = [...new Set(fullSchoolData.map(s => s.place).filter(p=>p))].sort();
+                places.forEach(p => UIElements.placeFilterSelect.add(new Option(p, p)));
+                const interests = new Set();
+                activitiesData?.schoolActivitiesReport?.activityCategories?.forEach(c => c.activities?.forEach(a => interests.add(a.activityName)));
+                [...interests].sort().forEach(i => UIElements.interestFilter.add(new Option(i, i)));
+            }
+
+            function applyFiltersAndRender() {
+                const q = { name: UIElements.nameFilterInput.value.toLowerCase(), type: UIElements.typeFilterSelect.value, place: UIElements.placeFilterSelect.value, safety: UIElements.safetyFilter.value, size: UIElements.sizeFilter.value, infra: UIElements.infraFilter.value, support: UIElements.supportFilter.value, childType: UIElements.childTypeFilter.value, interest: UIElements.interestFilter.value };
+                displayedData = fullSchoolData.filter(s => (s.name.toLowerCase().includes(q.name)) && (q.type==='all'||s.type===q.type) && (q.place==='all'||s.place===q.place) && (q.safety==='all'||s.safetyLevel===q.safety) && (q.size==='all'||s.sizeCategory===q.size) && (q.infra==='all'||(q.infra==='new'&&s.hasModernInfra)) && (q.support==='all'||(q.support==='foreigners'&&s.hasForeignerExperience)||(q.support==='erasmus'&&s.hasErasmus)) && (q.childType==='all'||s.childTypes.includes(q.childType)) && (q.interest==='all'||s.activitiesList.includes(q.interest)) );
+                sortData(currentSort.key, true);
+            }
+
+            function renderTable() {
+                UIElements.tableBody.innerHTML = displayedData.length === 0 ? `<tr><td colspan="8" class="p-8 text-center">Нет школ, соответствующих вашим фильтрам.</td></tr>` : '';
+                const fragment = document.createDocumentFragment();
+                displayedData.forEach(s => {
+                    const row = document.createElement('tr');
+                    row.className = 'border-b hover:bg-gray-50';
+                    const format = (n, d=2) => n!=null ? n.toFixed(d) : 'N/A';
+                    const mapBtn = s.lat&&s.lng?`<button class="map-button p-2 text-blue-600 rounded-md hover:bg-blue-100" data-lat="${s.lat}" data-lng="${s.lng}" data-name="${s.name}"><svg class="w-5 h-5 pointer-events-none" fill="currentColor" viewBox="0 0 20 20"><path d="M5.05 4.05a7 7 0 119.9 9.9L10 21l-4.95-6.95a7 7 0 010-9.9zM10 12a2 2 0 100-4 2 2 0 000 4z"></path></svg></button>`:`<div class="w-9 h-9"></div>`;
+                    const detailsBtn = `<button class="details-button p-2 text-gray-500 rounded-md hover:bg-gray-200" data-id="${s.id}"><svg class="w-5 h-5 pointer-events-none" fill="currentColor" viewBox="0 0 20 20"><path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z"></path></svg></button>`;
+                    const mobileHdr = `<th scope="row" class="px-4 py-4 font-semibold text-gray-900 whitespace-nowrap lg:hidden">${s.name}</th>`;
+                    const cells = `
+                        <td data-label="Карта" class="px-2 py-3">${mapBtn}</td>
+                        <td data-label="Топ" class="px-2 py-3 font-bold text-gray-800">${s.rank}</td>
+                        <th scope="row" class="px-2 py-3 font-semibold text-gray-900 hidden lg:table-cell">${s.name}</th>
+                        <td data-label="Рейтинг" class="px-2 py-3 font-bold text-blue-600">${format(s.finalRating)}</td>
+                        <td data-label="Академ. балл" class="px-2 py-3 hidden xl:table-cell">${format(s.academicScore)}</td>
+                        <td data-label="Репутация" class="px-2 py-3 hidden xl:table-cell">${format(s.reviewScore)}</td>
+                        <td data-label="Активности" class="px-2 py-3 hidden xl:table-cell">${format(s.activityRating)}</td>
+                        <td data-label="Детали" class="px-2 py-3 text-center">${detailsBtn}</td>`;
+                    row.innerHTML = window.innerWidth < 1024 ? mobileHdr + cells : cells;
+                    fragment.appendChild(row);
+                });
+                UIElements.tableBody.appendChild(fragment);
+            }
+
+            function sortData(key, keepDirection = false) {
+                const header = document.querySelector(`th[data-sort-key="${key}"]`);
+                if (!header) return;
+                const type = header.dataset.type;
+                if (!keepDirection) { currentSort.direction = currentSort.key === key && currentSort.direction === 'desc' ? 'asc' : 'desc'; currentSort.key = key; }
+                const dir = currentSort.direction === 'asc' ? 1 : -1;
+                
+                displayedData.sort((a,b) => {
+                    const valA = a[key] ?? (type === 'numeric' ? -Infinity : ''), valB = b[key] ?? (type === 'numeric' ? -Infinity : '');
+                    if (type === 'numeric') return (valA-valB)*dir;
+                    return String(valA).localeCompare(String(valB))*dir;
+                });
+
+                // Re-rank after sorting
+                displayedData.forEach((s, i) => s.rank = i + 1);
+
+                updateHeaderStyles();
+                renderTable();
+            }
+            
+            function updateHeaderStyles() {
+                UIElements.headers.forEach(h => {
+                    h.classList.remove('sorted', 'asc');
+                    if (h.dataset.sortKey === currentSort.key) {
+                        h.classList.add('sorted');
+                        if (currentSort.direction === 'asc') h.classList.add('asc');
+                    }
+                });
+            }
+
+            function setupEventListeners() {
+                UIElements.headers.forEach(h => h.addEventListener('click', () => sortData(h.dataset.sortKey)));
+                Object.values(UIElements).forEach(el => { if (el?.id && (el.tagName === 'INPUT' || el.tagName === 'SELECT')) el.addEventListener(el.tagName === 'INPUT' ? 'input' : 'change', applyFiltersAndRender); });
+                UIElements.tableBody.addEventListener('click', e => {
+                    const mapBtn = e.target.closest('.map-button'), detailsBtn = e.target.closest('.details-button');
+                    if (mapBtn) {
+                        const { lat, lng, name } = mapBtn.dataset;
+                        if (lat && lng && lat !== 'null') {
+                            UIElements.mapModalTitle.textContent = name;
+                            UIElements.mapIframe.src = `https://www.google.com/maps?q=${lat},${lng}&z=15&output=embed`;
+                            UIElements.mapModal.classList.remove('hidden');
+                        } else { alert('Координаты не найдены.'); }
+                    }
+                    if (detailsBtn) displaySchoolDetails(parseInt(detailsBtn.dataset.id, 10));
+                });
+                const closeMap = () => UIElements.mapModal.classList.add('hidden');
+                UIElements.mapModalClose.addEventListener('click', closeMap);
+                UIElements.mapModal.addEventListener('click', e => { if (e.target === UIElements.mapModal) closeMap(); });
+                const closeDetails = () => UIElements.detailsModal.classList.add('hidden');
+                UIElements.detailsModalClose.addEventListener('click', closeDetails);
+                UIElements.detailsModal.addEventListener('click', e => { if (e.target === UIElements.detailsModal) closeDetails(); });
+            }
+
+            async function init() {
+                try {
+                    const rawData = await loadAllData();
+                    if (rawData) {
+                        fullSchoolData = processData(rawData);
+                        populateFilters(rawData.activities);
+                        setupEventListeners();
+                        applyFiltersAndRender();
+                    }
+                } catch(error) {
+                    console.error("Initialization failed:", error);
+                    UIElements.tableBody.innerHTML = `<tr><td colspan="8" class="p-8 text-center text-red-600"><strong>Критическая ошибка при инициализации страницы.</strong><br><span class="text-sm text-gray-500">Пожалуйста, проверьте консоль разработчика (F12).</span></td></tr>`;
+                }
+            }
+            
+            init();
+        });
+    </script>
+</body>
+</html>

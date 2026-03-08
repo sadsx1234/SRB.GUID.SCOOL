@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Админ-панель</title>
+  
+  <link rel="stylesheet" href="styles.css"> 
+  
+  <script>
+    // === ЛОГИКА ДЛЯ ГЛАВНЫХ ВКЛАДОК ("Школы" / "Новости") ===
+    function switchMainTab(tabId) {
+        document.querySelectorAll('nav.tabs .tab-button').forEach(btn => {
+            btn.classList.remove('active');
+        });
+        document.querySelectorAll('.tab-content').forEach(content => {
+            content.style.display = 'none';
+        });
+
+        const activeBtn = document.querySelector(`.tab-button[data-tab="${tabId}"]`);
+        const activeContent = document.getElementById(tabId);
+        
+        if (activeBtn) activeBtn.classList.add('active');
+        if (activeContent) {
+            activeContent.style.display = 'block';
+            // Если переключаемся на вкладку Новостей, убедимся, что скрипт новостей загрузился
+            if (tabId === 'newsTab' && typeof loadNews === 'function') {
+                loadNews(); 
+            }
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        // Активируем вкладку "Школы" по умолчанию
+        switchMainTab('schoolsTab');
+        
+        // Обработчик кликов для навигационных кнопок
+        document.querySelectorAll('nav.tabs .tab-button').forEach(button => {
+            button.addEventListener('click', () => {
+                const tabId = button.getAttribute('data-tab');
+                switchMainTab(tabId);
+            });
+        });
+    });
+  </script>
+</head>
+<body>
+
+  <div id="mainContentContainer" class="container">
+    <h1>Админ-панель</h1>
+
+    <nav class="tabs">
+      <button class="tab-button active" data-tab="schoolsTab">Школы</button>
+      <button class="tab-button" data-tab="newsTab">Новости</button>
+    </nav>
+    
+    <div id="schoolsTab" class="tab-content active" style="display: block;">
+      <div class="school-edit-container">
+        <h2>Управление Школами</h2>
+
+        <div id="school-list-container">
+            <h3>Список Школ</h3>
+            <ul id="school-list">
+                <li>Загрузка...</li>
+            </ul>
+        </div>
+
+        <div id="edit-form-container" style="display:none;">
+            <h3>Редактирование Школы: <span id="school-name"></span></h3>
+            
+            <div id="tab-headers"></div>
+
+            <form id="edit-form" onsubmit="return false;">
+            </form>
+            
+            <div class="form-actions">
+                <button id="save-button" onclick="saveSchoolData()">Сохранить</button>
+                <button id="close-button" onclick="closeEditForm()">Закрыть Окно</button>
+            </div>
+            <p id="status-message"></p>
+        </div>
+      </div>
+    </div>
+
+    <div id="newsTab" class="tab-content" style="display:none;">
+        <form id="newsForm" onsubmit="handleNewsSubmit(event)">
+            <h2>Добавить новую запись</h2>
+            <div>
+                <label for="post_id">Post ID (уникальный):</label>
+                <input type="text" id="post_id" name="post_id" required>
+            </div>
+            <div>
+                <label for="title">Название/Заголовок:</label>
+                <input type="text" id="title" name="title" required>
+            </div>
+            <div>
+                <label for="url">URL (источник):</label>
+                <input type="url" id="url" name="url" required>
+            </div>
+            <div>
+                <label for="post_datetime">Время публикации (локальное время):</label>
+                <input type="datetime-local" id="post_datetime" name="post_datetime" required>
+            </div>
+            <div>
+                <label for="keywords">Ключевые слова (через запятую):</label>
+                <input type="text" id="keywords" name="keywords">
+            </div>
+            <button type="submit">Добавить новость</button>
+        </form>
+
+        <h2 style="margin-top: 30px;">Список опубликованных новостей</h2>
+        <button id="refreshNewsButton" class="secondary">Обновить список</button>
+        <div id="newsListContainer" style="margin-top: 20px;">
+            <p>Новостей пока нет.</p>
+        </div>
+        <div id="newsStatus" style="margin-top: 15px; font-weight: bold;"></div>
+    </div>
+  </div>
+  
+  <script src="scripts.js"></script> 
+  <script src="news.js"></script> 
+</body>
+</html>

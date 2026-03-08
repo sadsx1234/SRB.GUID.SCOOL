@@ -1,0 +1,452 @@
+[
+  {
+    "school_id": "194",
+    "school_name": "OŠ \"JOVAN DUČIĆ\"",
+    "workers": [
+      {
+        "role": "Директор",
+        "full_name": "Nemanja Jovišević"
+      }
+    ]
+  },
+  {
+    "school_id": "195",
+    "school_name": "OŠ \"VELJKO PETROVIĆ\"",
+    "workers": [
+      {
+        "role": "Директор",
+        "full_name": "Nemanja Jovišević"
+      }
+    ]
+  },
+  {
+    "school_id": "196",
+    "school_name": "OŠ \"ALEKSA ŠANTIĆ\"",
+    "workers": [
+      {
+        "role": "в.д. Директор",
+        "full_name": "Vitomirka Mladić"
+      }
+    ]
+  },
+  {
+    "school_id": "197",
+    "school_name": "OŠ \"MIROSLAV ANTIĆ\"",
+    "workers": [
+      {
+        "role": "Директор",
+        "full_name": "Немања Јовишевић"
+      }
+    ]
+  },
+  {
+    "school_id": "198",
+    "school_name": "OŠ \"DESANKA MAKSIMOVIĆ\"",
+    "workers": [
+      {
+        "role": "Директор",
+        "full_name": "Nemanja Jovišević"
+      }
+    ]
+  },
+  {
+    "school_id": "199",
+    "school_name": "OŠ \"ĐURA JAKŠIĆ\"",
+    "workers": [
+      {
+        "role": "Директор",
+        "full_name": "Verica Letić"
+      }
+    ]
+  },
+  {
+    "school_id": "200",
+    "school_name": "OŠ \"IVO ANDRIĆ\"",
+    "workers": [
+      {
+        "role": "Директор",
+        "full_name": "Nemanja Jovišević"
+      }
+    ]
+  },
+  {
+    "school_id": "201",
+    "school_name": "OŠ \"ŽARKO ZRENJANIN\"",
+    "workers": [
+      {
+        "role": "в.д. Директор",
+        "full_name": "Снежана Костић"
+      }
+    ]
+  },
+  {
+    "school_id": "202",
+    "school_name": "OŠ \"SONJA MARINKOVIĆ\"",
+    "workers": [
+      {
+        "role": "Директор",
+        "full_name": "Бранислав Давидовић"
+      }
+    ]
+  },
+  {
+    "school_id": "203",
+    "school_name": "OŠ \"VELJKO VLAHOVIĆ\"",
+    "workers": [
+      {
+        "role": "Директор",
+        "full_name": "Није пронађено"
+      }
+    ]
+  },
+  {
+    "school_id": "204",
+    "school_name": "OŠ \"JOVAN JOVANOVIĆ ZMAJ\"",
+    "workers": [
+      {
+        "role": "Директор",
+        "full_name": "Није пронађено"
+      }
+    ]
+  },
+  {
+    "school_id": "205",
+    "school_name": "OŠ \"ĐORĐE NATOŠEVIĆ\"",
+    "workers": [
+      {
+        "role": "в.д. Директор",
+        "full_name": "Vesna Tegeltija Dujaković"
+      }
+    ]
+  },
+  {
+    "school_id": "206",
+    "school_name": "OŠ \"ĐURA DANIČIĆ\"",
+    "workers": [
+      {
+        "role": "в.д. Директор",
+        "full_name": "Dragana Lužajić"
+      }
+    ]
+  },
+  {
+    "school_id": "207",
+    "school_name": "OŠ \"BRANKO RADIČEVIĆ\"",
+    "workers": [
+      {
+        "role": "Директор",
+        "full_name": "Suzana Marić"
+      }
+    ]
+  },
+  {
+    "school_id": "208",
+    "school_name": "OŠ \"DOSITEJ OBRADOVIĆ\"",
+    "workers": [
+      {
+        "role": "Директор",
+        "full_name": "Stanimir Paunić"
+      }
+    ]
+  },
+  {
+    "school_id": "209",
+    "school_name": "OŠ \"DUŠAN RADOVIĆ\"",
+    "workers": [
+      {
+        "role": "Директор",
+        "full_name": "Nemanja Jovišević"
+      }
+    ]
+  },
+  {
+    "school_id": "210",
+    "school_name": "OŠ \"IVAN GUNDULIĆ\"",
+    "workers": [
+      {
+        "role": "Директор",
+        "full_name": "Nemanja Jovišević"
+      }
+    ]
+  },
+  {
+    "school_id": "211",
+    "school_name": "OŠ \"IVO LOLA RIBAR\"",
+    "workers": [
+      {
+        "role": "Директор",
+        "full_name": "Goran Jojić"
+      }
+    ]
+  },
+  {
+    "school_id": "212",
+    "school_name": "OŠ \"JOŽEF ATILA\"",
+    "workers": [
+      {
+        "role": "Директор",
+        "full_name": "Nemanja Jovišević"
+      }
+    ]
+  },
+  {
+    "school_id": "213",
+    "school_name": "OŠ \"JOVAN POPOVIĆ\"",
+    "workers": [
+      {
+        "role": "Директор",
+        "full_name": "Nemanja Jovišević"
+      }
+    ]
+  },
+  {
+    "school_id": "214",
+    "school_name": "OŠ \"KOSTA TRIFKOVIĆ\"",
+    "workers": [
+      {
+        "role": "Директор",
+        "full_name": "Milan Spasojević"
+      }
+    ]
+  },
+  {
+    "school_id": "215",
+    "school_name": "OŠ \"MILOŠ CRNJANSKI\"",
+    "workers": [
+      {
+        "role": "Директор",
+        "full_name": "Jasna Tomić"
+      }
+    ]
+  },
+  {
+    "school_id": "216",
+    "school_name": "OŠ \"NIKOLA TESLA\"",
+    "workers": [
+      {
+        "role": "Директор",
+        "full_name": "Igor Milićević"
+      }
+    ]
+  },
+  {
+    "school_id": "217",
+    "school_name": "OŠ \"PETEFI ŠANDOR\"",
+    "workers": [
+      {
+        "role": "Директор",
+        "full_name": "Zoltan Arđelan"
+      }
+    ]
+  },
+  {
+    "school_id": "218",
+    "school_name": "OŠ \"PRVA VOJVOĐANSKA BRIGADA\"",
+    "workers": [
+      {
+        "role": "в.д. Директор",
+        "full_name": "Петар Којић"
+      }
+    ]
+  },
+  {
+    "school_id": "219",
+    "school_name": "OŠ \"SVETOZAR MARKOVIĆ TOZA\"",
+    "workers": [
+      {
+        "role": "Директор",
+        "full_name": "Nemanja Jovišević"
+      }
+    ]
+  },
+  {
+    "school_id": "220",
+    "school_name": "OŠ \"VASA STAJIĆ\"",
+    "workers": [
+      {
+        "role": "Директор",
+        "full_name": "Snežana Bajat"
+      }
+    ]
+  },
+  {
+    "school_id": "221",
+    "school_name": "OŠ \"VUK KARADŽIĆ\"",
+    "workers": [
+      {
+        "role": "Директор",
+        "full_name": "Zorica Zeljković"
+      }
+    ]
+  },
+  {
+    "school_id": "222",
+    "school_name": "OŠ \"SVETI SAVA\"",
+    "workers": [
+      {
+        "role": "Директор",
+        "full_name": "Nemanja Jovišević"
+      }
+    ]
+  },
+  {
+    "school_id": "223",
+    "school_name": "OŠ \"MIHAJLO PUPIN\"",
+    "workers": [
+      {
+        "role": "Директор",
+        "full_name": "Nemanja Jovišević"
+      }
+    ]
+  },
+  {
+    "school_id": "224",
+    "school_name": "OŠ \"22. AVGUST\"",
+    "workers": [
+      {
+        "role": "Директор",
+        "full_name": "Milanka Deman"
+      }
+    ]
+  },
+  {
+    "school_id": "225",
+    "school_name": "OŠ \"LJUDOVIT ŠTUR\"",
+    "workers": [
+      {
+        "role": "Директор",
+        "full_name": "Ana Vozar"
+      }
+    ]
+  },
+  {
+    "school_id": "226",
+    "school_name": "OŠ \"LAZA KOSTIĆ\"",
+    "workers": [
+      {
+        "role": "Директор",
+        "full_name": "Nemanja Jovišević"
+      }
+    ]
+  },
+  {
+    "school_id": "227",
+    "school_name": "ŠKOLA ZA OSNOVNO I SREDNJE OBRAZOVANJE \"MILAN PETROVIĆ\" SA DOMOM UČENIKA",
+    "workers": [
+      {
+        "role": "Директор",
+        "full_name": "Mr Slavica Marković"
+      }
+    ]
+  },
+  {
+    "school_id": "228",
+    "school_name": "ŠKOLA ZA OSNOVNO OBRAZOVANJE I VASPITANJE ODRASLIH \"SVETI SAVA\"",
+    "workers": [
+      {
+        "role": "в.д. Директор",
+        "full_name": "Nikola Joković"
+      }
+    ]
+  },
+  {
+    "school_id": "229",
+    "school_name": "OSNOVNA MUZIČKA ŠKOLA \"JOSIP SLAVENSKI\"",
+    "workers": [
+      {
+        "role": "Директор",
+        "full_name": "Nemanja Jovišević"
+      }
+    ]
+  },
+  {
+    "school_id": "230",
+    "school_name": "BALETSKA ŠKOLA U NOVOM SADU",
+    "workers": [
+      {
+        "role": "Директор",
+        "full_name": "Nemanja Jovišević"
+      }
+    ]
+  },
+  {
+    "school_id": "231",
+    "school_name": "MUZIČKA ŠKOLA \"ISIDOR BAJIĆ\"",
+    "workers": [
+      {
+        "role": "Директор",
+        "full_name": "Nemanja Jovišević"
+      }
+    ]
+  },
+  {
+    "school_id": "232",
+    "school_name": "OŠ \"MARIJA TRANDAFILE\"",
+    "workers": [
+      {
+        "role": "Директор",
+        "full_name": "Није пронађено"
+      }
+    ]
+  },
+  {
+    "school_id": "388",
+    "school_name": "Osnovna škola i predškolska ustanova \"Svitac\"",
+    "workers": [
+      {
+        "role": "Директор",
+        "full_name": "Elizabeta Carević"
+      }
+    ]
+  },
+  {
+    "school_id": "389",
+    "school_name": "Osnovna škola \"Sveti Kirilo i Metodije\"",
+    "workers": [
+      {
+        "role": "Директор",
+        "full_name": "Није пронађено"
+      }
+    ]
+  },
+  {
+    "school_id": "390",
+    "school_name": "Osnovna škola \"Miroslav Mika Antić\"",
+    "workers": [
+      {
+        "role": "в.д. Директор",
+        "full_name": "Nemanja Jovišević"
+      }
+    ]
+  },
+  {
+    "school_id": "391",
+    "school_name": "Privatna osnovna škola \"Junior\"",
+    "workers": [
+      {
+        "role": "Директор",
+        "full_name": "Није пронађено"
+      }
+    ]
+  },
+  {
+    "school_id": "392",
+    "school_name": "Privatna osnovna škola \"Tvrđava\"",
+    "workers": [
+      {
+        "role": "Директор",
+        "full_name": "Dina Đilas"
+      }
+    ]
+  },
+  {
+    "school_id": "393",
+    "school_name": "Osnovna srpsko-ruska škola \"Anton Pavlović Čehov\"",
+    "workers": [
+      {
+        "role": "Директор",
+        "full_name": "Živanka Majstorović"
+      }
+    ]
+  }
+]

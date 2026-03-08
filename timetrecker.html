@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Тайм-трекер PRO</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f0f2f5; margin: 0; }
+    .container { max-width: 900px; margin: 20px auto; padding: 0 20px; }
+    
+    /* --- Вкладки --- */
+    .tabs { display: flex; border-bottom: 2px solid #ccc; margin-bottom: 0; }
+    .tab-button { padding: 10px 20px; font-size: 16px; background: #eee; border: none; cursor: pointer; border-radius: 5px 5px 0 0; margin-right: 2px; }
+    .tab-button.active { background: #fff; border: 2px solid #ccc; border-bottom: 2px solid #fff; font-weight: 600; margin-bottom: -2px; }
+    
+    .tab-content { display: none; padding: 20px; background: #fff; border: 2px solid #ccc; border-top: none; border-radius: 0 0 5px 5px; }
+    .tab-content.active { display: block; }
+
+    /* --- Формы и инпуты --- */
+    input[type="text"], input[type="number"], select, textarea, input[type="datetime-local"] {
+        padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; width: 100%;
+    }
+    select { width: auto; /* Сброс для селектов */ }
+    
+    /* Форма запуска задачи */
+    #createTaskForm { display: flex; gap: 10px; margin-bottom: 20px; align-items: center; }
+    #createTaskForm select { flex: 1; } 
+    #createTaskForm input[name="taskName"] { flex: 2; } 
+    #createTaskPriority { flex: 0.8; } 
+    
+    /* --- Кнопки --- */
+    button { background: #007bff; color: white; padding: 10px 15px; border: none; border-radius: 4px; cursor: pointer; font-size: 14px; }
+    button:hover { background: #0056b3; }
+    button.red-btn { background: #dc3545; }
+    button.red-btn:hover { background: #c82333; }
+    button.yellow-btn { background: #ffc107; color: #212529; }
+    button.yellow-btn:hover { background: #e0a800; }
+    button.green-btn { background: #28a745; }
+    button.green-btn:hover { background: #218838; }
+    button.gray-btn { background: #6c757d; padding: 3px 8px; font-size: 12px; }
+
+    /* --- Списки --- */
+    .task-item, .project-item {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 15px; background: #f9f9f9; border: 1px solid #ddd; border-radius: 5px; margin-bottom: 10px;
+    }
+    .task-timer { font-family: monospace; font-size: 1.3em; font-weight: bold; margin: 0 15px; }
+
+    /* --- Отчеты --- */
+    .week-group { margin-bottom: 30px; border-bottom: 2px solid #007bff; padding-bottom: 10px; }
+    .week-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 10px;}
+    .fte-analytics { margin-top: 10px; background: #f1f8ff; padding: 10px; border-radius: 5px; border: 1px solid #cce5ff; }
+    .fte-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 5px; font-size: 0.9em; }
+    .fte-bar-container { flex: 1; height: 10px; background: #ddd; border-radius: 5px; margin: 0 10px; position: relative; overflow: hidden; }
+    .fte-bar { height: 100%; background: #28a745; width: 0%; transition: width 0.5s; }
+    .fte-bar.overload { background: #dc3545; } 
+    .fte-details { width: 180px; text-align: right; font-size: 0.85em; color: #555; }
+    .report-task-item { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #eee; }
+    .task-notes { font-style: italic; color: #666; font-size: 0.9em; margin-left: 10px; }
+    
+    /* [НОВЫЙ СТИЛЬ] Заметки о последующих действиях */
+    .task-followup {
+        background: #fff3cd; border: 1px solid #ffeeba; border-radius: 4px;
+        padding: 5px 10px; margin-left: 10px; margin-top: 5px; font-size: 0.85em;
+    }
+    .task-followup ul { margin: 5px 0 5px 20px; padding: 0; }
+
+    /* Приоритет */
+    .priority {
+        display: inline-block; padding: 2px 8px; border-radius: 10px;
+        font-size: 0.75em; font-weight: 600; margin-left: 5px; vertical-align: middle;
+    }
+    .priority-low { background: #d1ecf1; color: #0c5460; }
+    .priority-medium { background: #fff3cd; color: #856404; }
+    .priority-high { background: #f8d7da; color: #721c24; }
+    
+    /* Справочник проектов */
+    #addProjectForm { display: flex; gap: 10px; margin-bottom: 20px; align-items: center; background: #eee; padding: 15px; border-radius: 5px; }
+    #addProjectForm input, #addProjectForm select { width: auto; } /* Сброс для формы */
+    #addProjectForm input[type="text"] { flex: 2; }
+    #addProjectForm input[type="number"] { flex: 1; }
+    .checkbox-label { display: flex; align-items: center; gap: 5px; cursor: pointer; }
+
+    /* --- Модальные окна --- */
+    .modal-overlay { 
+        position: fixed; top:0; left:0; width:100%; height:100%; 
+        background:rgba(0,0,0,0.5); display:none; 
+        align-items:center; justify-content:center; z-index:999; 
+    }
+    .modal { 
+        background:#fff; padding:25px; width:90%; 
+        max-width:500px; border-radius:8px; 
+    }
+    .modal label { display:block; margin-top:10px; font-weight:600; }
+    .modal-actions { margin-top:20px; text-align:right; }
+    
+    /* [НОВЫЙ СТИЛЬ] Чекбоксы в модалке */
+    .checkbox-group { margin-top: 15px; }
+    .checkbox-group label {
+        display: flex; align-items: center; gap: 8px;
+        font-weight: normal; margin-top: 5px;
+    }
+    .checkbox-group input[type="checkbox"] {
+        width: auto; /* Сброс 100% ширины */
+    }
+    /* [НОВЫЙ СТИЛЬ] Скрытое поле "Прочее" */
+    #followUpOtherTextWrapper {
+        display: none; /* Скрыто по умолчанию */
+        margin-top: 5px;
+        margin-left: 25px;
+    }
+    #editFollowUpOtherTextWrapper {
+        display: none; 
+        margin-top: 5px;
+        margin-left: 25px;
+    }
+
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Тайм-трекер PRO</h1>
+
+  <nav class="tabs">
+    <button class="tab-button active" data-tab="tracker">Трекер</button>
+    <button class="tab-button" data-tab="reports">Отчеты</button>
+    <button class="tab-button" data-tab="projects">Справочник проектов</button>
+  </nav>
+
+  <div id="tracker" class="tab-content active">
+    <h3>Запуск задачи</h3>
+    <form id="createTaskForm">
+      <select id="createProjectSelect" required>
+        <option value="" disabled selected>Выберите проект...</option>
+      </select>
+      <input type="text" name="taskName" id="taskName" placeholder="Что делаем? (Задание)" required>
+      <select id="createTaskPriority" required>
+          <option value="medium" selected>Средний</option>
+          <option value="low">Низкий</option>
+          <option value="high">Высокий</option>
+      </select>
+      <button type="submit" class="green-btn">Старт</button>
+    </form>
+    <small style="color:#777;">* Проекты настраиваются во вкладке "Справочник"</small>
+    <hr>
+    <h3>В работе</h3>
+    <div id="activeTasksList"></div>
+  </div>
+
+  <div id="reports" class="tab-content">
+    <div style="display:flex; justify-content:space-between; align-items:center;">
+      <h2>Аналитика и задачи</h2>
+      <button id="refreshReports">Обновить</button>
+    </div>
+    <div id="status"></div>
+    <div id="reportsContainer"></div>
+  </div>
+
+  <div id="projects" class="tab-content">
+    <h3>Управление проектами</h3>
+    <form id="addProjectForm">
+      <input type="text" id="newProjectName" placeholder="Название проекта" required>
+      <input type="number" id="newProjectFTE" placeholder="FTE (напр. 0.5)" step="0.01" min="0" max="5" required>
+      <label class="checkbox-label">
+        <input type="checkbox" id="newProjectIsPersonal">
+        Личное
+      </label>
+      <button type="submit">Добавить</button>
+    </form>
+    <div id="projectsList"></div>
+  </div>
+
+</div>
+
+<div id="notesModalOverlay" class="modal-overlay">
+  <div id="notesModal" class="modal">
+    <h2>Завершение задачи</h2>
+    <form id="notesModalForm">
+      <input type="hidden" id="notesTaskId">
+      
+      <label for="taskNotesInput">Что было сделано?</label>
+      <textarea id="taskNotesInput" rows="3" required></textarea>
+
+      <div class="checkbox-group">
+        <strong>Следующие шаги:</strong>
+        <label>
+          <input type="checkbox" id="followUpCreateTask">
+          Нужно создать задачу?
+        </label>
+        <label>
+          <input type="checkbox" id="followUpWaitingResponse">
+          Ожидается ответ (аналитика)?
+        </label>
+        <label>
+          <input type="checkbox" id="followUpOther">
+          Прочее
+        </label>
+        <div id="followUpOtherTextWrapper">
+          <textarea id="followUpOtherText" rows="2" placeholder="Укажите, что именно..."></textarea>
+        </div>
+      </div>
+
+      <div class="modal-actions">
+        <button type="button" class="gray-btn" id="cancelNotesBtn">Отмена</button>
+        <button type="submit" class="green-btn">Сохранить</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+<div id="editModalOverlay" class="modal-overlay">
+  <div id="editModal" class="modal">
+    <h2>Редактирование записи</h2>
+    <form id="editTaskForm">
+      <input type="hidden" id="editTaskId">
+      
+      <label>Проект</label>
+      <select id="editProjectSelect" required></select>
+      <label>Задание</label>
+      <input type="text" id="editTaskName" required>
+      <label>Приоритет</label>
+      <select id="editTaskPriority" required>
+          <option value="medium" selected>Средний</option>
+          <option value="low">Низкий</option>
+          <option value="high">Высокий</option>
+      </select>
+      <label>Дата завершения</label>
+      <input type="datetime-local" id="editDateTime" required>
+      <label>Длительность (ЧЧ:ММ:СС)</label>
+      <input type="text" id="editDuration" required>
+      <label>Заметки "Что сделано"</label>
+      <textarea id="editNotes" rows="3"></textarea>
+      
+      <div class="checkbox-group">
+        <strong>Следующие шаги:</strong>
+        <label>
+          <input type="checkbox" id="editFollowUpCreateTask">
+          Нужно создать задачу?
+        </label>
+        <label>
+          <input type="checkbox" id="editFollowUpWaitingResponse">
+          Ожидается ответ (аналитика)?
+        </label>
+        <label>
+          <input type="checkbox" id="editFollowUpOther">
+          Прочее
+        </label>
+        <div id="editFollowUpOtherTextWrapper">
+          <textarea id="editFollowUpOtherText" rows="2" placeholder="Укажите, что именно..."></textarea>
+        </div>
+      </div>
+      
+      <div style="margin-top:10px; font-size:0.9em; color:#555;">
+        Тип проекта: <span id="editProjectTypeDisplay">...</span>
+      </div>
+      <div class="modal-actions">
+        <button type="button" class="gray-btn" id="cancelEditBtn">Отмена</button>
+        <button type="submit" class="green-btn">Сохранить</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script>
+  const API_URL = 'timetracker_api.php';
+  
+  // Данные
+  let activeTasks = {};
+  let projects = []; 
+  let completedTasks = [];
+  let timerInterval = null;
+
+  // DOM Elements
+  const createSelect = document.getElementById('createProjectSelect');
+  const projectsListEl = document.getElementById('projectsList');
+  const reportsContainer = document.getElementById('reportsContainer');
+  
+  // [НОВЫЕ] DOM Модалки Завершения
+  const notesModalOverlay = document.getElementById('notesModalOverlay');
+  const notesModalForm = document.getElementById('notesModalForm');
+  const cancelNotesBtn = document.getElementById('cancelNotesBtn');
+  const followUpOtherCheck = document.getElementById('followUpOther');
+  const followUpOtherWrapper = document.getElementById('followUpOtherTextWrapper');
+
+  // [НОВЫЕ] DOM Модалки Редактирования (для "Прочего")
+  const editFollowUpOtherCheck = document.getElementById('editFollowUpOther');
+  const editFollowUpOtherWrapper = document.getElementById('editFollowUpOtherTextWrapper');
+
+
+  // --- ИНИЦИАЛИЗАЦИЯ ---
+  document.addEventListener('DOMContentLoaded', async () => {
+    await loadProjects(); 
+    loadActiveTasks();    
+    
+    // Переключение вкладок
+    document.querySelectorAll('.tab-button').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        document.querySelectorAll('.tab-button').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+        e.target.classList.add('active');
+        document.getElementById(e.target.dataset.tab).classList.add('active');
+        
+        if (e.target.dataset.tab === 'reports') loadReports();
+      });
+    });
+
+    // --- [НОВЫЕ] Слушатели модалки завершения ---
+    notesModalForm.addEventListener('submit', handleNotesSubmit);
+    cancelNotesBtn.addEventListener('click', () => notesModalOverlay.style.display = 'none');
+    // Показать/скрыть поле "Прочее"
+    followUpOtherCheck.addEventListener('change', () => {
+        followUpOtherWrapper.style.display = followUpOtherCheck.checked ? 'block' : 'none';
+    });
+    
+    // [НОВОЕ] Слушатель модалки редактирования (для "Прочего")
+    editFollowUpOtherCheck.addEventListener('change', () => {
+        editFollowUpOtherWrapper.style.display = editFollowUpOtherCheck.checked ? 'block' : 'none';
+    });
+
+  });
+
+  // ==========================================
+  // 1. ЛОГИКА ПРОЕКТОВ (СПРАВОЧНИК)
+  // (без изменений)
+  // ==========================================
+  async function loadProjects() {
+    try {
+      const res = await fetch(`${API_URL}?type=projects`);
+      const data = await res.json();
+      projects = data.projects || [];
+      renderProjects();
+      updateProjectSelects();
+    } catch (e) { console.error("Ошибка загрузки проектов", e); }
+  }
+  async function saveProjects() {
+    try {
+      await fetch(API_URL, {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({ action: 'save_projects_list', data: projects })
+      });
+      renderProjects();
+      updateProjectSelects();
+    } catch (e) { alert("Ошибка сохранения проектов"); }
+  }
+  function renderProjects() {
+    projectsListEl.innerHTML = '';
+    if (projects.length === 0) {
+      projectsListEl.innerHTML = '<p>Справочник пуст. Добавьте проекты.</p>';
+      return;
+    }
+    projects.forEach((proj, index) => {
+      const div = document.createElement('div');
+      div.className = 'project-item';
+      div.innerHTML = `
+        <div>
+          <strong>${proj.name}</strong> 
+          <span style="color:#666; margin-left:10px;">FTE: ${proj.fte}</span>
+          ${proj.isPersonal ? '<span style="color:green; margin-left:10px;">(Личное)</span>' : '<span style="color:blue; margin-left:10px;">(Рабочее)</span>'}
+        </div>
+        <button class="red-btn" onclick="deleteProject(${index})">Удалить</button>
+      `;
+      projectsListEl.appendChild(div);
+    });
+  }
+  window.deleteProject = function(index) {
+    if(confirm('Удалить проект?')) {
+      projects.splice(index, 1);
+      saveProjects();
+    }
+  };
+  document.getElementById('addProjectForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const name = document.getElementById('newProjectName').value.trim();
+    const fte = parseFloat(document.getElementById('newProjectFTE').value);
+    const isPersonal = document.getElementById('newProjectIsPersonal').checked;
+    if(!name || isNaN(fte)) return;
+    if(projects.find(p => p.name === name)) {
+      alert('Проект с таким именем уже есть!');
+      return;
+    }
+    projects.push({ name, fte, isPersonal });
+    saveProjects();
+    e.target.reset();
+  });
+  function updateProjectSelects() {
+    const populate = (selectEl) => {
+      const currentVal = selectEl.value;
+      selectEl.innerHTML = '<option value="" disabled selected>Выберите проект...</option>';
+      projects.forEach(p => {
+        const opt = document.createElement('option');
+        opt.value = p.name;
+        opt.textContent = p.name;
+        opt.dataset.fte = p.fte;
+        opt.dataset.isPersonal = p.isPersonal;
+        selectEl.appendChild(opt);
+      });
+      if(currentVal) selectEl.value = currentVal; 
+    };
+    populate(createSelect);
+    populate(document.getElementById('editProjectSelect'));
+  }
+
+  // ==========================================
+  // 2. ЛОГИКА ТРЕКЕРА
+  // (finishTask изменена)
+  // ==========================================
+
+  function loadActiveTasks() {
+    activeTasks = JSON.parse(localStorage.getItem('activeTasks')) || {};
+    renderActiveTasks();
+    startGlobalTimer();
+  }
+  function saveActiveTasksLocal() {
+    localStorage.setItem('activeTasks', JSON.stringify(activeTasks));
+  }
+  
+  // (без изменений)
+  document.getElementById('createTaskForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const projectName = createSelect.value;
+    const taskName = document.getElementById('taskName').value.trim();
+    const priority = document.getElementById('createTaskPriority').value; 
+    if (!projectName || !taskName) return;
+    const projData = projects.find(p => p.name === projectName);
+    const isPersonal = projData ? projData.isPersonal : false;
+    const now = Date.now();
+    const id = 't_' + now;
+    activeTasks[id] = {
+      id, project: projectName, taskName, isPersonal, priority: priority, 
+      startTime: now, sessionStartTime: now, accumulated: 0, status: 'running'
+    };
+    saveActiveTasksLocal();
+    renderActiveTasks();
+    startGlobalTimer();
+    document.getElementById('taskName').value = '';
+    createSelect.value = '';
+    document.getElementById('createTaskPriority').value = 'medium'; 
+  });
+  
+  // (без изменений)
+  function renderActiveTasks() {
+    const list = document.getElementById('activeTasksList');
+    list.innerHTML = '';
+    if(Object.keys(activeTasks).length === 0) {
+      list.innerHTML = '<p>Нет активных задач</p>';
+      return;
+    }
+    for (const id in activeTasks) {
+      const t = activeTasks[id];
+      const el = document.createElement('div');
+      el.className = 'task-item';
+      const btnState = t.status === 'running' 
+        ? `<button class="yellow-btn" onclick="togglePause('${id}')">Пауза</button>` 
+        : `<button class="green-btn" onclick="togglePause('${id}')">Продолжить</button>`;
+      el.innerHTML = `
+        <div>
+          <strong>${t.project}</strong> ${getPriorityHTML(t.priority)} <br>
+          <small>${t.taskName}</small>
+        </div>
+        <div class="task-timer" id="timer-${id}">00:00:00</div>
+        <div style="display:flex; gap:5px;">
+          ${btnState}
+          <button class="red-btn" onclick="finishTask('${id}')">Стоп</button>
+        </div>
+      `;
+      list.appendChild(el);
+    }
+    updateTimersDisplay();
+  }
+  
+  // (без изменений)
+  window.togglePause = function(id) {
+    const t = activeTasks[id];
+    if (t.status === 'running') {
+      t.accumulated += Date.now() - t.sessionStartTime;
+      t.status = 'paused';
+    } else {
+      t.sessionStartTime = Date.now();
+      t.status = 'running';
+    }
+    saveActiveTasksLocal();
+    renderActiveTasks();
+    startGlobalTimer();
+  };
+
+  /**
+   * [ПЕРЕПИСАНО] Шаг 1: Открывает модалку завершения
+   */
+  window.finishTask = function(id) {
+    // 1. Сбросить форму
+    notesModalForm.reset();
+    followUpOtherWrapper.style.display = 'none'; // Скрыть поле "Прочее"
+    
+    // 2. Сохранить ID задачи, которую мы завершаем
+    document.getElementById('notesTaskId').value = id;
+    
+    // 3. Показать модалку
+    notesModalOverlay.style.display = 'flex';
+    document.getElementById('taskNotesInput').focus();
+  };
+
+  /**
+   * [НОВАЯ ФУНКЦИЯ] Шаг 2: Обработка модалки завершения
+   */
+  async function handleNotesSubmit(e) {
+    e.preventDefault();
+    
+    // 1. Получаем ID задачи из скрытого поля
+    const id = document.getElementById('notesTaskId').value;
+    const t = activeTasks[id];
+    if (!t) {
+        alert("Ошибка: задача не найдена!");
+        return;
+    }
+
+    // 2. Считаем длительность
+    let duration = t.accumulated;
+    if(t.status === 'running') {
+      duration += Date.now() - t.sessionStartTime;
+    }
+    const endTime = Date.now();
+
+    // 3. Собираем данные из модалки
+    const notes = document.getElementById('taskNotesInput').value;
+    const followUpCreateTask = document.getElementById('followUpCreateTask').checked;
+    const followUpWaitingResponse = document.getElementById('followUpWaitingResponse').checked;
+    const followUpOther = document.getElementById('followUpOther').checked;
+    let followUpOtherText = '';
+    
+    if (followUpOther) {
+        followUpOtherText = document.getElementById('followUpOtherText').value;
+    }
+
+    // 4. Формируем финальный объект
+    const finalTask = {
+      id: t.id,
+      project: t.project,
+      taskName: t.taskName,
+      isPersonal: t.isPersonal, 
+      priority: t.priority,
+      duration: duration,
+      endTime: endTime,
+      dateCompleted: new Date(endTime).toISOString(),
+      notes: notes || '',
+      // [НОВОЕ] Добавляем объект followUp
+      followUp: {
+          createTask: followUpCreateTask,
+          waitingResponse: followUpWaitingResponse,
+          other: followUpOtherText // Сохраняем текст, если "Прочее" выбрано, иначе пустую строку
+      }
+    };
+
+    // 5. Удаляем из активных
+    delete activeTasks[id];
+    saveActiveTasksLocal();
+    renderActiveTasks();
+    
+    // 6. Отправляем на сервер
+    try {
+      await fetch(API_URL, {
+        method: 'POST',
+        headers: {'Content-Type':'application/json'},
+        body: JSON.stringify({ action: 'save_task', data: finalTask })
+      });
+      // 7. Закрываем модалку
+      notesModalOverlay.style.display = 'none';
+      
+      if(document.getElementById('reports').classList.contains('active')) loadReports();
+    } catch(e) { alert('Ошибка сохранения на сервер'); }
+  }
+
+
+  // Таймер (без изменений)
+  function startGlobalTimer() {
+    if (timerInterval) clearInterval(timerInterval);
+    const hasRunning = Object.values(activeTasks).some(t => t.status === 'running');
+    if (hasRunning) {
+      timerInterval = setInterval(updateTimersDisplay, 1000);
+    }
+  }
+  function updateTimersDisplay() {
+    const now = Date.now();
+    for (const id in activeTasks) {
+      const t = activeTasks[id];
+      const el = document.getElementById(`timer-${id}`);
+      if(el) {
+        let total = t.accumulated;
+        if(t.status === 'running') total += (now - t.sessionStartTime);
+        el.innerText = formatDuration(total);
+      }
+    }
+  }
+
+  // ==========================================
+  // 3. ОТЧЕТЫ И АНАЛИТИКА (FTE)
+  // ==========================================
+
+  // (без изменений)
+  async function loadReports() {
+    const status = document.getElementById('status');
+    status.innerText = 'Загрузка...';
+    try {
+      const res = await fetch(API_URL);
+      const data = await res.json();
+      completedTasks = data.tasks || [];
+      renderReports();
+      status.innerText = '';
+    } catch (e) { status.innerText = 'Ошибка загрузки'; }
+  }
+
+  // [ИЗМЕНЕНО] Добавлено отображение 'followUp'
+  function renderReports() {
+    reportsContainer.innerHTML = '';
+    
+    // Группировка по неделям
+    const weeks = {};
+    completedTasks.forEach(t => {
+      const weekStart = getWeekStartDate(t.endTime);
+      if(!weeks[weekStart]) weeks[weekStart] = { tasks: [], summaryByProject: {} };
+      weeks[weekStart].tasks.push(t);
+      if(!weeks[weekStart].summaryByProject[t.project]) {
+        weeks[weekStart].summaryByProject[t.project] = 0;
+      }
+      weeks[weekStart].summaryByProject[t.project] += t.duration;
+    });
+
+    const sortedWeeks = Object.keys(weeks).sort((a, b) => new Date(b) - new Date(a));
+
+    sortedWeeks.forEach(weekDate => {
+      const weekData = weeks[weekDate];
+      const weekEnd = new Date(new Date(weekDate).getTime() + 6*24*60*60*1000);
+      const div = document.createElement('div');
+      div.className = 'week-group';
+      
+      // -- Блок аналитики FTE (без изменений) --
+      let analyticsHTML = '<div class="fte-analytics"><strong>Аналитика FTE (План / Факт):</strong>';
+      projects.forEach(proj => {
+        const actualMs = weekData.summaryByProject[proj.name] || 0;
+        const actualHours = actualMs / (1000 * 60 * 60);
+        const targetHours = proj.fte * 40; 
+        let percent = 0; let barClass = 'fte-bar'; let detailsText = '';
+        if (targetHours > 0) {
+            percent = (actualHours / targetHours) * 100;
+            const leftHours = targetHours - actualHours;
+            if (leftHours > 0) detailsText = `Осталось: ${leftHours.toFixed(1)} ч.`;
+            else { detailsText = `Переработка: ${Math.abs(leftHours).toFixed(1)} ч.`; barClass += ' overload'; }
+        } else { detailsText = 'Без плана (FTE 0)'; percent = actualHours > 0 ? 100 : 0; }
+        const displayPercent = Math.min(percent, 100);
+        analyticsHTML += `
+          <div class="fte-row">
+            <div style="width: 150px; font-weight:bold;">${proj.name} <span style="font-weight:normal; color:#777;">(${proj.fte} FTE)</span></div>
+            <div class="fte-bar-container"><div class="${barClass}" style="width: ${displayPercent}%"></div></div>
+            <div class="fte-details">
+                Факт: ${actualHours.toFixed(1)} / ${targetHours.toFixed(1)} ч.<br>
+                ${detailsText}
+            </div>
+          </div>`;
+      });
+      analyticsHTML += '</div>';
+      
+      // -- Список задач --
+      let tasksHTML = '';
+      weekData.tasks.sort((a,b) => b.endTime - a.endTime).forEach(t => {
+        
+        // [НОВОЕ] Формируем блок "Follow-up"
+        let followUpHTML = '';
+        if (t.followUp && (t.followUp.createTask || t.followUp.waitingResponse || t.followUp.other)) {
+            followUpHTML = '<div class="task-followup"><strong>Следующие шаги:</strong><ul>';
+            if(t.followUp.createTask) followUpHTML += '<li>Нужно создать задачу</li>';
+            if(t.followUp.waitingResponse) followUpHTML += '<li>Ожидается ответ</li>';
+            if(t.followUp.other) followUpHTML += `<li>Прочее: ${t.followUp.other}</li>`;
+            followUpHTML += '</ul></div>';
+        }
+        
+        // [ИЗМЕНЕНО] Добавлен 'followUpHTML'
+        tasksHTML += `
+          <div class="report-task-item">
+            <div>
+               <strong>${t.project}</strong>: ${t.taskName}
+               ${getPriorityHTML(t.priority)} 
+               ${t.isPersonal ? '<span style="color:green; font-size:0.8em;">[Личное]</span>' : ''}
+               <div class="task-notes">${t.notes || ''}</div>
+               ${followUpHTML} </div>
+            <div style="display:flex; align-items:center; gap:10px;">
+               <span>${formatDuration(t.duration)}</span>
+               <button class="gray-btn" onclick="openEditModal('${t.id}')">Ред.</button>
+            </div>
+          </div>
+        `;
+      });
+
+      div.innerHTML = `
+        <div class="week-header">
+          <h3>Неделя: ${formatDate(weekDate)} - ${formatDate(weekEnd)}</h3>
+        </div>
+        ${analyticsHTML}
+        <div style="margin-top:15px;">${tasksHTML}</div>
+      `;
+      reportsContainer.appendChild(div);
+    });
+  }
+
+  document.getElementById('refreshReports').addEventListener('click', loadReports);
+
+  // ==========================================
+  // 4. РЕДАКТИРОВАНИЕ (МОДАЛКА)
+  // [ИЗМЕНЕНО]
+  // ==========================================
+  const editModalOverlay = document.getElementById('editModalOverlay');
+  const editForm = document.getElementById('editTaskForm');
+
+  // [ИЗМЕНЕНО] Добавлено заполнение 'followUp'
+  window.openEditModal = function(id) {
+    const task = completedTasks.find(t => t.id === id);
+    if(!task) return;
+
+    document.getElementById('editTaskId').value = task.id;
+    document.getElementById('editProjectSelect').value = task.project;
+    document.getElementById('editTaskName').value = task.taskName;
+    document.getElementById('editTaskPriority').value = task.priority || 'medium'; 
+    document.getElementById('editDuration').value = formatDuration(task.duration);
+    document.getElementById('editNotes').value = task.notes || '';
+    
+    const d = new Date(task.endTime);
+    const dLocal = new Date(d.getTime() - d.getTimezoneOffset()*60000).toISOString().slice(0,16);
+    document.getElementById('editDateTime').value = dLocal;
+
+    // [НОВОЕ] Заполняем чекбоксы "Follow-up"
+    const followUp = task.followUp || {}; // Пустой объект, если followUp не существует
+    document.getElementById('editFollowUpCreateTask').checked = followUp.createTask || false;
+    document.getElementById('editFollowUpWaitingResponse').checked = followUp.waitingResponse || false;
+    
+    const hasOther = !!followUp.other;
+    document.getElementById('editFollowUpOther').checked = hasOther;
+    document.getElementById('editFollowUpOtherText').value = followUp.other || '';
+    editFollowUpOtherWrapper.style.display = hasOther ? 'block' : 'none';
+
+    updateEditModalTypeInfo();
+    editModalOverlay.style.display = 'flex';
+  };
+
+  // (без изменений)
+  document.getElementById('editProjectSelect').addEventListener('change', updateEditModalTypeInfo);
+  function updateEditModalTypeInfo() {
+    const sel = document.getElementById('editProjectSelect');
+    const opt = sel.options[sel.selectedIndex];
+    const display = document.getElementById('editProjectTypeDisplay');
+    if(opt && opt.dataset.isPersonal) {
+       const isPers = opt.dataset.isPersonal === 'true';
+       display.innerText = isPers ? 'Личное' : 'Рабочее';
+       display.style.color = isPers ? 'green' : 'blue';
+    } else { display.innerText = '...'; }
+  }
+
+  // (без изменений)
+  document.getElementById('cancelEditBtn').addEventListener('click', () => {
+    editModalOverlay.style.display = 'none';
+  });
+
+  // [ИЗМЕНЕНО] Добавлено сохранение 'followUp'
+  editForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const id = document.getElementById('editTaskId').value;
+    const project = document.getElementById('editProjectSelect').value;
+    const taskName = document.getElementById('editTaskName').value;
+    const priority = document.getElementById('editTaskPriority').value; 
+    const notes = document.getElementById('editNotes').value;
+    const durStr = document.getElementById('editDuration').value;
+    const dateStr = document.getElementById('editDateTime').value;
+
+    const parts = durStr.split(':').map(Number);
+    const duration = (parts[0]*3600 + parts[1]*60 + parts[2]) * 1000;
+    const endTime = new Date(dateStr).getTime();
+    const projData = projects.find(p => p.name === project);
+    const isPersonal = projData ? projData.isPersonal : false;
+
+    // [НОВОЕ] Собираем "Follow-up"
+    const followUp = {
+        createTask: document.getElementById('editFollowUpCreateTask').checked,
+        waitingResponse: document.getElementById('editFollowUpWaitingResponse').checked,
+        other: document.getElementById('editFollowUpOther').checked 
+               ? document.getElementById('editFollowUpOtherText').value 
+               : ''
+    };
+
+    const updatedTask = {
+       id, project, taskName, isPersonal, duration, endTime, 
+       priority: priority, 
+       dateCompleted: new Date(endTime).toISOString(), notes,
+       followUp: followUp // [НОВОЕ]
+    };
+
+    try {
+      await fetch(API_URL, {
+        method: 'POST',
+        headers: {'Content-Type':'application/json'},
+        body: JSON.stringify({ action: 'update_task', data: updatedTask })
+      });
+      editModalOverlay.style.display = 'none';
+      loadReports();
+    } catch(e) { alert('Ошибка обновления'); }
+  });
+
+
+  // --- Утилиты ---
+  
+  // (без изменений)
+  function getPriorityHTML(priority) {
+    switch(priority) {
+        case 'high': return '<span class="priority priority-high">Высокий</span>';
+        case 'low': return '<span class="priority priority-low">Низкий</span>';
+        case 'medium': default: return '<span class="priority priority-medium">Средний</span>';
+    }
+  }
+  function formatDuration(ms) {
+    const s = Math.floor(ms/1000);
+    const h = Math.floor(s/3600).toString().padStart(2,'0');
+    const m = Math.floor((s%3600)/60).toString().padStart(2,'0');
+    const sec = (s%60).toString().padStart(2,'0');
+    return `${h}:${m}:${sec}`;
+  }
+  function formatDate(str) {
+    return new Date(str).toLocaleDateString('ru-RU');
+  }
+  function getWeekStartDate(date) {
+      const d = new Date(date);
+      const day = d.getDay();
+      const diff = d.getDate() - day + (day === 0 ? -6 : 1);
+      d.setDate(diff);
+      d.setHours(0,0,0,0);
+      return d.toISOString().split('T')[0];
+  }
+</script>
+</body>
+</html>

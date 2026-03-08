@@ -1,0 +1,705 @@
+{
+    "tasks": [
+        {
+            "id": "task_1761550893196",
+            "project": "act and invoce",
+            "taskName": "act and invoce",
+            "startTime": 1761550893196,
+            "endTime": 1761551248227,
+            "duration": 355031,
+            "dateCompleted": "2025-10-27T07:47:28.227Z"
+        },
+        {
+            "id": "task_1761551272100",
+            "project": "dwh",
+            "taskName": "Остатки",
+            "startTime": 1761551272100,
+            "endTime": 1761553139502,
+            "duration": 1867402,
+            "dateCompleted": "2025-10-27T08:18:59.502Z"
+        },
+        {
+            "id": "task_1761555749169",
+            "project": "dwh",
+            "taskName": "встреча аналитиков",
+            "startTime": 1761555749169,
+            "endTime": 1761558590554,
+            "duration": 2841385,
+            "dateCompleted": "2025-10-27T09:49:50.554Z"
+        },
+        {
+            "id": "task_1761560933128",
+            "project": "ГИС ЭПК",
+            "taskName": "Встреча",
+            "startTime": 1761560933128,
+            "endTime": 1761562943634,
+            "duration": 2008626,
+            "dateCompleted": "2025-10-27T11:02:23.634Z"
+        },
+        {
+            "id": "task_1761559221381",
+            "project": "Видео",
+            "taskName": "Запись видео",
+            "startTime": 1761559221381,
+            "endTime": 1761563586958,
+            "duration": 3123798,
+            "dateCompleted": "2025-10-27T11:13:06.958Z",
+            "type": "personal"
+        },
+        {
+            "id": "task_1761562954301",
+            "project": "Голосовой помошник",
+            "taskName": "Встреча",
+            "startTime": 1761562954301,
+            "endTime": 1761564494646,
+            "duration": 1540345,
+            "dateCompleted": "2025-10-27T11:28:14.646Z"
+        },
+        {
+            "id": "task_1761567922127",
+            "project": "акты",
+            "taskName": "акты",
+            "startTime": 1761567922127,
+            "endTime": 1761568616427,
+            "duration": 694300,
+            "dateCompleted": "2025-10-27T12:36:56.427Z",
+            "notes": "Сформированы доки и отправлены на согласование"
+        },
+        {
+            "id": "task_1761553150385",
+            "project": "dwh",
+            "taskName": "остатки",
+            "startTime": 1761553150385,
+            "endTime": 1761569737941,
+            "duration": 2980632,
+            "dateCompleted": "2025-10-27T12:55:37.941Z",
+            "notes": "Сформированы кейсы, а также отрисована схема"
+        },
+        {
+            "id": "task_1761568944127",
+            "project": "ГИС эпк",
+            "taskName": "Встреча аналитиков",
+            "startTime": 1761568944127,
+            "endTime": 1761572280668,
+            "duration": 3336541,
+            "dateCompleted": "2025-10-27T13:38:00.668Z",
+            "notes": "Сделать оценку по своим задачам из ЧТЗ"
+        },
+        {
+            "id": "task_1761570568421",
+            "project": "Видео",
+            "taskName": "Монтаж",
+            "startTime": 1761570568421,
+            "endTime": 1761584236725,
+            "duration": 6543476,
+            "dateCompleted": "2025-10-27T16:57:16.725Z",
+            "notes": "выложи публикации по старые школы, не зачисляют и т.д.",
+            "type": "personal"
+        },
+        {
+            "id": "task_1761597023473",
+            "project": "Видео",
+            "taskName": "Работа со сценарием",
+            "startTime": 1761597023473,
+            "endTime": 1761597537133,
+            "duration": 493664,
+            "dateCompleted": "2025-10-27T20:38:57.133Z",
+            "notes": "написание 3 сценария для завтрашней съемки",
+            "type": "personal"
+        },
+        {
+            "id": "task_1761595388676",
+            "project": "Видео",
+            "taskName": "Монтаж",
+            "startTime": 1761595388676,
+            "endTime": 1761597912675,
+            "duration": 1459837,
+            "dateCompleted": "2025-10-27T20:45:12.675Z",
+            "notes": "завершен монтаж 2 видел",
+            "type": "personal"
+        },
+        {
+            "id": "task_1761631907592",
+            "project": "Нейрооператор",
+            "taskName": "задачи",
+            "startTime": 1761631907592,
+            "endTime": 1761632769585,
+            "duration": 861993,
+            "dateCompleted": "2025-10-28T06:26:09.585Z",
+            "notes": "Задча аналитики откладываются"
+        },
+        {
+            "id": "task_1761633433415",
+            "project": "Видео",
+            "taskName": "Выкладка видео",
+            "startTime": 1761633433415,
+            "endTime": 1761634964602,
+            "duration": 1531187,
+            "dateCompleted": "2025-10-28T07:02:44.602Z",
+            "notes": "выложены 3 ролика",
+            "type": "personal"
+        },
+        {
+            "id": "task_1761632788630",
+            "project": "dwh",
+            "taskName": "Дейли",
+            "startTime": 1761632788630,
+            "endTime": 1761634974326,
+            "duration": 624536,
+            "dateCompleted": "2025-10-28T07:02:54.326Z",
+            "notes": "Работаю над остатками "
+        },
+        {
+            "id": "task_1761639784089",
+            "project": "Сценарии для видео",
+            "taskName": "сценарии",
+            "startTime": 1761639784089,
+            "endTime": 1761640653633,
+            "duration": 869544,
+            "dateCompleted": "2025-10-28T08:37:33.633Z",
+            "notes": "Описан сценарий по рейтингу школ",
+            "type": "personal"
+        },
+        {
+            "id": "task_1761643690255",
+            "project": "встреча по голосовму пмошнику",
+            "taskName": "встреча",
+            "startTime": 1761643690255,
+            "endTime": 1761653840650,
+            "duration": 10150395,
+            "dateCompleted": "2025-10-28T12:17:20.650Z",
+            "notes": "Приступить к вычетки ТЗ, а также приступить к описанию НИР"
+        },
+        {
+            "id": "task_1761571898656",
+            "project": "Голосовой помошник",
+            "taskName": "РОПО",
+            "startTime": 1761571898656,
+            "endTime": 1761663273915,
+            "duration": 7241990,
+            "dateCompleted": "2025-10-28T14:54:33.915Z",
+            "notes": "Сформированы пункты и их наполнение необходимо выделить время на вычетку и корректировку"
+        },
+        {
+            "id": "task_1761663286798",
+            "project": "Голосовой помошник",
+            "taskName": "Ревью документа",
+            "startTime": 1761663286798,
+            "endTime": 1761724020000,
+            "duration": 11951000,
+            "dateCompleted": "2025-10-29T07:47:00.000Z",
+            "notes": "Было затрачено 3 часа забыл выключить"
+        },
+        {
+            "id": "task_1761724921490",
+            "project": "Запись видео",
+            "taskName": "ролики",
+            "startTime": 1761724921490,
+            "endTime": 1761726271555,
+            "duration": 1350065,
+            "dateCompleted": "2025-10-29T08:24:31.555Z",
+            "notes": "Записано 4 видео ролика",
+            "type": "personal"
+        },
+        {
+            "id": "task_1761738357949",
+            "project": "Видео",
+            "taskName": "мондаж одного ролика",
+            "startTime": 1761738357949,
+            "endTime": 1761741104586,
+            "duration": 1365605,
+            "dateCompleted": "2025-10-29T12:31:44.586Z",
+            "notes": "Завершен монтаж по чемпионам",
+            "type": "personal"
+        },
+        {
+            "id": "task_1761751086231",
+            "project": "Видео",
+            "taskName": "Монтаж",
+            "startTime": 1761751086231,
+            "endTime": 1761752998150,
+            "duration": 1517789,
+            "dateCompleted": "2025-10-29T15:49:58.150Z",
+            "notes": "монтаж одного видео \"Какая школа самая лучшая\"",
+            "type": "personal"
+        },
+        {
+            "id": "task_1761755976154",
+            "project": "Видео",
+            "taskName": "Выкладка видео",
+            "startTime": 1761755976154,
+            "endTime": 1761756269017,
+            "duration": 292863,
+            "dateCompleted": "2025-10-29T16:44:29.017Z",
+            "notes": "выложено 1 видео",
+            "type": "personal"
+        },
+        {
+            "id": "task_1761759237936",
+            "project": "Видео",
+            "taskName": "Запись видео",
+            "startTime": 1761759237936,
+            "endTime": 1761763140000,
+            "duration": 3262000,
+            "dateCompleted": "2025-10-29T18:39:00.000Z",
+            "notes": "Выложен видео ролик после аналитики gemini про васе стаич",
+            "type": "personal"
+        },
+        {
+            "id": "task_1761808067339",
+            "project": "Умный протокол",
+            "taskName": "Документаця",
+            "isPersonal": false,
+            "duration": 2169000,
+            "endTime": 1761830700000,
+            "dateCompleted": "2025-10-30T13:25:00.000Z",
+            "notes": "ПРоработан ответ"
+        },
+        {
+            "id": "task_1761827648491",
+            "project": "ЦТТ",
+            "taskName": "Встреча по ЧТЗ",
+            "startTime": 1761827648491,
+            "endTime": 1761857760000,
+            "duration": 4926000,
+            "dateCompleted": "2025-10-30T20:56:00.000Z",
+            "notes": "будет встреча 31.10",
+            "type": "work"
+        },
+        {
+            "id": "task_1761721982577",
+            "project": "Умный протокол",
+            "taskName": "написание НИР",
+            "isPersonal": false,
+            "duration": 33481000,
+            "endTime": 1761857760000,
+            "dateCompleted": "2025-10-30T20:56:00.000Z",
+            "notes": "Описание исследования"
+        },
+        {
+            "id": "task_1761908228667",
+            "project": "ЭПК",
+            "taskName": "Встреча с заказчиком",
+            "isPersonal": false,
+            "duration": 4995000,
+            "endTime": 1761916800000,
+            "dateCompleted": "2025-10-31T13:20:00.000Z",
+            "notes": "Изменить документ"
+        },
+        {
+            "id": "task_1762025920258",
+            "project": "Видео",
+            "taskName": "Работа с монтажем",
+            "startTime": 1762025920258,
+            "endTime": 1762092720000,
+            "duration": 5636000,
+            "dateCompleted": "2025-11-02T14:12:00.000Z",
+            "notes": "сделан монтаж",
+            "type": "personal"
+        },
+        {
+            "id": "task_1762327489001",
+            "project": "Видео",
+            "taskName": "Запись",
+            "startTime": 1762327489001,
+            "endTime": 1762330440948,
+            "duration": 921645,
+            "dateCompleted": "2025-11-05T08:14:00.948Z",
+            "notes": "Снять 5 коротких роликов",
+            "type": "personal"
+        },
+        {
+            "id": "task_1762347863847",
+            "project": "Нейрооператор",
+            "taskName": "Встреча по спринту",
+            "startTime": 1762347863847,
+            "endTime": 1762350425621,
+            "duration": 2561774,
+            "dateCompleted": "2025-11-05T13:47:05.621Z",
+            "notes": "Взять аналитику",
+            "type": "work"
+        },
+        {
+            "id": "task_1761904239036",
+            "project": "Умный протокол",
+            "taskName": "НИР",
+            "isPersonal": false,
+            "duration": 2843000,
+            "endTime": 1762507260000,
+            "dateCompleted": "2025-11-07T09:21:00.000Z",
+            "notes": "готов документ"
+        },
+        {
+            "id": "task_1762756426409",
+            "project": "FirstBI",
+            "taskName": "планирование",
+            "startTime": 1762756426409,
+            "endTime": 1762759085638,
+            "duration": 2659229,
+            "dateCompleted": "2025-11-10T07:18:05.638Z",
+            "notes": "Работа над остатками",
+            "type": "work"
+        },
+        {
+            "id": "task_1762763205828",
+            "project": "FirstBI",
+            "taskName": "Общение в Дмитрием",
+            "startTime": 1762763205828,
+            "endTime": 1762764420650,
+            "duration": 1214822,
+            "dateCompleted": "2025-11-10T08:47:00.650Z",
+            "notes": "Подключение Гульнары ",
+            "type": "work"
+        },
+        {
+            "id": "task_1762764827020",
+            "project": "Видео",
+            "taskName": "создание админки",
+            "isPersonal": true,
+            "duration": 4073000,
+            "endTime": 1762772460000,
+            "dateCompleted": "2025-11-10T11:01:00.000Z",
+            "notes": "Остались отзывы и адреса"
+        },
+        {
+            "id": "task_1762850127749",
+            "project": "Умный протокол",
+            "taskName": "Встерча по 1С",
+            "isPersonal": false,
+            "duration": 2813000,
+            "endTime": 1762852920000,
+            "dateCompleted": "2025-11-11T09:22:00.000Z",
+            "notes": "будет еще встреча "
+        },
+        {
+            "id": "task_1762801563055",
+            "project": "Видео",
+            "taskName": "Работа над сценариями",
+            "startTime": 1762801563055,
+            "endTime": 1762852967426,
+            "duration": 3986842,
+            "dateCompleted": "2025-11-11T09:22:47.426Z",
+            "notes": "Ничего",
+            "type": "personal"
+        },
+        {
+            "id": "task_1762852963101",
+            "project": "Нейрооператор",
+            "taskName": "обсуждение реализации",
+            "startTime": 1762852963101,
+            "endTime": 1762853848294,
+            "duration": 885193,
+            "dateCompleted": "2025-11-11T09:37:28.294Z",
+            "notes": "Поставлена задача по скетчам ",
+            "type": "work"
+        },
+        {
+            "id": "task_1762864687071",
+            "project": "Видео",
+            "taskName": "Сценарий и запись",
+            "startTime": 1762864687071,
+            "endTime": 1762867540010,
+            "duration": 2852939,
+            "dateCompleted": "2025-11-11T13:25:40.010Z",
+            "notes": "Записано 2 видео",
+            "type": "personal"
+        },
+        {
+            "id": "task_1762887719301",
+            "project": "Видео",
+            "taskName": "Монтаж",
+            "isPersonal": true,
+            "duration": 4035000,
+            "endTime": 1762891740000,
+            "dateCompleted": "2025-11-11T20:09:00.000Z",
+            "notes": "Завершено 2 ролика"
+        },
+        {
+            "id": "task_1762892168200",
+            "project": "Видео",
+            "taskName": "Выложить",
+            "isPersonal": true,
+            "duration": 462000,
+            "endTime": 1762892580000,
+            "dateCompleted": "2025-11-11T20:23:00.000Z",
+            "notes": "выложено в 2 сети "
+        },
+        {
+            "id": "task_1762891768450",
+            "project": "Нейрооператор",
+            "taskName": "ТЗ",
+            "isPersonal": false,
+            "duration": 390000,
+            "endTime": 1762892640000,
+            "dateCompleted": "2025-11-11T20:24:00.000Z",
+            "notes": "1"
+        },
+        {
+            "id": "task_1762502815072",
+            "project": "ЭПК",
+            "taskName": "Загрузка ФИАС",
+            "isPersonal": false,
+            "duration": 1119000,
+            "endTime": 1762935000000,
+            "dateCompleted": "2025-11-12T08:10:00.000Z",
+            "notes": "Описание сущностей"
+        },
+        {
+            "id": "task_1762858162432",
+            "project": "ЭПК",
+            "taskName": "ФИЯАС",
+            "isPersonal": false,
+            "duration": 13519000,
+            "endTime": 1762935000000,
+            "dateCompleted": "2025-11-12T08:10:00.000Z",
+            "notes": "Описание сущностей"
+        },
+        {
+            "id": "task_1762935023798",
+            "project": "ЭПК",
+            "taskName": "Описание логики",
+            "isPersonal": false,
+            "duration": 19860000,
+            "endTime": 1762963800000,
+            "dateCompleted": "2025-11-12T16:10:00.000Z",
+            "notes": "Написаны 2 статьи"
+        },
+        {
+            "id": "t_1763026373509",
+            "project": "Умный протокол",
+            "taskName": "Ревью и написание отчета",
+            "isPersonal": false,
+            "duration": 9715639,
+            "endTime": 1763064182923,
+            "dateCompleted": "2025-11-13T20:03:02.923Z",
+            "notes": "Sended document",
+            "followUp": {
+                "createTask": false,
+                "waitingResponse": false,
+                "other": ""
+            }
+        },
+        {
+            "id": "t_1763065142547",
+            "project": "Видео",
+            "taskName": "сценарий и всякая фигня.",
+            "isPersonal": true,
+            "priority": "low",
+            "duration": 7941975,
+            "endTime": 1763073084522,
+            "dateCompleted": "2025-11-13T22:31:24.522Z",
+            "notes": "выложено одно видео",
+            "followUp": {
+                "createTask": false,
+                "waitingResponse": false,
+                "other": ""
+            }
+        },
+        {
+            "id": "t_1763026352157",
+            "project": "Нейрооператор",
+            "taskName": "Сценарии",
+            "isPersonal": false,
+            "duration": 5242478,
+            "endTime": 1763104734446,
+            "dateCompleted": "2025-11-14T07:18:54.446Z",
+            "notes": "подготовить сценарии для оператора \n",
+            "followUp": {
+                "createTask": false,
+                "waitingResponse": false,
+                "other": ""
+            }
+        },
+        {
+            "id": "t_1763099172574",
+            "project": "Нейрооператор",
+            "taskName": "Встреча с стйкхолдером",
+            "isPersonal": false,
+            "priority": "high",
+            "duration": 716,
+            "endTime": 1763104749354,
+            "dateCompleted": "2025-11-14T07:19:09.354Z",
+            "notes": "ничего\n",
+            "followUp": {
+                "createTask": false,
+                "waitingResponse": false,
+                "other": ""
+            }
+        },
+        {
+            "id": "t_1763105547469",
+            "project": "Умный протокол",
+            "taskName": "Встреча",
+            "isPersonal": false,
+            "priority": "low",
+            "duration": 605147,
+            "endTime": 1763106152616,
+            "dateCompleted": "2025-11-14T07:42:32.616Z",
+            "notes": "Создать задачу по Админке + ожидаю НИР\n",
+            "followUp": {
+                "createTask": true,
+                "waitingResponse": false,
+                "other": ""
+            }
+        },
+        {
+            "id": "t_1763106943007",
+            "project": "Нейрооператор",
+            "taskName": "Встреча обсуждение архитектуры",
+            "isPersonal": false,
+            "priority": "high",
+            "duration": 8838994,
+            "endTime": 1763115782001,
+            "dateCompleted": "2025-11-14T10:23:02.001Z",
+            "notes": "ОБсуждение с Гульнарой и Сергеем концепции. ",
+            "followUp": {
+                "createTask": false,
+                "waitingResponse": false,
+                "other": ""
+            }
+        },
+        {
+            "id": "t_1763118189044",
+            "project": "Нейрооператор",
+            "taskName": "Встреча с дизайнером",
+            "isPersonal": false,
+            "priority": "high",
+            "duration": 1052058,
+            "endTime": 1763119241102,
+            "dateCompleted": "2025-11-14T11:20:41.102Z",
+            "notes": "Заплнирована встреча на понедельник с вариантами",
+            "followUp": {
+                "createTask": false,
+                "waitingResponse": false,
+                "other": ""
+            }
+        },
+        {
+            "id": "t_1763026341621",
+            "project": "ЭПК",
+            "taskName": "Постановка",
+            "isPersonal": false,
+            "duration": 7903506,
+            "endTime": 1763282710057,
+            "dateCompleted": "2025-11-16T08:45:10.057Z",
+            "notes": "готова\n",
+            "followUp": {
+                "createTask": false,
+                "waitingResponse": false,
+                "other": ""
+            }
+        },
+        {
+            "id": "t_1763313082902",
+            "project": "Видео",
+            "taskName": "Снять смонтировать и вложить",
+            "isPersonal": true,
+            "priority": "high",
+            "duration": 2151927,
+            "endTime": 1763362797426,
+            "dateCompleted": "2025-11-17T06:59:57.426Z",
+            "notes": "Выложен видео ролик\n",
+            "followUp": {
+                "createTask": false,
+                "waitingResponse": false,
+                "other": ""
+            }
+        },
+        {
+            "id": "t_1763361103970",
+            "project": "FirstBI",
+            "taskName": "Дейли",
+            "isPersonal": false,
+            "priority": "medium",
+            "duration": 3005748,
+            "endTime": 1763364109718,
+            "dateCompleted": "2025-11-17T07:21:49.718Z",
+            "notes": "Остатки\n",
+            "followUp": {
+                "createTask": false,
+                "waitingResponse": false,
+                "other": ""
+            }
+        },
+        {
+            "id": "t_1763366997844",
+            "project": "Умный протокол",
+            "taskName": "Задача с МП",
+            "isPersonal": false,
+            "priority": "medium",
+            "duration": 256624,
+            "endTime": 1763367254468,
+            "dateCompleted": "2025-11-17T08:14:14.468Z",
+            "notes": "Обсуждение задачи по умному протоколу\n",
+            "followUp": {
+                "createTask": false,
+                "waitingResponse": false,
+                "other": ""
+            }
+        },
+        {
+            "id": "t_1763370814525",
+            "project": "FirstBI",
+            "taskName": "Встреча анлитиков",
+            "isPersonal": false,
+            "priority": "medium",
+            "duration": 3042070,
+            "endTime": 1763373856595,
+            "dateCompleted": "2025-11-17T10:04:16.595Z",
+            "notes": "Буде еще одна встреча",
+            "followUp": {
+                "createTask": false,
+                "waitingResponse": false,
+                "other": ""
+            }
+        },
+        {
+            "id": "t_1763375966028",
+            "project": "ЭПК",
+            "taskName": "Дейли",
+            "isPersonal": false,
+            "priority": "high",
+            "duration": 1910393,
+            "endTime": 1763377876421,
+            "dateCompleted": "2025-11-17T11:11:16.421Z",
+            "notes": "Создать задачки для разработки",
+            "followUp": {
+                "createTask": true,
+                "waitingResponse": false,
+                "other": ""
+            }
+        },
+        {
+            "id": "t_1763365209882",
+            "project": "Нейрооператор",
+            "taskName": "Описание сценариев",
+            "isPersonal": false,
+            "priority": "medium",
+            "duration": 5821681,
+            "endTime": 1763394417695,
+            "dateCompleted": "2025-11-17T15:46:57.695Z",
+            "notes": "СОздан реестр",
+            "followUp": {
+                "createTask": false,
+                "waitingResponse": false,
+                "other": ""
+            }
+        },
+        {
+            "id": "t_1763368814594",
+            "project": "Нейрооператор",
+            "taskName": "Созданиеструктуры",
+            "isPersonal": false,
+            "priority": "high",
+            "duration": 366763,
+            "endTime": 1763394456358,
+            "dateCompleted": "2025-11-17T15:47:36.358Z",
+            "notes": "-",
+            "followUp": {
+                "createTask": false,
+                "waitingResponse": false,
+                "other": ""
+            }
+        }
+    ]
+}

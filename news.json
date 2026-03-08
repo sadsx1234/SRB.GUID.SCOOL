@@ -1,0 +1,59 @@
+{
+    "news_items": [
+        {
+            "post_id": "n001",
+            "priority": 1,
+            "importance_level": 1,
+            "publish_date": "2025-10-22T12:00:00Z",
+            "content_text": "Выпустили обзор основной школы Петефи Шандор не пропустите!",
+            "cta_link": "https:\/\/youtube.com\/shorts\/CziPLquz8pY?feature=share",
+            "publish_to_website": true,
+            "publish_to_messenger": true,
+            "active": true
+        },
+        {
+            "post_id": "n002",
+            "priority": 2,
+            "importance_level": 2,
+            "publish_date": "2025-10-23T12:00:00Z",
+            "content_text": "📢 Новый обзор! Добавили на сайт подробный разбор OŠ 'Vasa Stajić'. Сравнили плюсы и минусы, собрали первые отзывы. Читайте на сайте!",
+            "cta_link": "http:\/\/guidshool.atwebpages.com\/schools.html",
+            "publish_to_website": true,
+            "publish_to_messenger": true,
+            "active": false
+        },
+        {
+            "post_id": "n003",
+            "priority": 3,
+            "importance_level": 3,
+            "publish_date": "2025-10-24T09:00:00Z",
+            "content_text": "💡 Инсайт: Знаете ли вы, что 'боровак' (продленка) есть не во всех школах? (Эта новость сейчас скрыта)",
+            "cta_link": "https:\/\/boosty.to\/ВАШ_BOOSTY",
+            "publish_to_website": true,
+            "publish_to_messenger": true,
+            "active": false
+        },
+        {
+            "post_id": "n004",
+            "priority": 10,
+            "importance_level": 2,
+            "publish_date": "2025-10-27T15:50:00.000Z",
+            "content_text": "Вам отказал в зачислении по прописке. Смотрите алгоритм действий в телеграм канале! ",
+            "cta_link": "https:\/\/t.me\/guidschool",
+            "publish_to_website": true,
+            "publish_to_messenger": true,
+            "active": true
+        },
+        {
+            "post_id": "n005",
+            "priority": 10,
+            "importance_level": 1,
+            "publish_date": "2025-11-06T21:11:00.000Z",
+            "content_text": "Выпустили обзор основной школы \"Соня Маринкович\" не пропустите!...",
+            "cta_link": "https:\/\/www.youtube.com\/shorts\/2s6Ic28MP7s",
+            "publish_to_website": true,
+            "publish_to_messenger": true,
+            "active": true
+        }
+    ]
+}

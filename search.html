@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="GuidSchool – Поиск школы в Нови-Саде по вашему адресу. Введите адрес и найдите привязанную государственную школу.">
+    <meta name="keywords" content="школа по адресу, нови-сад, поиск школы по адресу, osnovna skola, skola novi sad">
+    <title>GuidSchool - Найти школу по адресу в Нови-Саде</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "GuidSchool - Поиск по адресу",
+            "url": "http://guidshool.atwebpages.com/find-by-address.html",
+            "description": "Помощник для поиска государственной школы в Нови-Саде по конкретному адресу проживания."
+        }
+    </script>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BV5BDKTY3C"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-BV5BDKTY3C');
+    </script>
+    
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MKNF5767');</script>
+    <style>
+        :root {
+            --primary-color: #007bff;
+            --secondary-color: #f0f4f8;
+            --text-color: #333;
+            --light-gray: #e9ecef;
+            --card-border: #dee2e6;
+            --accent-blue: #17a2b8;
+            --accent-red: #dc3545;
+            --accent-green-light: #e9f7ec;
+            --accent-red-light: #fdeeee;
+        }
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+        }
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+        }
+        .lang-switcher {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 5px;
+            z-index: 10;
+        }
+        .lang-switcher button {
+            background-color: #f0f4f8;
+            border: 1px solid #dee2e6;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .lang-switcher button.active {
+            background-color: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+        .tabs {
+            display: flex;
+            justify-content: center;
+            border-bottom: 2px solid var(--light-gray);
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+        .tab {
+            padding: 15px 20px;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--text-color);
+            transition: background-color 0.3s ease, color 0.3s ease;
+            white-space: nowrap;
+            text-decoration: none;
+        }
+        .tab.active {
+            color: var(--primary-color);
+            border-bottom: 3px solid var(--primary-color);
+        }
+        .tab:hover {
+            background-color: var(--light-gray);
+        }
+        h1, h2 {
+            text-align: center;
+            color: var(--primary-color);
+        }
+        h1.main-header { padding-right: 80px; }
+        .search-section, .district-section, .not-found-section {
+            padding: 20px;
+            border: 1px solid var(--card-border);
+            border-radius: 10px;
+            background-color: #fafafa;
+            margin-bottom: 20px;
+        }
+        .address-group {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .address-group input {
+            padding: 12px;
+            border: 1px solid var(--card-border);
+            border-radius: 8px;
+            font-size: 16px;
+        }
+        .address-group input#addressStreetInput {
+            flex-grow: 3;
+            min-width: 250px;
+        }
+        .address-group input#addressNumberInput {
+            flex-grow: 1;
+            max-width: 120px;
+        }
+        .search-section button, .district-section button {
+            padding: 12px 20px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        .search-section button:hover, .district-section button:hover {
+            background-color: #0056b3;
+        }
+        #results-container { margin-top: 20px; }
+        #map { height: 400px; width: 100%; border-radius: 10px; margin-top: 20px; }
+        .autocomplete-container { position: relative; flex-grow: 3; min-width: 250px; }
+        .autocomplete-items {
+            position: absolute; border: 1px solid #d4d4d4; border-top: none;
+            z-index: 999; top: 100%; left: 0; right: 0;
+            background-color: #fff; max-height: 200px; overflow-y: auto;
+        }
+        .autocomplete-items div { padding: 10px; cursor: pointer; border-bottom: 1px solid #d4d4d4; }
+        .autocomplete-items div:hover, .autocomplete-active { background-color: #e9e9e9; }
+        .district-section select {
+            width: 100%; padding: 12px; border: 1px solid var(--card-border);
+            border-radius: 8px; font-size: 16px; margin-bottom: 10px;
+        }
+        .results-actions { display: flex; justify-content: center; gap: 15px; margin-top: 20px; flex-wrap: wrap; }
+        .action-button {
+            display: inline-block; padding: 15px 30px; background-color: #28a745; color: white !important;
+            text-decoration: none; border-radius: 8px; font-weight: bold; text-align: center;
+            transition: background-color 0.3s; border: none; font-size: 16px; cursor: pointer;
+        }
+        .action-button:hover { background-color: #218838; }
+        .secondary-action-button { background-color: #6c757d; }
+        .secondary-action-button:hover { background-color: #5a6268; }
+        .info-text { text-align: center; color: #6c757d; margin-top: 15px; }
+        
+        /* School Card & Modal Styles */
+        .school-card{background-color:#fff;border:1px solid var(--card-border);border-radius:10px;padding:15px;margin-bottom:12px;cursor:pointer;transition:transform .2s ease,box-shadow .2s ease;position:relative}.school-card:hover{transform:translateY(-3px);box-shadow:0 5px 15px rgba(0,0,0,.1)}.school-rank{position:absolute;right:15px;top:15px;width:55px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;font-weight:700}.school-rank .fas{font-size:24px;margin-bottom:4px}.school-rank span{font-size:16px}.school-name{font-weight:700;font-size:1.3em;color:var(--primary-color)}.school-address{color:#6c757d;font-size:.9em;margin-top:5px}.info-row{display:flex;align-items:center;gap:5px;margin-top:5px}.info-label{font-weight:700}.tag{display:inline-block;padding:4px 8px;border-radius:5px;font-size:.8em;margin-right:5px;margin-bottom:5px;font-weight:500}.tag.language{background-color:#e9f5ff;color:#0056b3}.contact-info{margin-top:15px;border-top:1px solid var(--card-border);padding-top:10px}.contact-row{display:flex;align-items:center;margin-top:8px;color:#555}.contact-row .icon{width:25px;text-align:center;margin-right:8px;color:var(--primary-color)}.horizontal-tags{display:flex;flex-wrap:wrap;gap:5px}.rating-info-icon{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:50%;background-color:var(--primary-color);color:#fff;font-size:12px;font-weight:700;cursor:pointer;margin-left:8px;position:relative}.rating-tooltip{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);background-color:#333;color:#fff;padding:15px;border-radius:8px;font-size:12px;line-height:1.4;width:300px;z-index:1000;display:none;box-shadow:0 4px 15px rgba(0,0,0,.3)}.rating-tooltip.show{display:block}.rating-tooltip:after{content:'';position:absolute;top:100%;left:50%;margin-left:-5px;border-width:5px;border-style:solid;border-color:#333 transparent transparent}.school-details-btn{background-color:var(--primary-color);color:#fff;border:none;padding:10px 20px;border-radius:6px;cursor:pointer;font-size:14px;font-weight:600;margin-top:15px;transition:all .3s ease;min-height:44px;display:inline-flex;align-items:center;justify-content:center}.school-details-btn:hover{background-color:#0056b3;transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,123,255,.3)}
+        .address-button{padding:8px 15px;background-color:var(--accent-blue);color:#fff;border:none;border-radius:5px;cursor:pointer;font-size:.9em;font-weight:700;transition:background-color .3s ease}.address-button:hover{background-color:#117a8b}.addresses-info{margin-top:10px;padding:10px;background-color:var(--light-gray);border-radius:8px;display:none}
+        .modal-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background-color:rgba(0,0,0,.5);display:none;justify-content:center;align-items:center;z-index:10000;padding:20px;box-sizing:border-box}.modal-content{background:#fff;border-radius:12px;width:100%;max-width:600px;max-height:90vh;overflow-y:auto;position:relative;box-shadow:0 20px 60px rgba(0,0,0,.3)}.modal-header{padding:30px 30px 20px;border-bottom:1px solid var(--light-gray)}.modal-body{padding:30px}.modal-close{position:absolute;top:20px;right:20px;background:0 0;border:none;font-size:24px;cursor:pointer;color:#666;width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center}.modal-close:hover{background-color:var(--light-gray);color:var(--text-color)}.school-facts{list-style:none;padding:0;margin:20px 0}.school-facts li{display:flex;align-items:flex-start;margin-bottom:15px;font-size:16px;line-height:1.4}.school-facts li i{margin-right:12px;color:var(--primary-color);width:20px;text-align:center;margin-top:3px}.school-facts li > div {width: 100%; display: flex; justify-content: space-between; flex-wrap: wrap;}.school-facts li > div > span {padding-right: 10px;}.school-facts li strong{padding-left: 10px; flex-shrink: 0;}.invitation-text{background-color:var(--secondary-color);padding:20px;border-radius:8px;margin:25px 0;font-style:italic;text-align:center;line-height:1.6}.cta-button-primary{background-color:#28a745;color:#fff;border:none;padding:15px 30px;border-radius:8px;font-size:16px;font-weight:600;cursor:pointer;width:100%;min-height:44px;transition:all .3s ease}.cta-button-primary:hover{background-color:#218838;transform:translateY(-2px);box-shadow:0 6px 20px rgba(40,167,69,.3)}@media (max-width:768px){h1.main-header{padding-right:0;font-size:1.5em;padding-top:50px}.modal-content{margin:10px;width:calc(100% - 20px)}.modal-header,.modal-body{padding:20px}}.form-container{display:none}.form-container.active{display:block}.form-group{margin-bottom:20px}.form-group label{display:block;margin-bottom:8px;font-weight:600;color:var(--text-color)}.form-group input,.form-group select{width:100%;padding:12px;border:2px solid var(--card-border);border-radius:6px;font-size:16px;transition:border-color .3s ease;box-sizing:border-box}.form-group input:focus,.form-group select:focus{outline:0;border-color:var(--primary-color);box-shadow:0 0 0 3px rgba(0,123,255,.1)}.form-group.required label:after{content:" *";color:#dc3545}.loading-spinner{display:none;text-align:center;padding:20px}.spinner{border:4px solid var(--light-gray);border-top:4px solid var(--primary-color);border-radius:50%;width:40px;height:40px;animation:spin 1s linear infinite;margin:0 auto 15px}@keyframes spin{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}.thank-you-screen{display:none;text-align:center}.thank-you-screen.active{display:block}.thank-you-actions{display:flex;gap:15px;margin-top:25px}.secondary-button{background-color:#fff;color:var(--primary-color);border:2px solid var(--primary-color);padding:12px 20px;border-radius:6px;cursor:pointer;font-size:14px;font-weight:600;flex:1;min-height:44px;display:flex;align-items:center;justify-content:center;gap:8px;transition:all .3s ease}.secondary-button:hover{background-color:var(--primary-color);color:#fff}
+        
+        /* New styles for review details */
+        .review-details {
+            font-size: 0.9em;
+            color: #6c757d;
+            margin-top: 8px;
+            padding-left: 32px; /* Align with text next to icon */
+            flex-basis: 100%;
+        }
+        .review-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 4px 8px;
+            margin-top: 4px;
+            border-radius: 4px;
+        }
+        .review-item.positive {
+            background-color: var(--accent-green-light);
+        }
+        .review-item.negative {
+            background-color: var(--accent-red-light);
+        }
+        .review-item .count {
+            font-weight: 600;
+        }
+        .review-item .count.positive-count {
+            color: #155724;
+        }
+        .review-item .count.negative-count {
+            color: var(--accent-red);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="lang-switcher">
+            <button id="lang-ru" onclick="setLanguage('ru')">RU</button>
+            <button id="lang-en" onclick="setLanguage('en')">EN</button>
+        </div>
+
+        <h1 class="main-header" data-translate-key="mainHeader">Выбор государственной основной школы для ребенка в Нови-сад</h1>
+        <div class="tabs">
+            <a href="schools.html" class="tab" data-translate-key="tabSchools">🔍 Карта школ</a>
+            <a href="search.html" class="tab active" data-translate-key="tabAddress">📍 Поиск по адресу</a>
+            <a href="enrollment.html" class="tab" data-translate-key="tabEnrollment" style="display: none;">✅ Поступление в 1 класс</a>
+            <a href="bookstores.html" class="tab" data-translate-key="tabBookstores">📚 Где купить книги</a>
+            <a href="documents.html" class="tab" data-translate-key="tabDocuments">📝 Документы (шаблоны)</a>
+        </div>
+
+        <h1 data-translate-key="pageHeader">Найти школу по адресу</h1>
+
+        <div class="search-section" id="search-section">
+            <h2 data-translate-key="enterAddress">Введите ваш адрес</h2>
+            <div class="address-group">
+                <div class="autocomplete-container">
+                    <input type="text" id="addressStreetInput" data-translate-key-placeholder="streetPlaceholder" placeholder="Название улицы">
+                    <div id="autocomplete-list" class="autocomplete-items"></div>
+                </div>
+                <input type="text" id="addressNumberInput" data-translate-key-placeholder="numberPlaceholder" placeholder="Номер дома">
+                <button onclick="findSchool()" data-translate-key="findSchoolBtn">Найти школу</button>
+            </div>
+        </div>
+
+        <div class="district-section" id="district-section" style="display: none;">
+            <h2 data-translate-key="addressNotFound">Адрес не найден</h2>
+            <p data-translate-key="addressNotFoundHelp">К сожалению, мы не смогли найти школу по указанному адресу. Пожалуйста, выберите ваш район из списка ниже:</p>
+            <select id="districtSelect"></select>
+            <button onclick="findSchoolByDistrict()" data-translate-key="findByDistrictBtn">Найти по району</button>
+        </div>
+        
+        <div class="not-found-section" id="not-found-section" style="display: none;">
+            <h2 data-translate-key="schoolNotFound">Школа не найдена</h2>
+            <p data-translate-key="schoolNotFoundHelp">Мы не смогли определить школу ни по адресу, ни по району. Возможно, информация по вашему адресу еще не добавлена в нашу базу.</p>
+            <a href="schools.html" class="action-button" data-translate-key="viewAllSchoolsBtn">Посмотреть все школы</a>
+        </div>
+
+        <div id="results-container" style="display: none;">
+            <h2 data-translate-key="yourSchoolResult">Ваша школа по прописке:</h2>
+            <div id="school-card-container"></div>
+            <div id="map"></div>
+            <div class="results-actions">
+                <button class="action-button secondary-action-button" onclick="resetSearch()" data-translate-key="newAddressBtn">Ввести другой адрес</button>
+                <a href="schools.html" class="action-button" data-translate-key="chooseAnotherSchoolBtn">Подобрать другую школу</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="schoolModalContainer"></div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        // Global variables
+        let map;
+        let schools = [];
+        let addressData = [];
+        let averageGrades = [];
+        let studentsData = [];
+        let activitiesData = [];
+        let reviewsData = [];
+        let workersData = [];
+        let processedSchools = [];
+        let addressesCache = null;
+        let uniqueStreets = [];
+        let displayedSchoolId = null;
+        let currentLang = localStorage.getItem('language') || 'ru';
+        const MAKE_COM_URL = 'https://hook.eu2.make.com/jjy9e9hfgtgalaka4zhsupsaehljn7qd';
+
+        // --- TRANSLATION DATA ---
+        const translations = {
+            pageTitle: { ru: 'GuidSchool - Найти школу по адресу в Нови-Саде', en: 'GuidSchool - Find a School by Address in Novi Sad' },
+            metaDescription: { ru: 'GuidSchool – Поиск школы в Нови-Саде по вашему адресу. Введите адрес и найдите привязанную государственную школу.', en: 'GuidSchool – Find a school in Novi Sad by your address. Enter your address to find your designated public school.'},
+            mainHeader: { ru: 'Выбор государственной основной школы для ребенка в Нови-сад', en: 'Choosing a Public Elementary School for Your Child in Novi Sad' },
+            tabSchools: { ru: '🔍 Карта школ', en: '🔍 Map Search' },
+            tabAddress: { ru: '📍 Поиск по адресу', en: '📍 Search by Address' },
+            tabEnrollment: { ru: '✅ Поступление в 1 класс', en: '✅ 1st Grade Enrollment' },
+            tabBookstores: { ru: '📚 Где купить книги', en: '📚 Where to Buy Books' },
+            tabDocuments: { ru: '📝 Документы (шаблоны)', en: '📝 Documents (templates)' },
+            pageHeader: { ru: 'Найти школу по адресу', en: 'Find a School by Address' },
+            enterAddress: { ru: 'Введите ваш адрес', en: 'Enter your address' },
+            streetPlaceholder: { ru: 'Название улицы', en: 'Street name' },
+            numberPlaceholder: { ru: 'Номер дома', en: 'House number' },
+            findSchoolBtn: { ru: 'Найти школу', en: 'Find School' },
+            addressNotFound: { ru: 'Адрес не найден', en: 'Address Not Found' },
+            addressNotFoundHelp: { ru: 'К сожалению, мы не смогли найти школу по указанному адресу. Пожалуйста, выберите ваш район из списка ниже:', en: 'Unfortunately, we could not find a school at the specified address. Please select your district from the list below:' },
+            selectDistrictPlaceholder: { ru: '-- Выберите район --', en: '-- Select a district --' },
+            findByDistrictBtn: { ru: 'Найти по району', en: 'Find by District' },
+            schoolNotFound: { ru: 'Школа не найдена', en: 'School Not Found' },
+            schoolNotFoundHelp: { ru: 'Мы не смогли определить школу ни по адресу, ни по району. Возможно, информация по вашему адресу еще не добавлена в нашу базу.', en: 'We could not identify the school by address or district. Information for your address may not yet be in our database.' },
+            viewAllSchoolsBtn: { ru: 'Посмотреть все школы', en: 'View All Schools' },
+            yourSchoolResult: { ru: 'Ваша школа по прописке:', en: 'Your Designated School:' },
+            newAddressBtn: { ru: 'Ввести другой адрес', en: 'Enter a different address' },
+            chooseAnotherSchoolBtn: { ru: 'Подобрать другую школу', en: 'Choose another school' },
+            alertEnterAddress: { ru: "Пожалуйста, введите название улицы и корректный номер дома.", en: "Please enter a street name and a valid house number." },
+            errorDataLoad: { ru: 'Не удалось загрузить необходимые данные. Пожалуйста, перезагрузите страницу.', en: 'Failed to load necessary data. Please reload the page.' },
+            teachingLanguage: { ru: 'Язык преподавания:', en: 'Language of instruction:' },
+            schoolTypeLabel: { ru: 'Тип школы:', en: 'School Type:' },
+            finalRatingLabel: { ru: 'Итоговый рейтинг', en: 'Final Rating' },
+            ratingTooltip: { ru: `<b>Итоговый рейтинг (акцент на безопасность)</b><br>50% - Репутация (отзывы)<br>25% - Академ. успеваемость<br>15% - Наполненность школы<br>10% - Внеклассные активности`, en: `<b>Final Rating (Safety Focus)</b><br>50% - Reputation (Reviews)<br>25% - Academic Performance<br>15% - School Occupancy<br>10% - Extracurricular Activities` },
+            detailsButton: { ru: 'Подробнее о школе', en: 'More about the school' },
+            attachedAddresses: { ru: 'Привязанные адреса', en: 'Attached Addresses' },
+            loadingAddresses: { ru: 'Загрузка адресов...', en: 'Loading addresses...' },
+            addressesError: { ru: 'Ошибка при загрузке адресов.', en: 'Error loading addresses.' },
+            noAddressesFound: { ru: 'Для этой школы адреса не найдены.', en: 'No addresses found for this school.' },
+            na: { ru: 'н/д', en: 'N/A' },
+            modalTotalStudents: { ru: 'Всего учеников:', en: 'Total students:' },
+            modalClassesPerGrade: { ru: 'Классов в параллели:', en: 'Classes per grade:' },
+            modalBoravak: { ru: 'Продлёнка:', en: 'After-school care:' },
+            modalLanguages: { ru: 'Языки преподавания:', en: 'Languages of instruction:' },
+            modalSports: { ru: 'Спортивные секции:', en: 'Sports activities:' },
+            modalIntellectual: { ru: 'Интеллектуальные секции:', en: 'Intellectual activities:' },
+            modalCreative: { ru: 'Творческие секции:', en: 'Creative activities:' },
+            modalInternational: { ru: 'Международные программы:', en: 'International programs:' },
+            modalAcademicScore: { ru: 'Академ. успеваемость:', en: 'Academic performance:' },
+            modalReputationScore: { ru: 'Оценка репутации:', en: 'Reputation Score:' },
+            reviewPositive: { ru: 'Позитивные упоминания', en: 'Positive Mentions' },
+            reviewBullying: { ru: 'Буллинг', en: 'Bullying' },
+            reviewStaffIncidents: { ru: 'Инциденты (персонал)', en: 'Staff-related Incidents' },
+            reviewSecurity: { ru: 'Безопасность и вандализм', en: 'Security & Vandalism' },
+            reviewInfrastructure: { ru: 'Проблемы с инфраструктурой', en: 'Infrastructure Issues' },
+            reviewStrikes: { ru: 'Забастовки и протесты', en: 'Strikes & Protests' },
+            modalFactAfterSchool: { ru: 'Есть (до 17:00)', en: 'Available (until 17:00)' },
+            modalFactNoAfterSchool: { ru: 'Не предоставляется', en: 'Not provided' },
+            modalInvitationText: { ru: 'Не нужно открывать десятки сайтов и звонить в школы. Мы собрали данные и сравним эту школу с другими по ключевым параметрам. А также подготовили список того что нужно преобрести и сколько это обойдется.', en: "No need to open dozens of websites and call schools. We've collected the data and will compare this school with others on key parameters. We have also prepared a list of what you need to buy and how much it will cost." },
+            getDetailsButton: { ru: 'Получить подробности', en: 'Get Details' },
+            formHeader: { ru: 'Получите персональную подборку школ для вашего ребёнка', en: 'Get a personalized school selection for your child' },
+            formYourName: { ru: 'Ваше имя', en: 'Your Name' },
+            formYourEmail: { ru: 'Ваш e-mail', en: 'Your e-mail' },
+            formYourPhone: { ru: 'Ваш телефон', en: 'Your Phone' },
+            formYourTelegram: { ru: 'Ваш Telegram (необязательно)', en: 'Your Telegram (optional)' },
+            formSubmitButton: { ru: 'Отправить', en: 'Submit' },
+            formSending: { ru: 'Отправляем заявку...', en: 'Sending request...' },
+            formEmailError: { ru: 'Пожалуйста, введите корректный e-mail', en: 'Please enter a valid e-mail' },
+            formFillFieldsError: { ru: 'Пожалуйста, заполните все обязательные поля', en: 'Please fill in all required fields' },
+            thankYouHeader: { ru: 'Спасибо! Ваша заявка отправлена', en: 'Thank you! Your request has been sent' },
+            thankYouText: { ru: 'Кроме информации о школе или школах предоставим вам всю инфрмацию о том, что нужно купить, как писать справки и где их брать.', en: 'In addition to information about the school(s), we will provide you with all the information on what to buy, how to write certificates, and where to get them.' },
+            directorLabel: { ru: 'Директор:', en: 'Director:' },
+        };
+
+        const languageMap = { 'serbian':{ru:'Сербский',en:'Serbian'},'russian':{ru:'Русский',en:'Russian'},'english':{ru:'Английский',en:'English'},'german':{ru:'Немецкий',en:'German'},'slovak':{ru:'Словацкий',en:'Slovak'},'hungarian':{ru:'Венгерский',en:'Hungarian'},'rusin':{ru:'Русинский',en:'Rusyn'} };
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            localStorage.setItem('language', lang);
+            document.documentElement.lang = lang;
+            document.getElementById('lang-ru').classList.toggle('active', lang === 'ru');
+            document.getElementById('lang-en').classList.toggle('active', lang === 'en');
+            document.title = translations.pageTitle[lang];
+            document.querySelector('meta[name="description"]').setAttribute('content', translations.metaDescription[lang]);
+            document.querySelectorAll('[data-translate-key]').forEach(el => { const key = el.getAttribute('data-translate-key'); if (translations[key] && translations[key][lang]) { el.innerHTML = translations[key][lang]; } });
+            document.querySelectorAll('[data-translate-key-placeholder]').forEach(el => { const key = el.getAttribute('data-translate-key-placeholder'); if (translations[key] && translations[key][lang]) { el.placeholder = translations[key][lang]; } });
+            if (displayedSchoolId) { displaySchool(displayedSchoolId); }
+        }
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            await loadAllData();
+            setLanguage(currentLang);
+            document.getElementById('addressStreetInput').addEventListener('input', handleAutocomplete);
+        });
+
+        async function loadAllData() {
+            try {
+                const [schoolsRes, addressRes, gradesRes, studentsRes, activitiesRes, reviewsRes, workersRes] = await Promise.all([
+                    fetch('schools.json'), 
+                    fetch('new_address_2025.json'),
+                    fetch('AverageGrade.json'), 
+                    fetch('students.json'),
+                    fetch('activity.json'),
+                    fetch('review.json'),
+                    fetch('worker.json')
+                ]);
+                schools = await schoolsRes.json();
+                addressData = await addressRes.json();
+                if (gradesRes.ok) { const gradesData = await gradesRes.json(); averageGrades = gradesData[0]?.["data:"] || []; } else console.warn('Could not load average grade data.');
+                if (studentsRes.ok) studentsData = await studentsRes.json(); else console.warn('Could not load student count data.');
+                if (activitiesRes.ok) activitiesData = await activitiesRes.json(); else console.warn('Could not load activity data.');
+                if (reviewsRes.ok) reviewsData = await reviewsRes.json(); else console.warn('Could not load review data.');
+                if (workersRes.ok) workersData = await workersRes.json(); else console.warn('Could not load worker data.');
+                
+                processAllData();
+                
+                const streetSet = new Set();
+                addressData.forEach(item => { if (item.streets) { item.streets.forEach(street => { if (street.name) streetSet.add(street.name); }); } });
+                uniqueStreets = [...streetSet];
+            } catch (error) {
+                console.error("Data loading error:", error);
+                document.getElementById('search-section').innerHTML = `<p class="info-text" style="color: red;">${translations.errorDataLoad[currentLang]}</p>`;
+            }
+        }
+        
+        function processAllData() {
+            const activityMap = new Map();
+            const categoryNames = { 1: 'intellectual', 2: 'creative', 3: 'international', 4: 'sports'};
+            if (activitiesData && activitiesData.schoolActivitiesReport) {
+                activitiesData.schoolActivitiesReport.activityCategories.forEach(category => {
+                    const categoryKey = categoryNames[category.categoryId];
+                    if (categoryKey) {
+                        category.activities.forEach(activity => {
+                            activity.participatingSchoolIds.forEach(schoolId => {
+                                if (!activityMap.has(schoolId)) { activityMap.set(schoolId, { sports: { count: 0, names: [] }, intellectual: { count: 0, names: [] }, creative: { count: 0, names: [] }, international: { count: 0, names: [] } }); }
+                                const schoolEntry = activityMap.get(schoolId);
+                                if (schoolEntry[categoryKey] !== undefined) { schoolEntry[categoryKey].count++; schoolEntry[categoryKey].names.push(activity.activityName); }
+                            });
+                        });
+                    }
+                });
+            }
+            
+            const reviewsMap = new Map(reviewsData.map(review => [review.id, review]));
+            
+            const workersMap = new Map();
+            if (workersData) {
+                workersData.forEach(workerEntry => {
+                    const director = workerEntry.workers.find(w => w.role.includes('Директор'));
+                    workersMap.set(workerEntry.school_id, director ? director.full_name : translations.na[currentLang]);
+                });
+            }
+
+            const reviewCategoryWeights = { bullying_violence: 5, staff_student_incidents: 5, security_vandalism: 4, infrastructure_issues: 3, strikes_protests: 1 };
+            const currentYear = 2025;
+
+            let tempProcessedSchools = schools.map(school => {
+                const studentInfo = studentsData.find(s => s.crossId === school.id);
+                const gradeInfo = averageGrades.find(g => g.crossId === school.id);
+                const activityInfo = activityMap.get(school.id) || { sports: { count: 0, names: [] }, intellectual: { count: 0, names: [] }, creative: { count: 0, names: [] }, international: { count: 0, names: [] } };
+                const reviewInfo = reviewsMap.get(school.id);
+                const directorName = workersMap.get(String(school.id)) || translations.na[currentLang];
+
+                const totalActivities = activityInfo.sports.count + activityInfo.intellectual.count + activityInfo.creative.count + activityInfo.international.count;
+                const activityRating = totalActivities / 28;
+                const academicScore = gradeInfo ? gradeInfo.totalPoints : null;
+
+                let rawReviewScore = 0;
+                if (reviewInfo) {
+                    let finalNegativeScore = 0;
+                    if (reviewInfo.negative) {
+                        for (const category in reviewCategoryWeights) {
+                            if (reviewInfo.negative[category] && Array.isArray(reviewInfo.negative[category])) {
+                                reviewInfo.negative[category].forEach(incident => {
+                                    const decayFactor = 1 / ((currentYear - incident.year) + 1);
+                                    finalNegativeScore += reviewCategoryWeights[category] * decayFactor;
+                                });
+                            }
+                        }
+                    }
+                    rawReviewScore = reviewInfo.positive_count - finalNegativeScore;
+                }
+                
+                const studentCount = studentInfo?.students['2024/25'] || null;
+                let studentCountScoreRaw = 2;
+                if (studentCount !== null) {
+                    if (studentCount <= 500) {
+                        studentCountScoreRaw = 1;
+                    } else if (studentCount > 1200) {
+                        studentCountScoreRaw = 3;
+                    }
+                }
+                
+                return { 
+                    ...school, 
+                    academicScore: academicScore,
+                    activityRating: activityRating,
+                    rawReviewScore: rawReviewScore,
+                    reviewDetails: reviewInfo,
+                    studentCount: studentCount,
+                    studentCountScoreRaw: studentCountScoreRaw,
+                    sports: activityInfo.sports,
+                    intellectual: activityInfo.intellectual,
+                    creative: activityInfo.creative,
+                    international: activityInfo.international,
+                    director: directorName,
+                };
+            });
+
+            const rawScores = tempProcessedSchools.map(s => s.rawReviewScore);
+            const minReviewScore = Math.min(...rawScores);
+            const maxReviewScore = Math.max(...rawScores);
+
+            tempProcessedSchools = tempProcessedSchools.map(school => {
+                let reviewScore = 0.5;
+                if (maxReviewScore > minReviewScore) {
+                    reviewScore = (school.rawReviewScore - minReviewScore) / (maxReviewScore - minReviewScore);
+                }
+
+                let finalRating = null;
+                if (school.academicScore) {
+                    const studentScoreNormalized = (3 - school.studentCountScoreRaw) / 2;
+                    
+                    // --- ОБНОВЛЕННАЯ ФОРМУЛА ---
+                    finalRating = 
+                        (reviewScore * 0.50) +
+                        (school.academicScore / 100 * 0.25) + 
+                        (studentScoreNormalized * 0.15) +
+                        (school.activityRating * 0.10);
+                }
+
+                return {
+                    ...school,
+                    reviewScore: reviewScore,
+                    finalRating: finalRating
+                };
+            });
+
+            tempProcessedSchools.sort((a, b) => (b.finalRating || 0) - (a.finalRating || 0));
+            processedSchools = tempProcessedSchools.map((school, index) => ({ ...school, rank: index + 1 }));
+        }
+
+
+        function findSchool() {
+            const streetInput = document.getElementById('addressStreetInput').value.trim().toLowerCase();
+            const numberInput = document.getElementById('addressNumberInput').value.trim();
+            const houseNumber = parseInt(numberInput, 10);
+            if (!streetInput || !numberInput || isNaN(houseNumber)) { alert(translations.alertEnterAddress[currentLang]); return; }
+            let foundSchoolId = null;
+            const isEven = houseNumber % 2 === 0;
+            for (const schoolArea of addressData) {
+                if (schoolArea.streets) {
+                    for (const street of schoolArea.streets) {
+                        if (street.name && street.name.toLowerCase() === streetInput) {
+                            if (checkNumberMatch(street, houseNumber, isEven)) { foundSchoolId = schoolArea.id; break; }
+                        }
+                    }
+                }
+                if (foundSchoolId) break;
+            }
+            if (foundSchoolId) { displaySchool(foundSchoolId); } else { showDistrictSelector(); }
+        }
+        function checkNumberMatch(streetRule, houseNumber, isEven) { const rule = streetRule.street; if (!rule) return true; const parseNum = (val) => (typeof val === 'string' ? parseInt(val, 10) : val); if (rule.odd && !isEven) { const first = parseNum(rule.odd.first); const end = rule.odd.end === null ? Infinity : parseNum(rule.odd.end); return (houseNumber >= first && houseNumber <= end); } if (rule.even && isEven) { const first = parseNum(rule.even.first); const end = rule.even.end === null ? Infinity : parseNum(rule.even.end); return (houseNumber >= first && houseNumber <= end); } if (!rule.odd && !rule.even && rule.first !== undefined) { const first = parseNum(rule.first); const end = rule.end === null ? Infinity : parseNum(rule.end); return (houseNumber >= first && houseNumber <= end); } return false; }
+        function findSchoolByDistrict() { const selectedDistrict = document.getElementById('districtSelect').value; if (!selectedDistrict) return; const schoolArea = addressData.find(d => d.district === selectedDistrict && d.type === 'all_street'); if (schoolArea) { displaySchool(schoolArea.id); } else { showNotFound(); } }
+
+        function displaySchool(schoolId) {
+            displayedSchoolId = schoolId;
+            const school = processedSchools.find(s => s.id === schoolId);
+            if (!school) { console.error(`School with ID ${schoolId} not found.`); showNotFound(); return; }
+            document.getElementById('search-section').style.display = 'none';
+            document.getElementById('district-section').style.display = 'none';
+            document.getElementById('not-found-section').style.display = 'none';
+            const resultsContainer = document.getElementById('results-container');
+            const cardContainer = document.getElementById('school-card-container');
+            cardContainer.innerHTML = '';
+            cardContainer.appendChild(createSchoolCard(school));
+            resultsContainer.style.display = 'block';
+            initMap(school);
+        }
+        function showDistrictSelector() { document.getElementById('search-section').style.display = 'none'; document.getElementById('results-container').style.display = 'none'; document.getElementById('not-found-section').style.display = 'none'; const districtSection = document.getElementById('district-section'); const districtSelect = document.getElementById('districtSelect'); districtSelect.innerHTML = `<option value="">${translations.selectDistrictPlaceholder[currentLang]}</option>`; const districts = [...new Set(addressData.filter(d => d.district && d.type === 'all_street').map(d => d.district))].sort(); districts.forEach(district => { const option = document.createElement('option'); option.value = district; option.textContent = district; districtSelect.appendChild(option); }); districtSection.style.display = 'block'; }
+        function showNotFound() { document.getElementById('search-section').style.display = 'none'; document.getElementById('results-container').style.display = 'none'; document.getElementById('district-section').style.display = 'none'; document.getElementById('not-found-section').style.display = 'block'; }
+        function resetSearch() { displayedSchoolId = null; document.getElementById('results-container').style.display = 'none'; document.getElementById('district-section').style.display = 'none'; document.getElementById('not-found-section').style.display = 'none'; document.getElementById('search-section').style.display = 'block'; document.getElementById('addressStreetInput').value = ''; document.getElementById('addressNumberInput').value = ''; document.getElementById('school-card-container').innerHTML = ''; if (map) { map.remove(); map = null; } document.getElementById('addressStreetInput').focus(); }
+        function initMap(school) { if (map) { map.remove(); } map = L.map('map').setView([school.lat, school.lng], 16); L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19, attribution: '© OpenStreetMap contributors' }).addTo(map); const marker = L.marker([school.lat, school.lng]).addTo(map); marker.bindPopup(`<b>${school.name}</b><br>${school.address}`).openPopup(); }
+
+        function handleAutocomplete() { const input = this.value; const listContainer = document.getElementById('autocomplete-list'); listContainer.innerHTML = ""; if (input.length < 3) return; const lowerInput = input.toLowerCase(); const matches = uniqueStreets.filter(street => street.toLowerCase().includes(lowerInput)).slice(0, 7); matches.forEach(match => { let div = document.createElement("div"); const startIndex = match.toLowerCase().indexOf(lowerInput); const endIndex = startIndex + lowerInput.length; div.innerHTML = match.substring(0, startIndex) + `<strong>${match.substring(startIndex, endIndex)}</strong>` + match.substring(endIndex); div.addEventListener("click", function() { document.getElementById('addressStreetInput').value = match; listContainer.innerHTML = ""; }); listContainer.appendChild(div); }); }
+        document.addEventListener("click", function (e) { if (!e.target.closest('.autocomplete-container')) { document.getElementById("autocomplete-list").innerHTML = ""; } });
+
+        function translateLanguages(langs) { return langs.map(lang => (languageMap[lang.toLowerCase()] && languageMap[lang.toLowerCase()][currentLang]) || lang); }
+        function calculateClassCount(totalStudents) { if (!totalStudents) { return translations.na[currentLang]; } const classCount = (totalStudents / 8) / 30; const roundedClassCount = Math.round(classCount); return Math.min(Math.max(roundedClassCount, 1), 10); }
+
+        function createSchoolCard(school) {
+            const card = document.createElement('div');
+            card.className = 'school-card';
+            card.setAttribute('data-id', school.id);
+            const translatedLanguages = translateLanguages(school.languages);
+            let iconClass = '', iconColor = '';
+            const rank = school.rank;
+            if (rank <= 3) { iconClass = 'fa-trophy'; iconColor = '#FFD700'; } 
+            else if (rank <= 10) { iconClass = 'fa-medal'; iconColor = '#C0C0C0'; } 
+            else { iconClass = 'fa-leaf'; iconColor = '#28a745'; }
+            const rankHtml = `<div class="school-rank" style="color: ${iconColor};"><i class="fas ${iconClass}"></i><span>${rank}</span></div>`;
+            
+            let levelBarStyle = '';
+            const finalRating = school.finalRating;
+            if (finalRating !== null && finalRating !== undefined) {
+                const level = finalRating > 1 ? 1 : finalRating;
+                levelBarStyle = `<div style="display: flex; align-items: center; gap: 8px; flex-grow: 1;">
+                    <div style="flex-grow: 1; height: 8px; background: linear-gradient(to right, #dc3545, #ffc107, #28a745); position: relative; border-radius: 4px;">
+                        <div style="position: absolute; left: ${level * 100}%; top: -6px; width: 4px; height: 20px; background-color: #333; transform: translateX(-50%); border-radius: 2px; border: 1px solid white;"></div>
+                    </div>
+                    <span style="font-weight: bold; color: var(--primary-color); min-width: 35px; text-align: right;">${level.toFixed(2)}</span>
+                    <div class="rating-info-icon" onclick="showRatingTooltip(event, ${school.id})">?
+                        <div id="tooltip-${school.id}" class="rating-tooltip">${translations.ratingTooltip[currentLang]}</div>
+                    </div>
+                </div>`;
+            } else {
+                 levelBarStyle = `<div style="display: flex; align-items: center; gap: 8px; flex-grow: 1;"><span>${translations.na[currentLang]}</span></div>`;
+            }
+        
+            const directorHtml = `<div class="contact-row"><span class="icon"><i class="fas fa-user-tie"></i></span><span> ${translations.directorLabel[currentLang]} ${school.director || translations.na[currentLang]}</span></div>`;
+
+            card.innerHTML = `${rankHtml}<div class="school-card-content">
+                <div class="school-name">${school.name}</div>
+                <div class="school-address"><i class="fas fa-map-marker-alt"></i> ${school.place}, ${school.address}</div>
+                <div class="info-row"><span class="info-label">${translations.teachingLanguage[currentLang]}</span><div class="horizontal-tags">${translatedLanguages.map(lang => `<span class="tag language">${lang}</span>`).join('')}</div></div>
+                <div class="info-label">${translations.schoolTypeLabel[currentLang]} ${school.type || 'ОШ'}</div>
+                <div class="info-row" style="display: flex; justify-content: space-between; align-items: center;"><span class="info-label" style="white-space: nowrap; margin-right: 10px;">${translations.finalRatingLabel[currentLang]}</span>${levelBarStyle}</div>
+                <div class="info-row" style="margin-top: 20px;"><button class="address-button" onclick="showAddresses(${school.id})">${translations.attachedAddresses[currentLang]}</button></div>
+                <div id="addresses-${school.id}" class="addresses-info"></div>
+                <div class="contact-info">
+                    ${directorHtml} <div class="contact-row"><span class="icon"><i class="fas fa-phone"></i></span><span> ${school.phone}</span></div><div class="contact-row"><span class="icon"><i class="fas fa-envelope"></i></span><span> ${school.email}</span></div><div class="contact-row"><span class="icon"><i class="fas fa-link"></i></span><a href="${school.website}" target="_blank">${school.website}</a></div></div>
+                <button class="school-details-btn" onclick="openSchoolModal(event, ${school.id})">${translations.detailsButton[currentLang]}</button>
+            </div>`;
+            return card;
+        }
+        
+        async function showAddresses(schoolId) {
+            const addressesDiv = document.getElementById(`addresses-${schoolId}`);
+            if (addressesDiv.style.display === 'block') { addressesDiv.style.display = 'none'; return; }
+            addressesDiv.innerHTML = `<p>${translations.loadingAddresses[currentLang]}</p>`;
+            addressesDiv.style.display = 'block';
+            try {
+                if (!addressesCache) {
+                    const response = await fetch('addresses.json');
+                    if (!response.ok) throw new Error(`HTTP error: ${response.statusText}`);
+                    addressesCache = await response.json();
+                }
+                const addressInfo = addressesCache.find(item => item.id === schoolId);
+                if (addressInfo) {
+                    addressesDiv.innerHTML = `<p><b>${translations.attachedAddresses[currentLang]}:</b><br>${addressInfo.text}</p>`;
+                } else {
+                    addressesDiv.innerHTML = `<p>${translations.noAddressesFound[currentLang]}</p>`;
+                }
+            } catch (error) {
+                addressesDiv.innerHTML = `<p>${translations.addressesError[currentLang]}</p>`;
+                console.error('Error loading addresses.json:', error);
+            }
+        }
+
+        function openSchoolModal(event, schoolId) {
+            event.stopPropagation();
+            const school = processedSchools.find(s => s.id === schoolId);
+            if (!school) return;
+
+            const totalStudents = school.studentCount || translations.na[currentLang];
+            const classCount = calculateClassCount(school.studentCount);
+            const academicScore = school.academicScore ? school.academicScore.toFixed(2) : translations.na[currentLang];
+            const reputationScore = school.reviewScore ? (school.reviewScore * 10).toFixed(2) : translations.na[currentLang];
+            const isBoravakAvailable = String(school.boravak).toLowerCase() === 'true' || String(school.boravak).toLowerCase() === 'да';
+            const boravakText = isBoravakAvailable ? translations.modalFactAfterSchool[currentLang] : translations.modalFactNoAfterSchool[currentLang];
+            const languageText = translateLanguages(school.languages).join(', ');
+
+            // --- GENERATE REVIEW DETAILS HTML ---
+            let reviewDetailsHtml = '<div class="review-details">';
+            if (school.reviewDetails) {
+                reviewDetailsHtml += `<div class="review-item positive"><span>${translations.reviewPositive[currentLang]}</span><span class="count positive-count">${school.reviewDetails.positive_count || 0}</span></div>`;
+                
+                const negativeCats = [
+                    { key: 'bullying_violence', label: translations.reviewBullying[currentLang] },
+                    { key: 'staff_student_incidents', label: translations.reviewStaffIncidents[currentLang] },
+                    { key: 'security_vandalism', label: translations.reviewSecurity[currentLang] },
+                    { key: 'infrastructure_issues', label: translations.reviewInfrastructure[currentLang] },
+                    { key: 'strikes_protests', label: translations.reviewStrikes[currentLang] }
+                ];
+
+                negativeCats.forEach(cat => {
+                    const count = school.reviewDetails.negative?.[cat.key]?.length || 0;
+                    if (count > 0) {
+                        reviewDetailsHtml += `<div class="review-item negative"><span>${cat.label}</span><span class="count negative-count">${count}</span></div>`;
+                    }
+                });
+            }
+            reviewDetailsHtml += '</div>';
+
+            const modalHtml = `<div class="modal-overlay" id="schoolModal" onclick="closeModalOnOverlay(event)">
+                <div class="modal-content">
+                    <button class="modal-close" onclick="closeSchoolModal()">×</button>
+                    <div class="modal-header"><h2>${school.name}</h2><p style="color: #5c5c5c; margin: 5px 0 0 0;"><i class="fas fa-map-marker-alt"></i> ${school.address}, ${school.place}</p></div>
+                    <div class="modal-body">
+                        <div id="school-info" class="form-container active">
+                            <ul class="school-facts">
+                                <li><i class="fas fa-users"></i><div><span>${translations.modalTotalStudents[currentLang]}</span><strong>${totalStudents}</strong></div></li>
+                                <li><i class="fas fa-chalkboard-teacher"></i><div><span>${translations.modalClassesPerGrade[currentLang]}</span><strong>${classCount}</strong></div></li>
+                                <li><i class="fas fa-hourglass-half"></i><div><span>${translations.modalBoravak[currentLang]}</span><strong>${boravakText}</strong></div></li>
+                                <li><i class="fas fa-language"></i><div><span>${translations.modalLanguages[currentLang]}</span><strong>${languageText}</strong></div></li>
+                                <li><i class="fas fa-futbol"></i><div><span>${translations.modalSports[currentLang]}</span><strong>${school.sports.count}</strong></div></li>
+                                <li><i class="fas fa-brain"></i><div><span>${translations.modalIntellectual[currentLang]}</span><strong>${school.intellectual.count}</strong></div></li>
+                                <li><i class="fas fa-paint-brush"></i><div><span>${translations.modalCreative[currentLang]}</span><strong>${school.creative.count}</strong></div></li>
+                                <li><i class="fas fa-globe-europe"></i><div><span>${translations.modalInternational[currentLang]}</span><strong>${school.international.count}</strong></div></li>
+                                <li><i class="fas fa-graduation-cap"></i><div><span>${translations.modalAcademicScore[currentLang]}</span><strong>${academicScore}</strong></div></li>
+                                <li><i class="fas fa-comments"></i><div><span>${translations.modalReputationScore[currentLang]}</span><strong>${reputationScore} / 10</strong></div>${reviewDetailsHtml}</li>
+                            </ul>
+                            <div class="invitation-text"><p>${translations.modalInvitationText[currentLang]}</p></div>
+                            <button class="cta-button-primary" onclick="showApplicationForm()">${translations.getDetailsButton[currentLang]}</button>
+                        </div>
+                        <div id="application-form" class="form-container">
+                            <h3>${translations.formHeader[currentLang]}</h3>
+                            <form onsubmit="submitApplication(event)">
+                                <input type="hidden" id="schoolIdInput" value="${schoolId}">
+                                <div class="form-group required"><label for="parentName">${translations.formYourName[currentLang]}</label><input type="text" id="parentName" required></div>
+                                <div class="form-group required"><label for="parentEmail">${translations.formYourEmail[currentLang]}</label><input type="email" id="parentEmail" placeholder="example@mail.com" required><div id="emailError" style="color: red; font-size: 0.8em; display: none;">${translations.formEmailError[currentLang]}</div></div>
+                                <div class="form-group required"><label for="parentPhone">${translations.formYourPhone[currentLang]}</label><input type="tel" id="parentPhone" placeholder="+38161234567" required></div>
+                                <div class="form-group"><label for="parentTelegram">${translations.formYourTelegram[currentLang]}</label><input type="text" id="parentTelegram" placeholder="@username"></div>
+                                <button type="submit" class="cta-button-primary">${translations.formSubmitButton[currentLang]}</button>
+                            </form>
+                        </div>
+                        <div id="loading-screen" class="loading-spinner"><div class="spinner"></div><p>${translations.formSending[currentLang]}</p></div>
+                        <div id="thank-you" class="thank-you-screen">
+                            <h3>${translations.thankYouHeader[currentLang]}</h3><p>${translations.thankYouText[currentLang]}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>`;
+            document.getElementById('schoolModalContainer').innerHTML = modalHtml;
+            document.getElementById('schoolModal').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+        function closeSchoolModal(){ const modal = document.getElementById('schoolModal'); if (modal) { modal.remove(); document.body.style.overflow = ''; } }
+        function closeModalOnOverlay(event){ if (event.target.classList.contains('modal-overlay')) { closeSchoolModal(); } }
+        function showApplicationForm(){ document.getElementById('school-info').classList.remove('active'); document.getElementById('application-form').classList.add('active'); }
+        
+        function submitApplication(event) {
+            event.preventDefault();
+            const parentEmail = document.getElementById('parentEmail').value;
+            const parentName = document.getElementById('parentName').value;
+            const parentPhone = document.getElementById('parentPhone').value;
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            const emailError = document.getElementById('emailError');
+            if (!emailRegex.test(parentEmail)) { emailError.style.display = 'block'; return; } 
+            else { emailError.style.display = 'none'; }
+            if (!parentName || !parentEmail || !parentPhone) { alert(translations.formFillFieldsError[currentLang]); return; }
+            document.getElementById('application-form').style.display = 'none';
+            document.getElementById('loading-screen').style.display = 'block';
+            
+            const applicationData = { 
+                schoolId: document.getElementById('schoolIdInput').value, 
+                parentName: parentName, 
+                email: parentEmail, 
+                phone: parentPhone, 
+                telegram: document.getElementById('parentTelegram').value || null,
+                timestamp: new Date().toISOString() 
+            };
+
+            fetch(MAKE_COM_URL, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(applicationData) })
+            .then(response => { if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`); return response.text(); })
+            .then(data => { document.getElementById('loading-screen').style.display = 'none'; document.getElementById('thank-you').classList.add('active'); })
+            .catch(error => { document.getElementById('loading-screen').style.display = 'none'; document.getElementById('application-form').style.display = 'block'; alert('Submission failed: ' + error.message); });
+        }
+        
+        function showRatingTooltip(event, schoolId) { event.stopPropagation(); document.querySelectorAll('.rating-tooltip').forEach(tooltip => tooltip.classList.remove('show')); document.getElementById(`tooltip-${schoolId}`).classList.add('show'); }
+        document.addEventListener('click', function (event) { if (!event.target.closest('.rating-info-icon')) { document.querySelectorAll('.rating-tooltip').forEach(tooltip => tooltip.classList.remove('show')); } });
+    </script>
+</body>
+</html>

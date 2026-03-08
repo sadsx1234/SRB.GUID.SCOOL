@@ -1,0 +1,1315 @@
+[
+  {
+    "id": 194,
+    "name": "ОШ \"ЈОВАН ДУЧИЋ\"",
+    "nameLatin": "OŠ \"JOVAN DUČIĆ\"",
+    "city": "Нови Сад",
+    "place": "Петроварадин",
+    "address": "Прерадовићева 6",
+     "boravak": true,
+    "languages": [
+      "serbian"
+    ],
+    "phone": "021/6433-201",
+    "email": "jducic@eunet.rs",
+    "type": "ОШ",
+    "lat": 45.2518974,
+    "lng": 19.8720619,
+    "telegram": "",
+    "website": "https://www.osjducic.edu.rs/",
+    "erasmus": "да",
+    "sports": null,
+    "languages1stGrade": "Английский,",
+    "languages5thGrade": "Немецкий, Словачки, Мађарски, Русински",
+    "eTwinning": null,
+	
+    "schedule": {
+      "firstShift": 7.3,
+      "secondShift": "13.30",
+      "mediumShift": "12.00"
+    }
+  },
+  {
+    "id": 195,
+    "name": "ОШ \"ВЕЉКО ПЕТРОВИЋ\"",
+    "nameLatin": "OŠ \"VELJKO PETROVIĆ\"",
+    "city": "Нови Сад",
+    "place": "Бегеч",
+    "address": "Краља Петра I 36",
+    "languages": [
+      "serbian"
+    ],
+    "phone": "021/2998-009",
+    "email": "begso@open.telekom.rs",
+    "type": "ОШ",
+    "lat": 45.2357199,
+    "lng": 19.6183112,
+    "telegram": "",
+    "website": "http://www.veljkopetrovic.edu.rs/",
+    "erasmus": "да",
+    "sports": null,
+    "languages1stGrade": "Английский,",
+    "languages5thGrade": " Немецкий",
+    "eTwinning": null,
+	"boravak": true,
+    "schedule": {
+      "firstShift": null,
+      "secondShift": null,
+      "mediumShift": null
+    }
+  },
+  {
+    "id": 196,
+    "name": "ОШ \"АЛЕКСА ШАНТИЋ\"",
+    "nameLatin": "OŠ \"ALEKSA ŠANTIЋ\"",
+    "city": "Нови Сад",
+    "place": "Степановићево",
+    "address": "Все улицы в населённом пункте Степановићево.",
+    "languages": [
+      "serbian"
+    ],
+    "phone": "021/717-055",
+    "email": "aleksastep@mts.rs",
+    "type": "ОШ",
+    "lat": 45.4144056,
+    "lng": 19.7002576,
+    "telegram": "",
+    "website": "https://www.osaleksasantic.edu.rs/",
+    "erasmus": "Да",
+    "sports": null,
+    "languages1stGrade": "Английский,",
+    "languages5thGrade": "Немецкий, Румынский, Хорватский, Венгерский",
+    "eTwinning": null,
+	"boravak": true,
+    "schedule": {
+      "firstShift": 8.0,
+      "secondShift": null,
+      "mediumShift": null
+    }
+  },
+  {
+    "id": 197,
+    "name": "ОШ \"МИРОСЛАВ АНТИЋ\"",
+    "nameLatin": "OŠ \"MIROSLAV ANTIЋ\"",
+    "city": "Нови Сад",
+    "place": "Футог",
+    "address": "Раде Кончара 2",
+    "languages": [
+      "serbian"
+    ],
+    "phone": "021/2992-268;2992563",
+    "email": "pedagogantic@gmail.com",
+    "type": "ОШ",
+    "lat": 45.2400607,
+    "lng": 19.7294994,
+    "telegram": "",
+    "website": "https://osmiroslavantic.edu.rs/",
+    "erasmus": null,
+    "sports": "да",
+    "languages1stGrade": "Английский,",
+    "languages5thGrade": "Немецкий, Русинский, Итальянский",
+    "eTwinning": null,
+		"boravak": true,
+    "schedule": {
+      "firstShift": null,
+      "secondShift": null,
+      "mediumShift": null
+    }
+  },
+  {
+    "id": 198,
+    "name": "ОШ \"ДЕСАНКА МАКСИМОВИЋ\"",
+    "nameLatin": "OŠ \"DESANKA MAKSIMOVIĆ\"",
+    "city": "Нови Сад",
+    "place": "Футог",
+    "address": "Царице Милице 1",
+    "languages": [
+      "serbian"
+    ],
+    "phone": "021 89 52 43",
+    "email": "desanka@neobee.net",
+    "type": "ОШ",
+    "lat": 45.2363532,
+    "lng": 19.6996142,
+    "telegram": "",
+    "website": "https://www.desanka-futog.edu.rs/",
+    "erasmus": null,
+    "sports": null,
+    "languages1stGrade": "Английский,",
+    "languages5thGrade": "Словацкий, Немецкий",
+    "eTwinning": null,
+		"boravak": true,
+    "schedule": {
+      "firstShift": 7.3,
+      "secondShift": "13.30",
+      "mediumShift": null
+    }
+  },
+  {
+    "id": 199,
+    "name": "ОШ \"ЂУРА ЈАКШИЋ\"",
+    "nameLatin": "ОШ \"ĐURA JAKŠIĆ\"",
+    "city": "Нови Сад",
+    "place": "Каћ",
+    "address": "Краља Петра I 9",
+    "languages": [
+      "serbian"
+    ],
+    "phone": "021 62 13 015",
+    "email": "jdjuraskolakac@gmail.com",
+    "type": "ОШ",
+    "lat": 45.2999451,
+    "lng": 19.9406794,
+    "telegram": "",
+    "website": "https://skolakac.edu.rs/",
+    "erasmus": null,
+    "sports": null,
+    "languages1stGrade": "Английский,",
+    "languages5thGrade": "Немецкий, Французский",
+    "eTwinning": null,
+		"boravak": true,
+    "schedule": {
+      "firstShift": 7.3,
+      "secondShift": "13.30",
+      "mediumShift": null
+    }
+  },
+  {
+    "id": 200,
+    "name": "ОШ \"ИВО АНДРИЋ\"",
+    "nameLatin": "ОШ \"IVO ANDRIĆ\"",
+    "city": "Нови Сад",
+    "place": "Будисава",
+    "address": "Будисава, Школска бр.3",
+    "languages": [
+      "serbian",
+      "hungarian"
+    ],
+    "phone": "021/719018",
+    "email": "osivoandricbudisava@gmail.com",
+    "type": "ОШ",
+    "lat": 45.2793761,
+    "lng": 19.9936223,
+    "telegram": "",
+    "website": "http://ivoandricbudisava.edu.rs/srlat/",
+    "erasmus": "да",
+    "sports": "да",
+    "languages1stGrade": "Английский",
+    "languages5thGrade": "Немецкий, Французский",
+    "eTwinning": null,
+		"boravak": true,
+    "schedule": {
+      "firstShift": 8.0,
+      "secondShift": "13.30",
+      "mediumShift": null
+    }
+  },
+  {
+    "id": 201,
+    "name": "ОШ \"ЖАРКО ЗРЕЊАНИН\"",
+    "nameLatin": "ОШ \"ŽARKO ZRENJANIN\"",
+    "city": "Нови Сад",
+    "place": "Нови Сад",
+    "address": "Булевар деспота Стефана 8",
+    "languages": [
+      "serbian"
+    ],
+    "phone": "021 23 65 453",
+    "email": "posta.skole@zarkons.edu.rs",
+    "type": "ОШ",
+    "lat": 45.2372916,
+    "lng": 19.8363659,
+    "telegram": "",
+    "website": "https://zarkons.edu.rs/nastava/raspored-casova/",
+    "erasmus": "да",
+    "sports": "да",
+    "languages1stGrade": "Английский",
+    "languages5thGrade": "Немецкий",
+    "eTwinning": null,
+		"boravak": true,
+    "schedule": {
+      "firstShift": 8.0,
+      "secondShift": "14.00",
+      "mediumShift": null
+    }
+  },
+  {
+    "id": 202,
+    "name": "ОШ \"СОЊА МАРИНКОВИЋ\"",
+    "nameLatin": "ОШ \"SONJA MARINKOVIĆ\"",
+    "city": "Нови Сад",
+    "place": "Нови Сад",
+    "address": "Пушкинова 28",
+    "languages": [
+      "serbian",
+      "hungarian"
+    ],
+    "phone": "021 63 64 787",
+    "email": "ossmnsad@gmail.com",
+    "type": "ОШ",
+    "lat": 45.2438061,
+    "lng": 19.8335519,
+    "telegram": "",
+    "website": "https://sonjamarinkovicns.edu.rs/",
+    "erasmus": null,
+    "sports": "да",
+    "languages1stGrade": "Английский",
+    "languages5thGrade": "Немецкий",
+    "eTwinning": null,
+		"boravak": true,
+    "schedule": {
+      "firstShift": 8.0,
+      "secondShift": "14.00",
+      "mediumShift": null
+    }
+  },
+  {
+    "id": 203,
+    "name": "ОШ \"ВЕЉКО ВЛАХОВИЋ\"",
+    "nameLatin": "ОШ \"VELJKO VLAHOVIĆ\"",
+    "city": "Нови Сад",
+    "place": "Нови Сад Шангај",
+    "address": "Улица VIII број 2",
+    "languages": [
+      "serbian"
+    ],
+    "phone": "021 65 20 142",
+    "email": "osveljkovlahovic@mts.rs",
+    "type": "ОШ",
+    "lat": 45.2737501,
+    "lng": 19.875365,
+    "telegram": "",
+    "website": "https://veljko-vlahovic.edu.rs/",
+    "erasmus": "да",
+    "sports": "да",
+    "languages1stGrade": "Английский, Немецкий",
+    "languages5thGrade": " ",
+    "eTwinning": null,
+		"boravak": true,
+    "schedule": {
+      "firstShift": null,
+      "secondShift": null,
+      "mediumShift": null
+    }
+  },
+  {
+    "id": 204,
+    "name": "ОШ \"ЈОВАН ЈОВАНОВИЋ ЗМАЈ\"",
+    "nameLatin": "ОШ \"JOVAN JOVANOVIЋ ZMAJ\"",
+    "city": "Нови Сад",
+    "place": "Сремска Каменица",
+    "address": "Школска 3",
+    "languages": [
+      "serbian"
+    ],
+    "phone": "021 464 506",
+    "email": "jjzmajkamenica@mts.rs",
+    "type": "ОШ",
+    "lat": 45.2250332,
+    "lng": 19.8428408,
+    "telegram": "",
+    "website": "https://www.zmajevi.rs/index.php",
+    "erasmus": "да",
+    "sports": "да",
+    "languages1stGrade": "Англиски",
+    "languages5thGrade": "Ромский",
+    "eTwinning": null,
+		"boravak": true,
+    "schedule": {
+      "firstShift": 8.0,
+      "secondShift": "13.30",
+      "mediumShift": null
+    }
+  },
+  {
+    "id": 205,
+    "name": "ОШ \"ЂОРЂЕ НАТОШЕВИЋ\"",
+    "nameLatin": "ОШ \"ĐORĐE NATOŠEVIĆ\"",
+    "city": "Нови Сад",
+    "place": "Нови Сад",
+    "address": "Максима Горког 54",
+    "languages": [
+      "serbian"
+    ],
+    "phone": "021 66 12 957",
+    "email": "djnatos@gmail.com",
+    "type": "ОШ",
+    "lat": 45.2513464,
+    "lng": 19.853646,
+    "telegram": "",
+    "website": "https://www.djordje-natosevic.edu.rs/index.php",
+    "erasmus": null,
+    "sports": null,
+    "languages1stGrade": "Английский",
+    "languages5thGrade": "Немецкий, Русински, Французский (углубленный)",
+    "eTwinning": null,
+		"boravak": true,
+    "schedule": {
+      "firstShift": 8.0,
+      "secondShift": "14.00",
+      "mediumShift": null
+    }
+  },
+  {
+    "id": 206,
+    "name": "ОШ \"ЂУРА ДАНИЋИЋ\"",
+    "nameLatin": "ОШ \"ĐURA DANIЧIЋ\"",
+    "city": "Нови Сад",
+    "place": "Нови Сад",
+    "address": "Душана Васиљева 19",
+    "languages": [
+      "serbian"
+    ],
+    "phone": "021 45 29 62",
+    "email": "ddanicic@eunet.rs",
+    "type": "ОШ",
+    "lat": 45.260885,
+    "lng": 19.8530537,
+    "telegram": "",
+    "website": "https://djura-danicic.edu.rs/",
+    "erasmus": null,
+    "sports": "да",
+    "languages1stGrade": "Английский",
+    "languages5thGrade": "Немецкий",
+    "eTwinning": null,
+		"boravak": true,
+    "schedule": {
+      "firstShift": 8.0,
+      "secondShift": "13/10",
+      "mediumShift": null
+    }
+  },
+  {
+    "id": 207,
+    "name": "ОШ \"БРАНКО РАДИЧЕВИЋ\"",
+    "nameLatin": "ОШ \"BRANKO RADIČEVIĆ\"",
+    "city": "Нови Сад",
+    "place": "Нови Сад",
+    "address": "Футошка 5",
+    "languages": [
+      "serbian"
+    ],
+    "phone": "021 66 22 201",
+    "email": "jbnsbr@neobee.net",
+    "type": "ОШ",
+    "lat": 45.2511293,
+    "lng": 19.8358227,
+    "telegram": "",
+    "website": "http://brankoviosnovci.edu.rs/",
+    "erasmus": "да",
+    "sports": "да",
+    "languages1stGrade": "Английский",
+    "languages5thGrade": "Немецкий",
+    "eTwinning": null,
+		"boravak": true,
+    "schedule": {
+      "firstShift": 7.3,
+      "secondShift": "13.30",
+      "mediumShift": null
+    }
+  },
+  {
+    "id": 208,
+    "name": "ОШ \"ДОСИТЕЈ ОБРАДОВИЋ\"",
+    "nameLatin": "ОШ \"DOSITEJ OBRADOVIĆ\"",
+    "city": "Нови Сад",
+    "place": "Нови Сад",
+    "address": "Филипа Филиповића 3",
+    "languages": [
+      "serbian"
+    ],
+    "phone": "021 4774180",
+    "email": "dositejns@mts.rs",
+    "type": "ОШ",
+    "lat": 45.2662705,
+    "lng": 19.8124141,
+    "telegram": "https://t.me/+9NOphi8lK5pjOTJk",
+    "website": "dositejns.edu.rs",
+    "erasmus": "да",
+    "sports": "да",
+    "languages1stGrade": "Английский",
+    "languages5thGrade": "Немецкий",
+    "eTwinning": null,
+		"boravak": true,
+    "schedule": {
+      "firstShift": null,
+      "secondShift": null,
+      "mediumShift": null
+    }
+  },
+  {
+    "id": 209,
+    "name": "ОШ \"ДУШАН РАДОВИЋ\"",
+    "nameLatin": "ОШ \"DUŠAN RADOVIĆ\"",
+    "city": "Нови Сад",
+    "place": "Нови Сад",
+    "address": "Ченејска 61",
+    "languages": [
+      "serbian"
+    ],
+    "phone": "021 41 91 95",
+    "email": "dusanrad.skola@gmail.com",
+    "type": "ОШ",
+    "lat": 45.2892255,
+    "lng": 19.8265404,
+    "telegram": "",
+    "website": "https://www.dusan-radovic.edu.rs/",
+    "erasmus": null,
+    "sports": null,
+    "languages1stGrade": "Английский",
+    "languages5thGrade": "Немецкий",
+    "eTwinning": null,
+		"boravak": true,
+    "schedule": {
+      "firstShift": 8.0,
+      "secondShift": "14.00",
+      "mediumShift": null
+    }
+  },
+  {
+    "id": 210,
+    "name": "ОШ \"ИВАН ГУНДУЛИЋ\"",
+    "nameLatin": "ОШ \"IVAN GUNDULIĆ\"",
+    "city": "Нови Сад",
+    "place": "Нови Сад",
+    "address": "Гундулићева 9",
+    "languages": [
+      "serbian"
+    ],
+    "phone": "021 551 460",
+    "email": "gundulic@gundulic.edu.rs",
+    "type": "ОШ",
+    "lat": 45.2646532,
+    "lng": 19.8455816,
+    "telegram": "",
+    "website": "https://gundulic.edu.rs/",
+    "erasmus": null,
+    "sports": null,
+    "languages1stGrade": "Английский",
+    "languages5thGrade": "Немецкий, Французский, Итальянский, Словацкий",
+    "eTwinning": null,
+		"boravak": true,
+    "schedule": {
+      "firstShift": 8.0,
+      "secondShift": "13.30",
+      "mediumShift": null
+    }
+  },
+  {
+    "id": 211,
+    "name": "ОШ \"ИВО ЛОЛА РИБАР\"",
+    "nameLatin": "ОШ \"IVO LOLA RIBAR\"",
+    "city": "Нови Сад",
+    "place": "Нови Сад",
+    "address": "Краљевића Марка 2/a",
+    "languages": [
+      "serbian"
+    ],
+    "phone": "021 47 21 772",
+    "email": "skola@ivololaribar.net",
+    "type": "ОШ",
+    "lat": 45.2596639,
+    "lng": 19.8363329,
+    "telegram": "https://t.me/+IJOGga9rcjFlYWRi",
+    "website": "https://osivololaribar.edu.rs/",
+    "erasmus": null,
+    "sports": null,
+    "languages1stGrade": "Английский",
+    "languages5thGrade": "Немецкий",
+    "eTwinning": null,
+		"boravak": true,
+    "schedule": {
+      "firstShift": 8.0,
+      "secondShift": "14.00",
+      "mediumShift": null
+    }
+  },
+  {
+    "id": 212,
+    "name": "ОШ \"ЈОЖЕФ АТИЛА\"",
+    "nameLatin": "ОШ \"JOŽEF ATILA\"",
+    "city": "Нови Сад",
+    "place": "Нови Сад",
+    "address": "Шарпланинска 28",
+    "languages": [
+      "serbian",
+      "hungarian"
+    ],
+    "phone": "021/505-141",
+    "email": "jatila.ns.edu@gmail.com",
+    "type": "ОШ",
+    "lat": 45.2375751,
+    "lng": 19.8075088,
+    "telegram": "",
+    "website": "https://jatila.edu.rs/",
+    "erasmus": null,
+    "sports": null,
+    "languages1stGrade": "Венгерский, Английский",
+    "languages5thGrade": "Немецкий",
+    "eTwinning": null,
+		"boravak": true,
+    "schedule": {
+      "firstShift": 7.3,
+      "secondShift": "13.30",
+      "mediumShift": null
+    }
+  },
+  {
+    "id": 213,
+    "name": "ОШ \"ЈОВАН ПОПОВИЋ\"",
+    "nameLatin": "ОШ \"JOVAN POPOVIЋ\"",
+    "city": "Нови Сад",
+    "place": "Нови Сад",
+    "address": "Раваничка 2",
+    "languages": [
+      "serbian"
+    ],
+    "phone": "021/450-833",
+    "email": "jpopovicns@yahoo.com",
+    "type": "ОШ",
+    "lat": 45.2416792,
+    "lng": 19.8453372,
+    "telegram": "https://t.me/+w9p8elAPsLtmN2Ey",
+    "website": "https://www.jovanpopovic.edu.rs/",
+    "erasmus": null,
+    "sports": "да",
+    "languages1stGrade": "Русинский, Английский",
+    "languages5thGrade": "Немецкий, Венгерский",
+    "eTwinning": null,
+		"boravak": true,
+    "schedule": {
+      "firstShift": 8.0,
+      "secondShift": "14.00",
+      "mediumShift": null
+    }
+  },
+  {
+    "id": 214,
+    "name": "ОШ \"КОСТА ТРИФКОВИЋ\"",
+    "nameLatin": "ОШ \"KOSTA TRIFKOVIĆ\"",
+    "city": "Нови Сад",
+    "place": "Нови Сад",
+    "address": "Берислава Берића 2",
+    "languages": [
+      "serbian"
+    ],
+    "phone": "021/444-063",
+    "email": "skola@kostatrifkovicns.edu.rs",
+    "type": "ОШ",
+    "lat": 45.2643036,
+    "lng": 19.8359461,
+    "telegram": "https://t.me/+HUc9BU6Ksq1hM2Ey",
+    "website": "https://www.kostatrifkovicns.edu.rs/",
+    "erasmus": null,
+    "sports": null,
+    "languages1stGrade": "Английский",
+    "languages5thGrade": "Немецкий, Французский",
+    "eTwinning": null,
+		"boravak": true,
+    "schedule": {
+      "firstShift": 8.0,
+      "secondShift": "14.00",
+      "mediumShift": null
+    }
+  },
+  {
+    "id": 215,
+    "name": "ОШ \"МИЛОШ ЦРЊАНСКИ\"",
+    "nameLatin": "ОШ \"MILOŠ CRNJANSKI\"",
+    "city": "Нови Сад",
+    "place": "Нови Сад",
+    "address": "Анђе Ранковић 2",
+    "languages": [
+      "serbian"
+    ],
+    "phone": "021/6394-494",
+    "email": "mcrnjanski.mcrnjanski@gmail.com",
+    "type": "ОШ",
+    "lat": 45.2475763,
+    "lng": 19.7963702,
+    "telegram": "",
+    "website": "https://zkv.rs/",
+    "erasmus": null,
+    "sports": null,
+    "languages1stGrade": "Английский",
+    "languages5thGrade": "Немецкий, Французский",
+    "eTwinning": null,
+		"boravak": true,
+    "schedule": {
+      "firstShift": 7.1,
+      "secondShift": "13.10",
+      "mediumShift": null
+    }
+  },
+  {
+    "id": 216,
+    "name": "ОШ \"НИКОЛА ТЕСЛА\"",
+    "nameLatin": "ОШ \"NIKOLA TESLA\"",
+    "city": "Нови Сад",
+    "place": "Нови Сад",
+    "address": "Футошки пут 25/a",
+    "languages": [
+      "serbian"
+    ],
+    "phone": "4790-364",
+    "email": "osnikolate@gmail.com",
+    "type": "ОШ",
+    "lat": 45.2473545,
+    "lng": 19.8132627,
+    "telegram": "",
+    "website": "https://www.osnikolateslans.edu.rs/",
+    "erasmus": "да",
+    "sports": "да",
+    "languages1stGrade": "Английский",
+    "languages5thGrade": "Немецкий, Французский",
+    "eTwinning": null,
+		"boravak": true,
+    "schedule": {
+      "firstShift": 8.0,
+      "secondShift": "13.30",
+      "mediumShift": "12.30"
+    }
+  },
+  {
+    "id": 217,
+    "name": "ОШ \"ПЕТЕФИ ШАНДОР\"",
+    "nameLatin": "ОШ \"PETEFI ŠАНDOR\"",
+    "city": "Нови Сад",
+    "place": "Нови Сад",
+    "address": "Боре Продановића 15a",
+    "languages": [
+      "serbian",
+      "hungarian"
+    ],
+    "phone": "021/547-465",
+    "email": "os.petefi.sekretar@gmail.com",
+    "type": "ОШ",
+    "lat": 45.2543348,
+    "lng": 19.8294725,
+    "telegram": "https://t.me/novi_sad_petefi_shandor",
+    "website": "http://www.ospetefins.edu.rs/",
+    "erasmus": null,
+    "sports": null,
+    "languages1stGrade": "Венгерский (билингв), Английский",
+    "languages5thGrade": "Немецкий",
+    "eTwinning": null,
+		"boravak": true,
+    "schedule": {
+      "firstShift": 8.0,
+      "secondShift": "14.00",
+      "mediumShift": "13.10"
+    }
+  },
+  {
+    "id": 218,
+    "name": "ОШ \"ПРВА ВОЈВОЂАНСКА БРИГАДА\"",
+    "nameLatin": "ОШ \"PRVA VOJVOĐANSKA BRIGADA\"",
+    "city": "Нови Сад",
+    "place": "Нови Сад",
+    "address": "Сељачких буна 51/a",
+    "languages": [
+      "serbian"
+    ],
+    "phone": "021/ 400-540",
+    "email": "prvavojvodjanskabrigada@gmail.com",
+    "type": "ОШ",
+    "lat": 45.2540075,
+    "lng": 19.79789,
+    "telegram": "",
+    "website": "https://prvavojvodjanskabrigada.edu.rs/",
+    "erasmus": null,
+    "sports": null,
+    "languages1stGrade": "Англиски",
+    "languages5thGrade": "Немецкий",
+    "eTwinning": null,
+		"boravak": true,
+    "schedule": {
+      "firstShift": 8.0,
+      "secondShift": "14.00",
+      "mediumShift": "12.25"
+    }
+  },
+  {
+    "id": 219,
+    "name": "ОШ \"СВЕТОЗАР МАРКОВИЋ ТОЗА\"",
+    "nameLatin": "ОШ \"SVETOZAR MARKOVIĆ TOZA\"",
+    "city": "Нови Сад",
+    "place": "Нови Сад",
+    "address": "Јанка Чмелика 89",
+    "languages": [
+      "serbian"
+    ],
+    "phone": "021/512-231",
+    "email": "tozans@sbb.rs",
+    "type": "ОШ",
+    "lat": 45.2634034,
+    "lng": 19.8088396,
+    "telegram": "",
+    "website": "http://www.toza.edu.rs/",
+    "erasmus": null,
+    "sports": "да",
+    "languages1stGrade": "Английский",
+    "languages5thGrade": "Немецкий, Французский",
+    "eTwinning": null,
+		"boravak": true,
+    "schedule": {
+      "firstShift": null,
+      "secondShift": null,
+      "mediumShift": null
+    }
+  },
+  {
+    "id": 220,
+    "name": "ОШ \"ВАСА СТАЈИЋ\"",
+    "nameLatin": "ОШ \"VASA STAJIĆ\"",
+    "city": "Нови Сад",
+    "place": "Нови Сад",
+    "address": "Војводе Книћанина 12б",
+    "languages": [
+      "serbian"
+    ],
+    "phone": "021/469-210",
+    "email": "os.vasastajic@mts.rs",
+    "type": "ОШ",
+    "lat": 45.2463531,
+    "lng": 19.8264626,
+    "telegram": "https://t.me/+uUgp8QhUE4Q3MGY6",
+    "website": "https://www.vstajicns.rs/",
+    "erasmus": "да",
+    "sports": "да",
+    "languages1stGrade": "Английский",
+    "languages5thGrade": "Немецкий, Итальянский",
+    "eTwinning": null,
+		"boravak": true,
+    "schedule": {
+      "firstShift": null,
+      "secondShift": null,
+      "mediumShift": null
+    }
+  },
+  {
+    "id": 221,
+    "name": "ОШ \"ВУК КАРАЏИЋ\"",
+    "nameLatin": "ОШ \"VUK KARADŽIĆ\"",
+    "city": "Нови Сад",
+    "place": "Нови Сад",
+    "address": "Радоја Домановића 24",
+    "languages": [
+      "serbian"
+    ],
+    "phone": "021/6339-153",
+    "email": "direktorvukns@mts.rs",
+    "type": "ОШ",
+    "lat": 45.2682437,
+    "lng": 19.838549,
+    "telegram": "https://t.me/+e-Ty1fzj8_pjZGUy",
+    "website": "https://vkaradzicns.edu.rs/",
+    "erasmus": "да",
+    "sports": "да",
+    "languages1stGrade": "Английский",
+    "languages5thGrade": "Немецкий, Итальянский",
+    "eTwinning": null,
+		"boravak": true,
+    "schedule": {
+      "firstShift": null,
+      "secondShift": null,
+      "mediumShift": null
+    }
+  },
+  {
+    "id": 222,
+    "name": "ОШ \"СВЕТИ САВА\"",
+    "nameLatin": "ОШ \"SVETI SAVA\"",
+    "city": "Нови Сад",
+    "place": "Руменка",
+    "address": "Јована Јовановића Змаја 24",
+    "languages": [
+      "serbian"
+    ],
+    "phone": "021/6216016",
+    "email": "nrastko@neobee.net",
+    "type": "ОШ",
+    "lat": 45.295531, 
+    "lng": 19.747710,
+    "telegram": "",
+    "website": "https://www.svetisavarumenka.edu.rs/",
+    "erasmus": "да",
+    "sports": "да",
+    "languages1stGrade": "Английский",
+    "languages5thGrade": " ",
+    "eTwinning": null,
+		"boravak": true,
+    "schedule": {
+      "firstShift": null,
+      "secondShift": null,
+      "mediumShift": null
+    }
+  },
+  {
+    "id": 223,
+    "name": "ОШ \"МИХАЈЛО ПУПИН\"",
+    "nameLatin": "ОШ \"MIHAJLO PUPIN\"",
+    "city": "Нови Сад",
+    "place": "Ветерник",
+    "address": "Краља Александра 38",
+    "languages": [
+      "serbian"
+    ],
+    "phone": "+38121820565",
+    "email": "osmihajlopupin@neobee.net",
+    "type": "ОШ",
+    "lat": 45.2534169,
+    "lng": 19.7553058,
+    "telegram": "",
+    "website": "https://osmihajlopupin.edu.rs/",
+    "erasmus": "да",
+    "sports": "да",
+    "languages1stGrade": "Английский",
+    "languages5thGrade": "Немецкий, Русинский",
+    "eTwinning": null,
+		"boravak": true,
+    "schedule": {
+      "firstShift": 7.3,
+      "secondShift": "13.30",
+      "mediumShift": null
+    }
+  },
+  {
+    "id": 224,
+    "name": "ОШ \"22. АВГУСТ\"",
+    "nameLatin": "ОШ \"22. AVGUST\"",
+    "city": "Нови Сад",
+    "place": "Буковац",
+    "address": "Трг жртава геноцида 1",
+    "languages": [
+      "serbian"
+    ],
+    "phone": "021/826-020",
+    "email": "osbukovac22avgust@mts.rs",
+    "type": "ОШ",
+    "lat": 45.1965788,
+    "lng": 19.8927475,
+    "telegram": "",
+    "website": "http://osnovnaskolabukovac.edu.rs/",
+    "erasmus": "да",
+    "sports": "да",
+    "languages1stGrade": "Английский",
+    "languages5thGrade": "Немецкий, Французский, Русинский, Испанский, Итальянский",
+    "eTwinning": null,
+		"boravak": true,
+    "schedule": {
+      "firstShift": null,
+      "secondShift": null,
+      "mediumShift": null
+    }
+  },
+  {
+    "id": 225,
+    "name": "ОШ \"ЉУДОВИТ ШТУР\"",
+    "nameLatin": "ОШ \"LJUDOVIT ŠTUR\"",
+    "city": "Нови Сад",
+    "place": "Кисач",
+    "address": "Железничка 3",
+    "languages": [
+      "serbian",
+      "slovak"
+    ],
+    "phone": "021/827-015",
+    "email": "ludovitsturkisac@gmail.com",
+    "type": "ОШ",
+    "lat": 45.3563609,
+    "lng": 19.7314318,
+    "telegram": "",
+    "website": "https://skolaludovitstur.edu.rs/index.php/sr/",
+    "erasmus": "да",
+    "sports": null,
+    "languages1stGrade": "Английский",
+    "languages5thGrade": "Немецкий",
+    "eTwinning": null,
+		"boravak": true,
+    "schedule": {
+      "firstShift": 7.3,
+      "secondShift": null,
+      "mediumShift": null
+    }
+  },
+  {
+    "id": 226,
+    "name": "ОШ \"ЛАЗА КОСТИЋ\"",
+    "nameLatin": "ОШ \"LAZA KOSTIĆ\"",
+    "city": "Нови Сад",
+    "place": "Ковиљ",
+    "address": "Лаза Костић 42",
+    "languages": [
+      "serbian"
+    ],
+    "phone": "021/2988-006",
+    "email": "oslkostic@gmail.com",
+    "type": "ОШ",
+    "lat": 45.2252977,
+    "lng": 20.0214218,
+    "telegram": "",
+    "website": "https://www.lkostic.edu.rs/index.php/kontakt",
+    "erasmus": "да",
+    "sports": "да",
+    "languages1stGrade": "Английский",
+    "languages5thGrade": "Немецкий",
+    "eTwinning": null,
+		"boravak": true,
+    "schedule": {
+      "firstShift": null,
+      "secondShift": null,
+      "mediumShift": null
+    }
+  },
+  {
+    "id": 227,
+    "name": "ШКОЛА ЗА ОСНОВНО И СРЕДЊЕ ОБРАЗОВАЊЕ \"МИЛАН ПЕТРОВИЋ\" СА ДОМОМ УЧЕНИКА",
+    "nameLatin": "ŠKOLA ZA OSNOVNO I SREDNJE OBRAZOVANJE \"MILAN PETROVIĆ\" SA DOMOM УЧЕНИКА",
+    "city": "Нови Сад",
+    "place": "Нови Сад",
+    "address": "Браће Рибникара 32",
+    "languages": [
+      "serbian",
+      "slovak"
+    ],
+    "phone": "6616-366",
+    "email": "skolamp@eunet.rs",
+    "type": "ОШ",
+    "lat": 45.2533165,
+    "lng": 19.7946746,
+    "telegram": "",
+    "website": "https://smp.edu.rs/",
+    "erasmus": null,
+    "sports": null,
+    "languages1stGrade": " ",
+    "languages5thGrade": " ",
+    "eTwinning": null,
+		"boravak": true,
+    "schedule": {
+      "firstShift": null,
+      "secondShift": null,
+      "mediumShift": null
+    }
+  },
+  {
+    "id": 228,
+    "name": "ШКОЛА ЗА ОСНОВНО ОБРАЗОВАЊЕ И ВАСПИТАЊЕ ОДРАСЛИХ \"СВЕТИ САВА\"",
+    "nameLatin": "ŠKOLA ZA OSNOVNO OBRAZOVANJE I VASPITANJE ODRASLIH \"SVETИ SAVA\"",
+    "city": "Нови Сад",
+    "place": "Нови Сад",
+    "address": "Огњена Прице 7",
+    "languages": [
+      "serbian"
+    ],
+    "phone": "021/547-895",
+    "email": "sv.sava@neobee.net",
+    "type": "ОШ",
+    "lat": 45.252629,
+    "lng": 19.836122,
+    "telegram": "",
+    "website": "https://osssavans.edu.rs",
+    "erasmus": null,
+    "sports": "да",
+    "languages1stGrade": "Английский",
+    "languages5thGrade": "Немецкий",
+    "eTwinning": null,
+		"boravak": true,
+    "schedule": {
+      "firstShift": null,
+      "secondShift": null,
+      "mediumShift": null
+    }
+  },
+  {
+    "id": 229,
+    "name": "ОСНОВНА МУЗИЧКА ШКОЛА \"ЈОСИП СЛАВЕНСКИ\"",
+    "nameLatin": "OSNOVNA MUZIČKA ШКОЛА \"JOSIP SLAVENSKI\"",
+    "city": "Нови Сад",
+    "place": "Нови Сад",
+    "address": "Радничка 19/a",
+    "languages": [
+      "serbian"
+    ],
+    "phone": "021/ 66 222 85",
+    "email": "slavenski@gmail.com",
+    "type": "ОШ",
+    "lat": 45.2494523,
+    "lng": 19.8481381,
+    "telegram": "",
+    "website": "https://osjosiplavenski.edu.rs",
+    "erasmus": null,
+    "sports": null,
+    "languages1stGrade": " ",
+    "languages5thGrade": " ",
+    "eTwinning": null,
+		"boravak": true,
+    "schedule": {
+      "firstShift": null,
+      "secondShift": null,
+      "mediumShift": null
+    }
+  },
+  {
+    "id": 230,
+    "name": "БАЛЕТСКА ШКОЛА У НОВОМ САДУ",
+    "nameLatin": "BALETSKA ШКОЛА U NOVOM SADU",
+    "city": "Нови Сад",
+    "place": "Нови Сад",
+    "address": "Булевар Цара Лазара 67",
+    "languages": [
+      "serbian"
+    ],
+    "phone": "021 529 225",
+    "email": "baletska@neobee.net",
+    "type": "ОШ",
+    "lat": 45.2413861,
+    "lng": 19.8342052,
+    "telegram": "",
+    "website": "https://baletskaskola.edu.rs",
+    "erasmus": null,
+    "sports": null,
+    "languages1stGrade": " ",
+    "languages5thGrade": " ",
+    "eTwinning": null,
+		"boravak": true,
+    "schedule": {
+      "firstShift": null,
+      "secondShift": null,
+      "mediumShift": null
+    }
+  },
+  {
+    "id": 231,
+    "name": "МУЗИЧКА ШКОЛА \"ИСИДОР БАЈИЋ\"",
+    "nameLatin": "MUZIČKA ШКОЛА \"ISIDOR BAJIĆ\"",
+    "city": "Нови Сад",
+    "place": "Нови Сад",
+    "address": "Булевар цара Лазара 67",
+    "languages": [
+      "serbian"
+    ],
+    "phone": "021 529 866",
+    "email": "isabajic@sbb.rs",
+    "type": "ОШ",
+    "lat": 45.2413041,
+    "lng": 19.8341383,
+    "telegram": "",
+    "website": "https://msisidorbajic.edu.rs",
+    "erasmus": null,
+    "sports": null,
+    "languages1stGrade": " ",
+    "languages5thGrade": " ",
+    "eTwinning": null,
+		"boravak": true,
+    "schedule": {
+      "firstShift": null,
+      "secondShift": null,
+      "mediumShift": null
+    }
+  },
+  {
+    "id": 232,
+    "name": "ОШ \"МАРИЈА ТРАНДАФИЛ\"",
+    "nameLatin": "ОШ \"MARIJA TRANDAFILE\"",
+    "city": "Нови Сад",
+    "place": "Ветерник",
+    "address": "Паунова 14",
+    "languages": [
+      "serbian"
+    ],
+    "phone": "021/820-940",
+    "email": "osmarijatrandafil@gmail.com",
+    "type": "ОШ",
+    "lat": 45.2424243,
+    "lng": 19.7673659,
+    "telegram": "",
+    "website": "https://osmarijatrandafil.edu.rs",
+    "erasmus": null,
+    "sports": "да",
+    "languages1stGrade": "Английский",
+    "languages5thGrade": "Немецкий",
+    "eTwinning": null,
+		"boravak": true,
+    "schedule": {
+      "firstShift": 7.3,
+      "secondShift": "13.30",
+      "mediumShift": "11:00"
+    }
+  },
+  {
+    "id": 388,
+    "name": "Основна школа и предшколска установа \"Свитац\"",
+    "nameLatin": "Osnovna škola i predškolska ustanova \"Svitac\"",
+    "city": "Нови Сад",
+    "place": "Сремска Каменица",
+    "address": "Слободана Бајића 47",
+    "languages": [
+      "serbian"
+    ],
+    "phone": "021/461-006",
+    "email": "ospusvitac@gmail.com",
+    "type": "Приватна ОШ",
+    "lat": 45.2244584,
+    "lng": 19.847452,
+    "telegram": "",
+    "website": "https://svitac.edu.rs",
+    "erasmus": null,
+    "sports": null,
+    "languages1stGrade": " ",
+    "languages5thGrade": " ",
+    "eTwinning": null,
+		"boravak": true,
+    "schedule": {
+      "firstShift": null,
+      "secondShift": null,
+      "mediumShift": null
+    }
+  },
+  {
+    "id": 389,
+    "name": "Основна школа \"Свети Кирило и Методије\"",
+    "nameLatin": "Osnovna škola \"Sveti Кирило i Metodije\"",
+    "city": "Нови Сад",
+    "place": "Нови Сад",
+    "address": "Камењар3, бр.7",
+    "languages": [
+      "serbian"
+    ],
+    "phone": "065/6008228",
+    "email": "osnovnaskola@kiriloimetodije.com",
+    "type": "Приватна ОШ",
+    "lat": 45.2280956,
+    "lng": 19.7835108,
+    "telegram": "",
+    "website": "https://oskmetodije.edu.rs",
+    "erasmus": null,
+    "sports": null,
+    "languages1stGrade": " ",
+    "languages5thGrade": " ",
+    "eTwinning": null,
+		"boravak": true,
+    "schedule": {
+      "firstShift": null,
+      "secondShift": null,
+      "mediumShift": null
+    }
+  },
+  {
+    "id": 390,
+    "name": "Основна школа \"Мирослав Мика Антић\"",
+    "nameLatin": "Osnovna škola \"Miroslav Mika Антић\"",
+    "city": "Нови Сад",
+    "place": "Нови Сад",
+    "address": "Доситејева 15",
+    "languages": [
+      "serbian"
+    ],
+    "phone": "021442058",
+    "email": "office@skolamikaantic.edu.rs",
+    "type": "Приватна ОШ",
+    "lat": 45.2631696,
+    "lng": 19.8415482,
+    "telegram": "",
+    "website": "https://osmmantic.edu.rs",
+    "erasmus": null,
+    "sports": null,
+    "languages1stGrade": " ",
+    "languages5thGrade": " ",
+    "eTwinning": null,
+		"boravak": true,
+    "schedule": {
+      "firstShift": null,
+      "secondShift": null,
+      "mediumShift": null
+    }
+  },
+  {
+    "id": 391,
+    "name": "Приватна основна школа \"Јуниор\"",
+    "nameLatin": "Privatna osnovna škola \"Junior\"",
+    "city": "Нови Сад",
+    "place": "Нови Сад",
+    "address": "Симе Милутиновића Сарајлије број 32",
+    "languages": [
+      "serbian"
+    ],
+    "phone": "021/6392655",
+    "email": "info@cleveris.org",
+    "type": "Приватна ОШ",
+    "lat": 45.2280507,
+    "lng": 19.7836374,
+    "telegram": "",
+    "website": "https://junior.edu.rs",
+    "erasmus": null,
+    "sports": null,
+    "languages1stGrade": " ",
+    "languages5thGrade": " ",
+    "eTwinning": null,
+		"boravak": true,
+    "schedule": {
+      "firstShift": null,
+      "secondShift": null,
+      "mediumShift": null
+    }
+  },
+  {
+    "id": 392,
+    "name": "Приватна основна школа \"Тврђава\"",
+    "nameLatin": "Privatna osnovna škola \"Тврђава\"",
+    "city": "Нови Сад",
+    "place": "Петроварадин",
+    "address": "Штросмајерова 8",
+    "languages": [
+      "serbian"
+    ],
+    "phone": "069/ 79 70 80",
+    "email": "info@tvrdjava.edu.rs",
+    "type": "Приватна ОШ",
+    "lat": 45.2543042,
+    "lng": 19.8613403,
+    "telegram": "",
+    "website": "https://ostvrdjava.edu.rs",
+    "erasmus": null,
+    "sports": null,
+    "languages1stGrade": " ",
+    "languages5thGrade": " ",
+    "eTwinning": null,
+		"boravak": true,
+    "schedule": {
+      "firstShift": null,
+      "secondShift": null,
+      "mediumShift": null
+    }
+  },
+  {
+    "id": 393,
+    "name": "Основна српско-руска школа \"Антон Павлович Чехов\"",
+    "nameLatin": "Osnovna srpsko-ruska škola \"Anton Pavlović Čehov\"",
+    "city": "Нови Сад",
+    "place": "Нови Сад",
+    "address": "Трг Марије Трандафил бр. 5",
+    "languages": [
+      "serbian",
+      "russian"
+    ],
+    "phone": "066/ 184-754",
+    "email": "zivanka.m25@gmail.com",
+    "type": "Приватна ОШ",
+    "lat": 45.2596907,
+    "lng": 19.8436628,
+    "telegram": "",
+    "website": "https://osruskaskola.edu.rs",
+    "erasmus": null,
+    "sports": null,
+    "languages1stGrade": " ",
+    "languages5thGrade": " ",
+    "eTwinning": null,
+		"boravak": true,
+    "schedule": {
+      "firstShift": null,
+      "secondShift": null,
+      "mediumShift": null
+    }
+  }
+]

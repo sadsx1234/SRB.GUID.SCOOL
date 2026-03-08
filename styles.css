@@ -1,0 +1,205 @@
+/* --- Общие стили --- */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  margin: 0;
+  background: #f0f2f5;
+  color: #333; /* Основной цвет текста */
+}
+.container {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 20px;
+}
+h2 {
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 10px;
+}
+
+/* --- Стили для ГЛАВНЫХ ВКЛАДОК (Навигация) --- */
+nav.tabs {
+  display: flex;
+  border-bottom: 2px solid #007bff;
+  margin-bottom: 20px;
+}
+.tab-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  background: #f0f2f5;
+  color: #333; /* Устанавливаем черный/темный цвет текста */
+  border: 1px solid #ccc;
+  border-bottom: none;
+  cursor: pointer;
+  border-radius: 5px 5px 0 0;
+  margin-right: 5px;
+  margin-bottom: -2px; 
+  position: relative;
+}
+.tab-button.active {
+  background: #fff;
+  border-color: #007bff #007bff #fff; 
+  border-width: 2px;
+  border-style: solid;
+  color: #007bff; /* Активная вкладка синим */
+}
+
+/* --- Стили для БЛОКОВ РЕДАКТИРОВАНИЯ ШКОЛ (ИЗОЛЯЦИЯ) --- */
+.school-edit-container {
+  max-width: 900px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Стили СПИСКА ШКОЛ --- */
+#school-list { 
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+/* Блок отдельной школы */
+.school-block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  margin-bottom: 10px;
+  background-color: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 6px;
+  transition: background-color 0.2s;
+  color: #000; /* Гарантируем черный цвет текста */
+}
+
+.school-block:hover {
+  background-color: #e2e6ea;
+}
+
+.school-details {
+  flex-grow: 1;
+  margin-right: 15px;
+}
+
+.school-name-text {
+  font-size: 1.1em;
+  color: #000;
+  margin-bottom: 4px;
+}
+
+.school-info-details {
+  font-size: 0.9em;
+  color: #555;
+}
+
+.manage-btn {
+  background-color: #007bff;
+  color: white;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.manage-btn:hover {
+  background-color: #0056b3;
+}
+
+/* --- Стили формы редактирования (внутренние вкладки) --- */
+#edit-form-container {
+    margin-top: 20px;
+}
+.tab-headers {
+    display: flex;
+    overflow-x: auto;
+    border-bottom: 2px solid #ccc;
+    margin-bottom: 20px;
+    padding-bottom: 0;
+    white-space: nowrap;
+}
+/* Стили кнопок внутренней формы (из диалога) */
+#edit-form-container .tab-button {
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+    border-bottom: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    margin-right: 5px;
+    border-radius: 5px 5px 0 0;
+    transition: background-color 0.2s, color 0.2s;
+    flex-shrink: 0;
+}
+
+#edit-form-container .tab-button.active {
+    background-color: #fff;
+    border-color: #ccc;
+    border-bottom: 2px solid #fff;
+    color: #0056b3;
+    font-weight: bold;
+}
+.tab-content {
+    padding: 15px 0;
+}
+.tab-content.active {
+    display: block;
+}
+
+.form-actions button {
+    margin-right: 10px;
+}
+#save-button { background-color: #28a745; color: white; }
+#close-button { background-color: #6c757d; color: white; }
+
+.warning-text { 
+  color: orange; 
+  border: 1px solid orange; 
+  padding: 8px; 
+  margin-top: 10px; 
+}
+/* Добавьте сюда ваши остальные стили из styles.css */
+/* --- Адаптация стилей списка школ для новостей --- */
+
+/* Контейнер списка новостей теперь выглядит как контейнер списка школ */
+#newsListContainer .school-list { 
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+/* Блок отдельной новости */
+.news-item-block {
+    /* Использует все стили .school-block */
+    /* Дополнительные стили, если нужны */
+    align-items: flex-start; /* Выравнивание по верхнему краю */
+}
+
+.news-details {
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.news-link-details {
+    font-size: 0.8em;
+    color: #007bff;
+    margin-top: 5px;
+}
+
+/* Переопределяем цвет кнопок для активации/деактивации */
+.news-item-block .manage-btn {
+    font-weight: normal;
+    padding: 8px 12px;
+    margin-left: 15px;
+    flex-shrink: 0;
+    font-size: 14px;
+}
+
+.news-item-block .manage-btn.activate {
+    background-color: #28a745; /* Зеленый */
+}
+.news-item-block .manage-btn.deactivate {
+    background-color: #dc3545; /* Красный */
+}

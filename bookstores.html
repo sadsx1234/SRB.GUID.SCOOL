@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Магазины учебников в Нови-Саде (2-8 разред)</title>
+    <meta name="description" content="Список и карта книжных магазинов в Нови-Саде, где можно купить новые и б/у учебники для 2-8 классов. Вся информация, контакты и расположение."/>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <style>
+        :root {
+            --primary-color: #007bff;
+            --secondary-color: #f0f4f8;
+            --text-color: #333;
+            --light-gray: #e9ecef;
+            --card-border: #dee2e6;
+            --accent-green: #28a745;
+            --accent-blue: #17a2b8;
+            --online-color: #6f42c1;
+            --obsidian-clipper-text-muted: #5c5c5c;
+        }
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+        }
+        .container {
+            max-width: 1300px;
+            margin: 20px auto;
+            background-color: #fff;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+        }
+        .lang-switcher {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 5px;
+            z-index: 1000;
+        }
+        .lang-switcher button {
+            background-color: #f0f4f8;
+            border: 1px solid #dee2e6;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .lang-switcher button.active {
+            background-color: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+        h1 {
+            text-align: center;
+            padding: 20px 0;
+            color: var(--primary-color);
+            margin: 0;
+        }
+        .tabs { display: flex; justify-content: center; border-bottom: 2px solid var(--light-gray); flex-wrap: wrap; }
+        .tab { padding: 15px 20px; cursor: pointer; font-weight: 600; color: var(--text-color); transition: background-color 0.3s ease, color 0.3s ease; white-space: nowrap; text-decoration: none; }
+        .tab.active { color: var(--primary-color); border-bottom: 3px solid var(--primary-color); }
+        .tab:hover { background-color: var(--light-gray); }
+        .tab-content { display: block; padding: 20px; }
+        .bookstores-container { display: flex; flex-direction: row; min-height: 70vh; gap: 20px; }
+        .bookstores-map { flex: 1; position: relative; min-height: 600px; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.08); }
+        .bookstores-list { flex: 1; padding: 20px; overflow-y: auto; max-height: 70vh; background-color: #fff; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.08); }
+        #map-bookstores { height: 100%; width: 100%; min-height: 600px; }
+        .bookstore-card { background-color: #fff; border-radius: 8px; border: 1px solid var(--card-border); margin-bottom: 20px; padding: 15px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer; }
+        .bookstore-card:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .bookstore-card.online { border-left: 4px solid var(--online-color); }
+        .bookstore-card.offline { border-left: 4px solid var(--accent-green); }
+        .bookstore-card.highlighted { background-color: rgba(0, 123, 255, 0.1) !important; border-color: var(--primary-color) !important; }
+        .bookstore-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px; }
+        .bookstore-name { font-size: 1.2rem; font-weight: bold; color: var(--primary-color); }
+        .bookstore-type { display: flex; align-items: center; font-size: 0.8rem; padding: 3px 8px; border-radius: 4px; font-weight: bold; }
+        .bookstore-type.offline { background-color: rgba(40, 167, 69, 0.1); color: var(--accent-green); }
+        .bookstore-type.online { background-color: rgba(111, 66, 193, 0.1); color: var(--online-color); }
+        .bookstore-type i { margin-right: 5px; }
+        .bookstore-address { color: var(--obsidian-clipper-text-muted); margin-bottom: 10px; display: flex; align-items: center; }
+        .bookstore-address i { margin-right: 8px; }
+        .bookstore-info { margin-bottom: 8px; }
+        .bookstore-info-title { font-weight: bold; margin-right: 5px; }
+        .bookstore-contacts { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px; }
+        .bookstore-contact-item { display: flex; align-items: center; color: var(--text-color); }
+        .bookstore-contact-item i { margin-right: 5px; color: var(--primary-color); }
+        .bookstore-contact-item a { color: var(--primary-color); text-decoration: none; transition: color 0.3s ease; }
+        .bookstore-contact-item a:hover { color: var(--accent-blue); text-decoration: underline; }
+        .bookstore-comment { font-style: italic; color: var(--obsidian-clipper-text-muted); margin-top: 10px; font-size: 0.9rem; }
+        .bookstore-badge { display: inline-block; padding: 3px 8px; border-radius: 4px; font-size: 0.8rem; font-weight: bold; margin-right: 5px; background-color: var(--light-gray); }
+        .bookstore-badge.online-check { background-color: var(--accent-green); color: white; }
+        .bookstore-badge.reserve { background-color: var(--accent-blue); color: white; }
+        .bookstores-page-title { text-align: center; margin-bottom: 20px; color: var(--primary-color); }
+        @media (max-width: 768px) {
+            h1 { font-size: 1.5rem; }
+            .bookstores-container { flex-direction: column; }
+            .bookstores-map { height: 50vh; order: 2; }
+            .bookstores-list { max-height: none; order: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="lang-switcher">
+            <button id="lang-ru" onclick="setLanguage('ru')">RU</button>
+            <button id="lang-en" onclick="setLanguage('en')">EN</button>
+        </div>
+        <h1 data-translate-key="mainHeader">Выбор государственной основной школы для ребенка в Нови-сад</h1>
+        <div class="tabs">
+            <a href="schools.html" class="tab" data-translate-key="tabSchools">🔍 Карта школ</a>
+            <a href="search.html" class="tab" data-translate-key="tabAddress">📍 Поиск по адресу</a>
+            <a href="enrollment.html" class="tab" data-translate-key="tabEnrollment" style="display: none;">✅ Поступление в 1 класс</a>
+            <a href="bookstores.html" class="tab active" data-translate-key="tabBookstores">📚 Где купить книги</a>
+            <a href="documents.html" class="tab" data-translate-key="tabDocuments">📝 Документы (шаблоны)</a>
+        </div>
+        <div id="bookstores-tab" class="tab-content active">
+            <div class="bookstores-container">
+                <div class="bookstores-map">
+                    <div id="map-bookstores"></div>
+                </div>
+                <div class="bookstores-list">
+                    <h2 class="bookstores-page-title" data-translate-key="pageHeader">Магазины учебников в Нови Саде</h2>
+                    
+                    <div class="bookstore-card offline" data-shop-id="10" data-lat="45.256122" data-lng="19.8489824">
+                        <div class="bookstore-header">
+                            <div class="bookstore-name">Polovni udzbenici Dunavska Novi Sad</div>
+                            <div class="bookstore-type offline"><i class="fas fa-store"></i> <span data-translate-key="typeOffline">Оффлайн</span></div>
+                        </div>
+                        <div class="bookstore-address"><i class="fas fa-map-marker-alt"></i> <span data-translate-key="addr_dunavska">Дунавская, Центр</span></div>
+                        <div class="bookstore-info">
+                            <span class="bookstore-info-title" data-translate-key="sellsTitle">Что продают:</span> <span data-translate-key="shop10_sells">Б/у учебники с 5-го класса</span>
+                        </div>
+                        <div class="bookstore-contacts">
+                            <div class="bookstore-contact-item"><i class="fas fa-phone"></i><a href="tel:611412037">611412037</a></div>
+                        </div>
+                        <div class="bookstore-comment" data-translate-key="shop10_comment">Онлайн поиск с доставкой</div>
+                    </div>
+                    
+                    <div class="bookstore-card offline" data-shop-id="11" data-lat="45.2538257" data-lng="19.8382978">
+                        <div class="bookstore-header">
+                            <div class="bookstore-name">polovni i novi udzbenici za osnovnu i srednju skolu</div>
+                            <div class="bookstore-type offline"><i class="fas fa-store"></i> <span data-translate-key="typeOffline">Оффлайн</span></div>
+                        </div>
+                        <div class="bookstore-address"><i class="fas fa-map-marker-alt"></i> <span data-translate-key="addr_gajeva">Гајева 16, Еврейская</span></div>
+                        <div class="bookstore-info">
+                            <span class="bookstore-info-title" data-translate-key="sellsTitle">Что продают:</span> <span data-translate-key="sellsUsedNew">Б/у, новые</span>
+                        </div>
+                        <div class="bookstore-contacts">
+                            <div class="bookstore-contact-item"><i class="fas fa-phone"></i><a href="tel:613113207">613113207</a></div>
+                        </div>
+                        <div class="bookstore-comment" data-translate-key="shop11_comment">Выбор Б/у</div>
+                    </div>
+                    
+                    <div class="bookstore-card online" data-shop-id="12">
+                        <div class="bookstore-header">
+                            <div class="bookstore-name">Hijeroglif</div>
+                            <div class="bookstore-type online"><i class="fas fa-globe"></i> <span data-translate-key="typeOnline">Онлайн</span></div>
+                        </div>
+                        <div class="bookstore-info">
+                            <span class="bookstore-info-title" data-translate-key="sellsTitle">Что продают:</span> <span data-translate-key="sellsNew">новые</span>
+                        </div>
+                        <div class="bookstore-contacts">
+                            <div class="bookstore-contact-item"><i class="fas fa-phone"></i><a href="tel:607930624">607930624</a></div>
+                            <div class="bookstore-contact-item"><i class="fas fa-globe"></i><a href="https://www.hijeroglif.rs/" target="_blank" data-translate-key="website">Сайт</a></div>
+                        </div>
+                    </div>
+                    
+                    <div class="bookstore-card online" data-shop-id="13">
+                        <div class="bookstore-header">
+                            <div class="bookstore-name">Фондација Алек Кавчић</div>
+                            <div class="bookstore-type online"><i class="fas fa-globe"></i> <span data-translate-key="typeOnline">Онлайн</span></div>
+                        </div>
+                        <div class="bookstore-info">
+                            <span class="bookstore-info-title" data-translate-key="sellsTitle">Что продают:</span> <span data-translate-key="sellsFree">Бесплатные материалы</span>
+                        </div>
+                        <div class="bookstore-contacts">
+                            <div class="bookstore-contact-item"><i class="fas fa-globe"></i><a href="https://www.besplatnabiblioteka.com/" target="_blank" data-translate-key="website">Сайт</a></div>
+                        </div>
+                        <div class="bookstore-comment" data-translate-key="shop13_comment">Бесплатные материалы</div>
+                    </div>
+                    
+                    <div class="bookstore-card offline" data-shop-id="1" data-lat="45.2536577" data-lng="19.8061844">
+                        <div class="bookstore-header">
+                            <div class="bookstore-name">Polovni udzbenici 021</div>
+                            <div class="bookstore-type offline"><i class="fas fa-store"></i> <span data-translate-key="typeOffline">Оффлайн</span></div>
+                        </div>
+                        <div class="bookstore-address"><i class="fas fa-map-marker-alt"></i> <span data-translate-key="addr_radomira">Радомира Раше Радујкова 4, Бистрица</span></div>
+                        <div class="bookstore-info">
+                            <span class="bookstore-info-title" data-translate-key="sellsTitle">Что продают:</span> <span data-translate-key="sellsUsedNew">б\у, новые</span>
+                        </div>
+                        <div class="bookstore-info">
+                            <span class="bookstore-badge online-check" data-translate-key="badgeOnlineCheck">Можно уточнить онлайн</span>
+                            <span class="bookstore-badge reserve" data-translate-key="badgeReserve">Можно забронировать</span>
+                        </div>
+                        <div class="bookstore-contacts">
+                            <div class="bookstore-contact-item"><i class="fas fa-phone"></i><a href="tel:644462088">644462088</a></div>
+                            <div class="bookstore-contact-item"><i class="fab fa-facebook"></i><a href="https://www.facebook.com/polovniudzbenici021?_rdr" target="_blank">Facebook</a></div>
+                        </div>
+                        <div class="bookstore-comment" data-translate-key="shop1_comment">Выбор Б/у</div>
+                    </div>
+
+                    <div class="bookstore-card offline" data-shop-id="2" data-lat="45.2523638" data-lng="19.8386103">
+                        <div class="bookstore-header">
+                            <div class="bookstore-name">Polovni udžbenici novi sad</div>
+                            <div class="bookstore-type offline"><i class="fas fa-store"></i> <span data-translate-key="typeOffline">Оффлайн</span></div>
+                        </div>
+                        <div class="bookstore-address"><i class="fas fa-map-marker-alt"></i> <span data-translate-key="addr_vase">Васе Пелагића 13, Еврейская</span></div>
+                        <div class="bookstore-info">
+                            <span class="bookstore-info-title" data-translate-key="sellsTitle">Что продают:</span> <span data-translate-key="sellsUsedNew">б\у, новые</span>
+                        </div>
+                        <div class="bookstore-contacts">
+                            <div class="bookstore-contact-item"><i class="fas fa-phone"></i><a href="tel:628574117">628574117</a></div>
+                            <div class="bookstore-contact-item"><i class="fab fa-instagram"></i><a href="https://www.instagram.com/polovni_udzbenicins/" target="_blank">Instagram</a></div>
+                        </div>
+                        <div class="bookstore-comment" data-translate-key="shop2_comment">Большой выбор Б/у</div>
+                    </div>
+
+                    <div class="bookstore-card offline" data-shop-id="3" data-lat="45.2523316" data-lng="19.8382978">
+                        <div class="bookstore-header">
+                            <div class="bookstore-name">Kodeks Books</div>
+                            <div class="bookstore-type offline"><i class="fas fa-store"></i> <span data-translate-key="typeOffline">Оффлайн</span></div>
+                        </div>
+                        <div class="bookstore-address"><i class="fas fa-map-marker-alt"></i> <span data-translate-key="addr_jevrejska">Јеврејска 23, Еврейская</span></div>
+                        <div class="bookstore-info">
+                            <span class="bookstore-info-title" data-translate-key="sellsTitle">Что продают:</span> <span data-translate-key="sellsUsedNew">б\у, новые</span>
+                        </div>
+                        <div class="bookstore-contacts">
+                            <div class="bookstore-contact-item"><i class="fas fa-phone"></i><a href="tel:643860202">643860202</a></div>
+                            <div class="bookstore-contact-item"><i class="fas fa-globe"></i><a href="https://udzbenici.co.rs/" target="_blank" data-translate-key="website">Сайт</a></div>
+                        </div>
+                        <div class="bookstore-comment" data-translate-key="shop3_comment">Хорошие цены, удобное общение</div>
+                    </div>
+
+                    <div class="bookstore-card offline" data-shop-id="4" data-lat="45.2531798" data-lng="19.8453733">
+                        <div class="bookstore-header">
+                            <div class="bookstore-name">Bulevar Books</div>
+                            <div class="bookstore-type offline"><i class="fas fa-store"></i> <span data-translate-key="typeOffline">Оффлайн</span></div>
+                        </div>
+                        <div class="bookstore-address"><i class="fas fa-map-marker-alt"></i> <span data-translate-key="addr_bulevar">Булевар Михајла Пупина 6, Центр</span></div>
+                        <div class="bookstore-info">
+                            <span class="bookstore-info-title" data-translate-key="sellsTitle">Что продают:</span> <span data-translate-key="sellsNew">новые</span>
+                        </div>
+                        <div class="bookstore-contacts">
+                            <div class="bookstore-contact-item"><i class="fas fa-phone"></i><a href="tel:213008166">213008166</a></div>
+                            <div class="bookstore-contact-item"><i class="fas fa-globe"></i><a href="https://bulevarbooks.com/" target="_blank" data-translate-key="website">Сайт</a></div>
+                        </div>
+                        <div class="bookstore-comment" data-translate-key="shop4_comment">Уютный, арт-магазин книг</div>
+                    </div>
+
+                    <div class="bookstore-card online" data-shop-id="5">
+                        <div class="bookstore-header">
+                            <div class="bookstore-name">Синтра</div>
+                            <div class="bookstore-type online"><i class="fas fa-globe"></i> <span data-translate-key="typeOnline">Онлайн</span></div>
+                        </div>
+                        <div class="bookstore-contacts">
+                            <div class="bookstore-contact-item"><i class="fas fa-phone"></i><a href="tel:611933248">611933248</a></div>
+                            <div class="bookstore-contact-item"><i class="fas fa-globe"></i><a href="https://www.sintra.rs/" target="_blank" data-translate-key="website">Сайт</a></div>
+                        </div>
+                        <div class="bookstore-comment" data-translate-key="shop5_comment">Быстрая доставка</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        let map;
+        const markers = [];
+        const currentLang = localStorage.getItem('language') || 'ru';
+
+        const translations = {
+            // Meta & Tabs
+            meta_title: { ru: 'Магазины учебников в Нови-Саде (2-8 разред)', en: 'Textbook Stores in Novi Sad (Grades 2-8)' },
+            meta_desc: { ru: 'Список и карта книжных магазинов в Нови-Саде, где можно купить новые и б/у учебники для 2-8 классов. Вся информация, контакты и расположение.', en: 'List and map of bookstores in Novi Sad where you can buy new and used textbooks for grades 2-8. All information, contacts, and locations.' },
+            mainHeader: { ru: 'Выбор государственной основной школы для ребенка в Нови-сад', en: 'Choosing a Public Elementary School for Your Child in Novi Sad' },
+            tabSchools: { ru: '🔍 Карта школ', en: '🔍 Map Search' },
+            tabAddress: { ru: '📍 Поиск по адресу', en: '📍 Search by Address' },
+            tabEnrollment: { ru: '✅ Поступление в 1 класс', en: '✅ 1st Grade Enrollment' },
+            tabBookstores: { ru: '📚 Где купить книги', en: '📚 Where to Buy Books' },
+            tabDocuments: { ru: '📝 Документы (шаблоны)', en: '📝 Documents (templates)' },
+            // Page content
+            pageHeader: { ru: 'Магазины учебников в Нови Саде', en: 'Textbook Stores in Novi Sad' },
+            typeOffline: { ru: 'Оффлайн', en: 'Offline' },
+            typeOnline: { ru: 'Онлайн', en: 'Online' },
+            sellsTitle: { ru: 'Что продают:', en: 'Sells:' },
+            website: { ru: 'Сайт', en: 'Website' },
+            // Addresses
+            addr_dunavska: { ru: 'Дунавская, Центр', en: 'Dunavska, Center' },
+            addr_gajeva: { ru: 'Гајева 16, Еврейская', en: 'Gajeva 16, Jevrejska' },
+            addr_radomira: { ru: 'Радомира Раше Радујкова 4, Бистрица', en: 'Radomira Raše Radujkova 4, Bistrica' },
+            addr_vase: { ru: 'Васе Пелагића 13, Еврейская', en: 'Vase Pelagića 13, Jevrejska' },
+            addr_jevrejska: { ru: 'Јеврејска 23, Еврейская', en: 'Jevrejska 23, Jevrejska' },
+            addr_bulevar: { ru: 'Булевар Михајла Пупина 6, Центр', en: 'Bulevar Mihajla Pupina 6, Center' },
+            // Store specific
+            sellsUsedNew: { ru: 'Б/у, новые', en: 'Used, new' },
+            sellsNew: { ru: 'новые', en: 'new' },
+            sellsFree: { ru: 'Бесплатные материалы', en: 'Free materials' },
+            shop10_sells: { ru: 'Б/у учебники с 5-го класса', en: 'Used textbooks from 5th grade' },
+            shop10_comment: { ru: 'Онлайн поиск с доставкой', en: 'Online search with delivery' },
+            shop11_comment: { ru: 'Выбор Б/у', en: 'Selection of used books' },
+            shop13_comment: { ru: 'Бесплатные материалы', en: 'Free materials' },
+            shop1_comment: { ru: 'Выбор Б/у', en: 'Selection of used books' },
+            shop2_comment: { ru: 'Большой выбор Б/у', en: 'Large selection of used books' },
+            shop3_comment: { ru: 'Хорошие цены, удобное общение', en: 'Good prices, easy communication' },
+            shop4_comment: { ru: 'Уютный, арт-магазин книг', en: 'Cozy, art bookstore' },
+            shop5_comment: { ru: 'Быстрая доставка', en: 'Fast delivery' },
+            // Badges
+            badgeOnlineCheck: { ru: 'Можно уточнить онлайн', en: 'Check availability online' },
+            badgeReserve: { ru: 'Можно забронировать', en: 'Reservations available' },
+            // Map popup
+            popupTypeTitle: { ru: 'Тип', en: 'Type' },
+        };
+
+        function setLanguage(lang) {
+            localStorage.setItem('language', lang);
+            document.documentElement.lang = lang;
+
+            document.getElementById('lang-ru').classList.toggle('active', lang === 'ru');
+            document.getElementById('lang-en').classList.toggle('active', lang === 'en');
+
+            document.title = translations.meta_title[lang];
+            document.querySelector('meta[name="description"]').setAttribute('content', translations.meta_desc[lang]);
+
+            document.querySelectorAll('[data-translate-key]').forEach(el => {
+                const key = el.getAttribute('data-translate-key');
+                if (translations[key] && translations[key][lang]) {
+                    el.innerHTML = translations[key][lang];
+                }
+            });
+
+            if (map) {
+                updateMapPopups(lang);
+            }
+        }
+
+        function initializeMap() {
+            const mapContainer = document.getElementById('map-bookstores');
+            if (!mapContainer || map) return;
+
+            try {
+                map = L.map('map-bookstores', { center: [45.255, 19.8335], zoom: 14 });
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    attribution: '© OpenStreetMap contributors', maxZoom: 19
+                }).addTo(map);
+                addMarkers();
+                addEventListeners();
+            } catch (error) {
+                console.error('Error initializing map:', error);
+            }
+        }
+
+        function addMarkers() {
+            const bookstoreCards = document.querySelectorAll('.bookstore-card[data-lat][data-lng]');
+            bookstoreCards.forEach(card => {
+                const lat = parseFloat(card.dataset.lat);
+                const lng = parseFloat(card.dataset.lng);
+                if (!isNaN(lat) && !isNaN(lng)) {
+                    const marker = L.marker([lat, lng]).addTo(map);
+                    markers.push({ marker, shopId: card.dataset.shopId });
+                }
+            });
+            updateMapPopups(currentLang);
+        }
+
+        function updateMapPopups(lang) {
+            markers.forEach(({ marker, shopId }) => {
+                const card = document.querySelector(`.bookstore-card[data-shop-id="${shopId}"]`);
+                if (!card) return;
+
+                const name = card.querySelector('.bookstore-name').textContent;
+                const addressNode = card.querySelector('.bookstore-address');
+                const isOnline = card.classList.contains('online');
+                const typeText = isOnline ? translations.typeOnline[lang] : translations.typeOffline[lang];
+                const addressText = addressNode ? `<p style="margin: 5px 0;"><i class="fas fa-map-marker-alt"></i> ${addressNode.textContent.trim()}</p>` : '';
+
+                const popupContent = `
+                    <div style="min-width: 200px;">
+                        <h3 style="margin: 0 0 10px 0; color: #007bff;">${name}</h3>
+                        ${addressText}
+                        <p style="margin: 5px 0;"><strong>${translations.popupTypeTitle[lang]}:</strong> ${typeText}</p>
+                    </div>`;
+                marker.bindPopup(popupContent);
+            });
+        }
+
+        function addEventListeners() {
+            document.querySelectorAll('.bookstore-card[data-lat][data-lng]').forEach(card => {
+                card.addEventListener('click', function() {
+                    const lat = parseFloat(this.dataset.lat);
+                    const lng = parseFloat(this.dataset.lng);
+                    
+                    if (!isNaN(lat) && !isNaN(lng)) {
+                        map.setView([lat, lng], 16);
+                        
+                        const markerInfo = markers.find(m => m.shopId === this.dataset.shopId);
+                        if (markerInfo) {
+                            markerInfo.marker.openPopup();
+                        }
+
+                        document.querySelectorAll('.bookstore-card').forEach(c => c.classList.remove('highlighted'));
+                        this.classList.add('highlighted');
+                        
+                        setTimeout(() => this.classList.remove('highlighted'), 3000);
+                    }
+                });
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            setLanguage(currentLang);
+            initializeMap();
+        });
+    </script>
+</body>
+</html>

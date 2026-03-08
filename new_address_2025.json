@@ -1,0 +1,2452 @@
+[
+  {"id": 194, "district": "Petrovaradinu", "type": "all_street"},
+  {"id": 195, "district": "Begeč", "type": "all_street"},
+  {"id": 196, "district": "Stepanovićevo", "type": "all_street"},
+  {
+    "id": 197,
+    "district": null,
+    "streets": [
+      {
+        "name": "Industrijska",
+        "type": "all",
+        "text": "neparni brojevi od broja 49 do kraja ulice i parni brojevi",
+        "street": {
+          "odd" : {"first": 49, "end": null},
+          "even": {"first": 50, "end": null}
+        }
+      },
+      {"name": "Toze Markovića", "type": "all", "street": null},
+      {
+        "name": "Zdravka Čelara",
+        "type": "all",
+        "text": "od broja 101 i 62 do kraja ulice",
+        "street": {"first": 101, "end": null}
+      },
+      {
+        "name": "Zdravka Čelara",
+        "type": "all",
+        "text": "od broja 101 i 62 do kraja ulice",
+        "street": {"first": 62, "end": null}
+      },
+      {
+        "name"  : "Marije Bursać Republike srpske",
+        "type"  : "all",
+        "street": null
+      },
+      {"name": "Rumenačka", "type": "all", "street": null},
+      {"name": "Sutjeska", "type": "all", "street": null},
+      {
+        "name": "Rade Kondića",
+        "type": "all",
+        "text": "neparni brojevi i parni od broja 122 do kraja ulice",
+        "street": {
+          "odd" : {"first": 122, "end": null},
+          "even": {"first": 123, "end": null}
+        }
+      },
+      {
+        "name": "Krajiška",
+        "type": "all",
+        "text": "neparni brojevi od broja 47 i parni brojevi od broja 48a do kraja ulice",
+        "street": {
+          "odd" : {"first": 47,    "end": null},
+          "even": {"first": "48a", "end": null}
+        }
+      },
+      {"name": "Romanijska", "type": "all", "street": null},
+      {
+        "name": "Povrtarska",
+        "type": "all",
+        "text": "neparni brojevi od broja 51 i parni brojevi od broja 50a do kraja ulice",
+        "street": {
+          "odd" : {"first": 51,    "end": null},
+          "even": {"first": "50a", "end": null}
+        }
+      },
+      {
+        "name": "Gavrila Principa",
+        "type": "all",
+        "text": "neparni brojevi od broja 47 i parni brojevi od broja 36 do kraja ulice",
+        "street": {
+          "odd" : {"first": 47, "end": null},
+          "even": {"first": 36, "end": null}
+        }
+      },
+      {"name": "Prvomajska", "type": "all", "street": null},
+      {
+        "name": "Svetozara Markovića",
+        "type": "all",
+        "text": "od broja 43 i 36 do kraja ulice",
+        "street": {"first": 43, "end": null}
+      },
+      {
+        "name": "Svetozara Markovića",
+        "type": "all",
+        "text": "od broja 43 i 36 do kraja ulice",
+        "street": {"first": 36, "end": null}
+      },
+      {"name": "Braće Bošnjak", "type": "all", "street": null},
+      {"name": "Svetozara Miletića", "type": "all", "street": null},
+      {"name": "Boška Buhe", "type": "all", "street": null},
+      {"name": "Heroja Pinkija", "type": "all", "street": null},
+      {"name": "Save Kovačevića", "type": "all", "street": null},
+      {
+        "name": "Cara Lazara",
+        "type": "all",
+        "text": "od broja 143 i 152 do kraja ulice",
+        "street": {"first": 143, "end": null}
+      },
+      {
+        "name": "Cara Lazara",
+        "type": "all",
+        "text": "od broja 143 i 152 do kraja ulice",
+        "street": {"first": 152, "end": null}
+      },
+      {"name": "Stevana Sremca", "type": "all", "street": null},
+      {"name": "Majevička", "type": "all", "street": null},
+      {"name": "Vuka Karadžića", "type": "all", "street": null},
+      {"name": "Rakovačka", "type": "all", "street": null},
+      {"name": "Jovana Skerlića", "type": "all", "street": null},
+      {"name": "Vojvode Bojovića", "type": "all", "street": null},
+      {"name": "Ive Andrića", "type": "all", "street": null},
+      {
+        "name": "Ribarska",
+        "type": "all",
+        "text": "od broja 17 do kraja ulice",
+        "street": {"first": 17, "end": null}
+      },
+      {"name": "Dimitrija Lazareva Raše", "type": "all", "street": null},
+      {"name": "Novosadska", "type": "all", "street": null},
+      {"name": "Žarka Aleksića", "type": "all", "street": null},
+      {"name": "Pop Janka", "type": "all", "street": null},
+      {"name": "Dušana Šijačkog", "type": "all", "street": null},
+      {"name": "Stevana Šijačkog", "type": "all", "street": null},
+      {"name": "Dr Milana Kostića", "type": "all", "street": null},
+      {"name": "Žarka Zrenjanina", "type": "all", "street": null},
+      {"name": "Laze Kostića", "type": "all", "street": null},
+      {"name": "Jovana Veselinova", "type": "all", "street": null},
+      {"name": "Mihajla Pupina", "type": "all", "street": null},
+      {"name": "Ledinačka", "type": "all", "street": null},
+      {"name": "Vojvode Mišića", "type": "all", "street": null},
+      {"name": "Nova 4", "type": "all", "street": null},
+      {"name": "Miroslava Antića", "type": "all", "street": null},
+      {"name": "Vojvođanskih brigada", "type": "all", "street": null},
+      {"name": "Zelengorska", "type": "all", "street": null},
+      {"name": "Vase Stajića", "type": "all", "street": null},
+      {"name": "Nikole Tesle", "type": "all", "street": null},
+      {"name": "Banjalučka", "type": "all", "street": null},
+      {"name": "Rade Končara", "type": "all", "street": null},
+      {"name": "Relje Savića", "type": "all", "street": null},
+      {"name": "Jovana Dučića", "type": "all", "street": null},
+      {"name": "Stepe Stepanovića", "type": "all", "street": null},
+      {"name": "Duška Trifunovića", "type": "all", "street": null}
+    ]
+  },
+  {
+    "id": 198,
+    "district": null,
+    "streets": [
+      {"name": "Lepe Radić", "type": "all", "street": null},
+      {"name": "Ilije Jeličića (Nova 3)", "type": "all", "street": null},
+      {"name": "Slaviše Vajnera Čiče", "type": "all", "street": null},
+      {"name": "Josipa Mažara Šoše", "type": "all", "street": null},
+      {"name": "Kordunaška", "type": "all", "street": null},
+      {"name": "Sime Šolaje", "type": "all", "street": null},
+      {"name": "Slavka Rodića", "type": "all", "street": null},
+      {"name": "Carice Milice", "type": "all", "street": null},
+      {"name": "Dr Milana Nikolića", "type": "all", "street": null},
+      {"name": "Ivana Milutinovića", "type": "all", "street": null},
+      {"name": "Moše Pijade", "type": "all", "street": null},
+      {"name": "Sonje Marinković", "type": "all", "street": null},
+      {"name": "Omladinska", "type": "all", "street": null},
+      {"name": "Marka Peričina", "type": "all", "street": "Kamenjara"},
+      {"name": "Kamenjara", "type": "all", "street": null},
+      {"name": "Petra Kočića", "type": "all", "street": null},
+      {"name": "Đure Đakovića", "type": "all", "street": null},
+      {"name": "Dunavska", "type": "all", "street": null},
+      {"name": "Panonska", "type": "all", "street": null},
+      {"name": "7. jula", "type": "all", "street": null},
+      {"name": "Petra Mećave", "type": "all", "street": null},
+      {"name": "Proleterska", "type": "all", "street": null},
+      {"name": "Železnička", "type": "all", "street": null},
+      {"name": "Put za Plantu", "type": "all", "street": null},
+      {"name": "Grmečka", "type": "all", "street": null},
+      {"name": "Joakima Vujića", "type": "all", "street": null},
+      {"name": "Nade Dimić", "type": "all", "street": null},
+      {"name": "Marka Jelesića", "type": "all", "street": null},
+      {"name": "Bosanska", "type": "all", "street": null},
+      {"name": "Save Mrkalja", "type": "all", "street": null},
+      {"name": "Vladana Stefanovića", "type": "all", "street": null},
+      {"name": "Dušana Košutića", "type": "all", "street": null},
+      {"name": "Kralja Dragutina", "type": "all", "street": null},
+      {"name": "Milana Vidaka", "type": "all", "street": null},
+      {"name": "Futoškog vašara", "type": "all", "street": null},
+      {"name": "Lazara Kneževića", "type": "all", "street": null},
+      {
+        "name": "Zdravka Čelara",
+        "type": "all",
+        "text": "od broja 1 do 99 i od broja 2 do 60",
+        "street": {
+          "odd" : {"first": 1, "end": 99},
+          "even": {"first": 2, "end": 60}
+        }
+      },
+      {"name": "Vasilija Gaćeše", "type": "all", "street": null},
+      {"name": "dr Mladena Stojanovića", "type": "all", "street": null},
+      {
+        "name": "Rade Kondića",
+        "type": "all",
+        "text": "od broja 2 do broja 120",
+        "street": {"first": 2, "end": 120}
+      },
+      {"name": "Branka Ćopića", "type": "all", "street": null},
+      {"name": "Njegoševa", "type": "all", "street": null},
+      {"name": "Zmaj Jovina", "type": "all", "street": null},
+      {"name": "Pionirska", "type": "all", "street": null},
+      {"name": "Uroša Predića", "type": "all", "street": null},
+      {"name": "Fruškogorska", "type": "all", "street": null},
+      {"name": "Jovana Popovića", "type": "all", "street": null},
+      {"name": "Petra Drapšina", "type": "all", "street": null},
+      {"name": "Ratarska", "type": "all", "street": null},
+      {"name": "Sremska", "type": "all", "street": null},
+      {"name": "Partizanska", "type": "all", "street": null},
+      {"name": "Vojvođanska", "type": "all", "street": null},
+      {"name": "Radnička", "type": "all", "street": null},
+      {"name": "Lovačka", "type": "all", "street": null},
+      {"name": "Đure Jakšića", "type": "all", "street": null},
+      {
+        "name": "Svetozara Markovića",
+        "type": "all",
+        "text": "neparni brojevi od 1 do 41 i parni brojevi od 2 do 34",
+        "street": {
+          "odd" : {"first": 1, "end": 41},
+          "even": {"first": 2, "end": 34}
+        }
+      },
+      {
+        "name": "Cara Lazara",
+        "type": "all",
+        "text": "neparni brojevi od 1 do 139 i parni brojevi od 2 do 150",
+        "street": {
+          "odd" : {"first": 1, "end": 139},
+          "even": {"first": 2, "end": 150}
+        }
+      },
+      {"name": "Branka Radičevića", "type": "all", "street": null},
+      {
+        "name": "Gavrila Principa",
+        "type": "all",
+        "text": "neparni brojevi od broja 1 do 45 i parni brojevi od broja 2 do 34",
+        "street": {
+          "odd" : {"first": 1, "end": 45},
+          "even": {"first": 2, "end": 34}
+        }
+      },
+      {
+        "name": "Povrtarska",
+        "type": "all",
+        "text": "neparni brojevi od broja 1 do 49 i parni brojevi od broja 2 do 50",
+        "street": {
+          "odd" : {"first": 1, "end": 49},
+          "even": {"first": 2, "end": 50}
+        }
+      },
+      {"name": "Romanijska", "type": "all", "street": null},
+      {
+        "name": "Krajiška",
+        "type": "all",
+        "text": "neparni brojevi od broja 1 do 45 i parni brojevi od broja 2 do 46",
+        "street": {
+          "odd" : {"first": 1, "end": 45},
+          "even": {"first": 2, "end": 46}
+        }
+      },
+      {
+        "name": "Industrijska",
+        "type": "all",
+        "text": "neparni brojevi od broja 1 do 43",
+        "street": { "odd": {"first": 1, "end": 43} }
+      },
+      {
+        "name": "Ribarska",
+        "type": "all",
+        "text": "neparni brojevi od broja 1 do broja 15 i parni brojevi od broja 2 do 16",
+        "street": {
+          "odd" : {"first": 1, "end": 15},
+          "even": {"first": 2, "end": 16}
+        }
+      },
+      {"name": "Kozaračka", "type": "all", "street": null},
+      {"name": "Aleksandra Adamovića", "type": "all", "street": null},
+      {"name": "Atar", "type": "all", "street": null}
+    ]
+  },
+  {"id": 199, "district": "Kać", "type": "all_street"},
+  {"id": 200, "district": "Budisava", "type": "all_street"},
+  {
+    "id": 201,
+    "district": null,
+    "streets": [
+      {
+        "name": "Narodnog fronta",
+        "type": "all",
+        "text": "neparni brojevi od 21 do kraja ulice i parni brojevi od 14 do kraja ulice",
+        "street": {
+          "odd" : {"first": 21, "end": null},
+          "even": {"first": 14, "end": null}
+        }
+      },
+      {"name": "Balzakova", "type": "all", "street": null},
+      {
+        "name": "Banović Strahinje",
+        "type": "all",
+        "text": "parni brojevi od 16 do 20",
+        "street": { "even": {"first": 16, "end": 20} }
+      },
+      {"name": "Jozefa Marčoka", "type": "all", "street": null},
+      {"name": "Miloša Crnjanskog", "type": "all", "street": null},
+      {"name": "Ive Andrića", "type": "all", "street": null},
+      {"name": "1300 kaplara", "type": "all", "street": null},
+      {"name": "Ribarsko ostrvo", "type": "all", "street": null},
+      {"name": "Bulevar despota Stefana", "type": "all", "street": null},
+      {
+        "name": "Šekspirova",
+        "type": "all",
+        "text": "neparni brojevi i parni brojevi od 2 do 46",
+        "street": {
+          "odd" : {"first": 1, "end": 47},
+          "even": {"first": 2, "end": 46}
+        }
+      },
+      {"name": "Podgorička", "type": "all", "street": null}
+    ]
+  },
+  {
+    "id": 202,
+    "district": null,
+    "streets": [
+      {
+        "name": "Miše Dimitrijevića",
+        "type": "all",
+        "text": "neparni brojevi od broja 3 do 53 и parni brojevi od 18 do 50",
+        "street": {
+          "odd" : {"first":  3, "end": 53},
+          "even": {"first": 18, "end": 50}
+        }
+      },
+      {
+        "name": "Gogoljeva",
+        "type": "all",
+        "text": "neparni brojevi od 1 do 25",
+        "street": { "odd": {"first": 1, "end": 25} }
+      },
+      {"name": "Puškinova", "type": "all", "street": null},
+      {"name": "Tolstojeva", "type": "all", "street": null},
+      {"name": "Hopovska", "type": "all", "street": null},
+      {
+        "name": "Bulevar cara Lazara",
+        "type": "all",
+        "text": "parni brojevi od 52 do 62 i neparni brojevi od 19 do 79",
+        "street": {
+          "odd" : {"first": 19, "end": 79},
+          "even": {"first": 52, "end": 62}
+        }
+      },
+      {"name": "Milana Simovića", "type": "all", "street": null},
+      {"name": "Alekse Šantića", "type": "all", "street": null},
+      {"name": "Vere Pavlović", "type": "all", "street": null},
+      {"name": "Vladimira Nikolića", "type": "all", "street": null},
+      {"name": "Vojvođanska", "type": "all", "street": null},
+      {"name": "Lasla Gala", "type": "all", "street": null},
+      {
+        "name": "Danila Kiša",
+        "type": "all",
+        "text": "parni brojevi od 28 do 44 i neparni brojevi od 17 c do 43",
+        "street": {
+          "odd" : {"first": 17, "end": 43},
+          "even": {"first": 28, "end": 44}
+        }
+      },
+      {
+        "name": "Bulevar oslobođenja",
+        "type": "all",
+        "text": "parni brojevi 94 i 96",
+        "street": { "even": {"first": 94, "end": 96} }
+      }
+    ]
+  },
+  {"id": 203, "district": "Šangaj", "type": "all_street"},
+  {"id": 204, "district": "Sremska Kamenica", "type": "all_street"},
+  {"id": 204, "district": "Ledinci", "type": "all_street"},
+  {"id": 204, "district": "Stari Ledinci", "type": "all_street"},
+  {
+    "id": 205,
+    "district": null,
+    "streets": [
+      {"name": "Trg neznanog junaka", "type": "all", "street": null},
+      {
+        "name": "Bulevar Mihajla Pupina",
+        "type": "all",
+        "text": "parni brojevi",
+        "street": { "even": {"first": 1, "end": 100} }
+      },
+      {"name": "Dr Laze Stanojevića", "type": "all", "street": null},
+      {"name": "Milete Jakšića", "type": "all", "street": null},
+      {
+        "name": "Vase Stajića",
+        "type": "all",
+        "text": "neparni brojevi od 1 do 13 i parni brojevi od 2 do 20/d",
+        "street": {
+          "odd" : {"first": 1, "end": 13},
+          "even": {"first": 2, "end": 20}
+        }
+      },
+      {"name": "Pavla Simića", "type": "all", "street": null},
+      {"name": "Trg galerija", "type": "all", "street": null},
+      {"name": "Vojvođanskih brigada", "type": "all", "street": null},
+      {"name": "Miroslava Antića", "type": "all", "street": null},
+      {"name": "Trg Feher Ferenca", "type": "all", "street": null},
+      {"name": "Polita Desančića", "type": "all", "street": null},
+      {"name": "Vladike Platona", "type": "all", "street": null},
+      {"name": "Jovana Đorđevića", "type": "all", "street": null},
+      {"name": "Stevana Musića", "type": "all", "street": null},
+      {"name": "Ilije Vučetića", "type": "all", "street": null},
+      {"name": "Stevana Branovačkog", "type": "all", "street": null},
+      {"name": "Jovana Boškovića", "type": "all", "street": null},
+      {"name": "Vojvode Mišića", "type": "all", "street": null},
+      {"name": "Sonje Marinković", "type": "all", "street": null},
+      {"name": "Kej žrtava racije", "type": "all", "street": null},
+      {
+        "name": "Maksima Gorkog",
+        "type": "all",
+        "text": "neparni brojevi od 3 do kraja ulice i parni od 6 do kraja ulice",
+        "street": {
+          "odd" : {"first": 3, "end": null},
+          "even": {"first": 6, "end": null}
+        }
+      },
+      {"name": "Sutjeska", "type": "all", "street": null},
+      {"name": "Radnička", "type": "all", "street": null},
+      {"name": "Lovćenska", "type": "all", "street": null},
+      {"name": "Stražilovska", "type": "all", "street": null},
+      {
+        "name": "Žarka Zrenjanina",
+        "type": "all",
+        "text": "parni brojevi od 4 do kraja ulice",
+        "street": { "even": {"first": 4, "end": null} }
+      },
+      {"name": "Kralja Aleksandra", "type": "all", "street": null},
+      {"name": "Narodnih heroja", "type": "all", "street": null},
+      {
+        "name": "Bulevar cara Lazara",
+        "type": "all",
+        "text": "parni brojevi od 2 do broja 48",
+        "street": { "even": {"first": 2, "end": 48} }
+      }
+    ]
+  },
+  {
+    "id": 206,
+    "district": null,
+    "streets": [
+      {
+        "name": "Marka Miljanova",
+        "type": "all",
+        "text": "parni brojevi od 8 do kraja ulice",
+        "street": { "even": {"first": 8, "end": null} }
+      },
+      {
+        "name": "Filipa Višnjića",
+        "type": "all",
+        "text": "neparni brojevi od broja 1 do 5/c",
+        "street": { "odd": {"first": 1, "end": 5} }
+      },
+      {"name": "Beogradski kej", "type": "all", "street": null},
+      {
+        "name": "Trg neznanog junaka",
+        "type": "all",
+        "text": "neparni brojevi",
+        "street": { "odd": {"first": 1, "end": 101} }
+      },
+      {
+        "name": "Bulevar Mihajla Pupina",
+        "type": "all",
+        "text": "neparni brojevi od broja 9 do 19",
+        "street": { "odd": {"first": 9, "end": 19} }
+      },
+      {"name": "Modene", "type": "all", "street": null},
+      {"name": "Trg slobode", "type": "all", "street": null},
+      {"name": "Zmaj Jovina", "type": "all", "street": null},
+      {"name": "Gimnazijska", "type": "all", "street": null},
+      {"name": "Daničićeva", "type": "all", "street": null},
+      {"name": "Lončarska", "type": "all", "street": null},
+      {"name": "Aleksandra Tišme", "type": "all", "street": null},
+      {
+        "name": "Kosovska",
+        "type": "all",
+        "text": "parni brojevi od 2 do 22 b i a rojevi od 1 do 15",
+        "street": {
+          "odd" : {"first": 1, "end": 15},
+          "even": {"first": 2, "end": 22}
+        }
+      },
+      {
+        "name": "Đorđa Jovanovića",
+        "type": "all",
+        "text": "parni brojevi od 8 do kraja ulice i neparni brojevi od 11 do kraja ulice",
+        "street": {
+          "odd" : {"first": 11, "end": null},
+          "even": {"first":  8, "end": null}
+        }
+      },
+      {"name": "Šumadijska", "type": "all", "street": null},
+      {"name": "Episkopa Visariona", "type": "all", "street": null},
+      {"name": "Dušana Vasiljeva", "type": "all", "street": null},
+      {"name": "Stevana Milovanova", "type": "all", "street": null},
+      {"name": "Kozačinskog", "type": "all", "street": null},
+      {"name": "Trg republike", "type": "all", "street": null},
+      {"name": "Miloša Bajića", "type": "all", "street": null},
+      {"name": "Vojvode Putnika", "type": "all", "street": null},
+      {"name": "Ive Lole Ribara", "type": "all", "street": null},
+      {"name": "Pionirska", "type": "all", "street": null},
+      {"name": "Ignjata Pavlasa", "type": "all", "street": null},
+      {"name": "Konstantina Danila", "type": "all", "street": null},
+      {"name": "Ise Bajića", "type": "all", "street": null},
+      {"name": "Ilije Ognjanovića", "type": "all", "street": null},
+      {"name": "Dunavska", "type": "all", "street": null},
+      {"name": "Žarka Vasiljevića.", "type": "all", "street": null}
+    ]
+  },
+  {
+    "id": 207,
+    "district": null,
+    "streets": [
+      {
+        "name": "Futoška",
+        "type": "all",
+        "text": "neparni brojevi od 1 do 37 i parni brojevi od 2 do 66",
+        "street": {
+          "odd" : {"first": 1, "end": 37},
+          "even": {"first": 2, "end": 66}
+        }
+      },
+      {"name": "Antona Čehova", "type": "all", "street": null},
+      {"name": "Dože Đerđa", "type": "all", "street": null},
+      {"name": "Zorana Petrovića", "type": "all", "street": null},
+      {"name": "Ljermontova", "type": "all", "street": null},
+      {
+        "name": "Miše Dimitrijevića",
+        "type": "all",
+        "text": "neparni brojevi od 1/a do 1/c, od 3/a do 3/c i parni brojevi od 2 do 16",
+        "street": {
+          "odd" : {"first": "1a", "end": "1c"},
+          "even": {"first": 6,    "end": null}
+        }
+      },
+      {
+        "name": "Gogoljeva",
+        "type": "all",
+        "text": "parni brojevi od 2 do 42 i neparni brojevi od 27 do 31",
+        "street": {
+          "odd" : {"first": 27, "end": 31},
+          "even": {"first":  2, "end": 42}
+        }
+      },
+      {"name": "Braće Ribnikar", "type": "all", "street": null},
+      {
+        "name": "Danila Kiša",
+        "type": "all",
+        "text": "parni brojevi od 2 do 22 i neparni brojevi od 1 do 17",
+        "street": {
+          "odd" : {"first": 1, "end": 17},
+          "even": {"first": 2, "end": 22}
+        }
+      },
+      {
+        "name": "Dimitrija Tucovića",
+        "type": "all",
+        "text": "parni brojevi od 2 do 16",
+        "street": { "even": {"first": 2, "end": 16} }
+      },
+      {"name": "Alberta Tome", "type": "all", "street": null},
+      {
+        "name": "Maksima Gorkog",
+        "type": "all",
+        "text": "parni brojevi od 2 do 4/f i neparni 1 i 1/a",
+        "street": {
+          "odd" : {"first": 1, "end": "1\f"},
+          "even": {"first": 2, "end": "4\f"}
+        }
+      },
+      {"name": "Trg carice Milice", "type": "all", "street": null},
+      {"name": "Sremska", "type": "all", "street": null},
+      {"name": "Železnička", "type": "all", "street": null},
+      {"name": "Trg mladenaca", "type": "all", "street": null},
+      {
+        "name": "Vase Stajića",
+        "type": "all",
+        "text": "parni brojevi od 22 do 36 i neparni brojevi od 15 do 27",
+        "street": {
+          "odd" : {"first": 15, "end": 27},
+          "even": {"first": 22, "end": 36}
+        }
+      },
+      {"name": "Poštanska", "type": "all", "street": null},
+      {
+        "name": "Jevrejska",
+        "type": "all",
+        "text": "neparni brojevi",
+        "street": { "odd": {"first": 1, "end": 101} }
+      },
+      {"name": "Augusta Cesarca", "type": "all", "street": null},
+      {"name": "Petra Drapšina", "type": "all", "street": null},
+      {"name": "Vase Pelagića", "type": "all", "street": null},
+      {"name": "Laze Kostića", "type": "all", "street": null},
+      {"name": "Trg Komenskog", "type": "all", "street": null},
+      {"name": "Školska", "type": "all", "street": null},
+      {
+        "name": "Bulevar oslobođenja",
+        "type": "all",
+        "text": "neparni brojevi od 91 do 117 i parni brojevi od 70 do 88",
+        "street": {
+          "odd" : {"first": 91, "end": 117},
+          "even": {"first": 70, "end":  88}
+        }
+      }
+    ]
+  },
+  {
+    "id": 208,
+    "district": null,
+    "streets": [
+      {"name": "Božidara Boška Petrovića", "type": "all", "street": null},
+      {"name": "Boška Vrebalova", "type": "all", "street": null},
+      {"name": "Milenka Grčića", "type": "all", "street": "parni brojevi"},
+      {"name": "Joakima Vujića", "type": "all", "street": null},
+      {"name": "Čika Stevina", "type": "all", "street": null},
+      {
+        "name": "Rumenačka",
+        "type": "all",
+        "text": "neparni brojevi od 99 do 165 i parni brojevi od 112 do 148",
+        "street": {
+          "odd" : {"first":  99, "end": 165},
+          "even": {"first": 112, "end": 148}
+        }
+      },
+      {
+        "name": "Rumenački put",
+        "type": "all",
+        "text": "neparni brojevi od 1 do 103 i brojevi od 119 do 119 b",
+        "street": {
+          "odd" : {"first":   1, "end": 103   },
+          "even": {"first": 119, "end": "119b"}
+        }
+      },
+      {"name": "Đerđa Molnara", "type": "all", "street": null},
+      {"name": "Alberta Anštajna", "type": "all", "street": null},
+      {"name": "Mihaila Babinke", "type": "all", "street": null},
+      {"name": "Dragoslava Srejovića Sipa", "type": "all", "street": null},
+      {"name": "Pančevačka", "type": "all", "street": null},
+      {"name": "Vase Miskina Crnog", "type": "all", "street": null},
+      {
+        "name": "Milete Protića",
+        "type": "all",
+        "text": "parni brojevi od 14 do 26 i neparni od 13 do 25",
+        "street": {
+          "odd" : {"first": 13, "end": 25},
+          "even": {"first": 14, "end": 26}
+        }
+      },
+      {"name": "Đorđa Tabakovića", "type": "all", "street": null},
+      {
+        "name": "Avijatičarska",
+        "type": "all",
+        "text": "neparni brojevi od 1 do 23",
+        "street": { "odd": {"first": 1, "end": 23} }
+      },
+      {
+        "name": "Đorđa Radujkova",
+        "type": "all",
+        "text": "parni brojevi od 14 do 16 i neparni brojevi od 13 do 25",
+        "street": {
+          "odd" : {"first": 13, "end": 25},
+          "even": {"first": 14, "end": 16}
+        }
+      },
+      {
+        "name": "Nikole Mirkova",
+        "type": "all",
+        "text": "parni brojevi od 2 do 24 i neparni brojevi od 1 do 5",
+        "street": {
+          "odd" : {"first": 1, "end":  5},
+          "even": {"first": 2, "end": 24}
+        }
+      },
+      {
+        "name": "Oblačića Rada",
+        "type": "all",
+        "text": "parni brojevi od 2 do 22 i neparni od 7 do 17",
+        "street": {
+          "odd" : {"first": 7, "end": 17},
+          "even": {"first": 2, "end": 22}
+        }
+      },
+      {"name": "Dimitrija Milovanova", "type": "all", "street": null},
+      {"name": "Molijerova", "type": "all", "street": null},
+      {"name": "Banatska", "type": "all", "street": null},
+      {"name": "Starine Novaka", "type": "all", "street": null},
+      {
+        "name": "Orlovića Pavla",
+        "type": "all",
+        "text": "parni brojevi od 4 do 26 i neparni brojevi od 3 do 33",
+        "street": {
+          "odd" : {"first": 3, "end": 33},
+          "even": {"first": 4, "end": 26}
+        }
+      },
+      {"name": "Braće Mogin", "type": "all", "street": null},
+      {"name": "Milana Glumca", "type": "all", "street": null},
+      {"name": "Kalmana Langa", "type": "all", "street": null},
+      {"name": "Krfska", "type": "all", "street": null},
+      {"name": "Solunska", "type": "all", "street": null},
+      {
+        "name": "Kornelija Stankovića",
+        "type": "all",
+        "text": "parni brojevi do broja 42 i neparni do broja 29",
+        "street": {
+          "odd" : {"first": 1, "end": 29},
+          "even": {"first": 2, "end": 42}
+        }
+      },
+      {
+        "name": "Janka Veselinovića",
+        "type": "all",
+        "text": "neparni brojevi od 1 do 15 i parni brojevi od 2 do 20",
+        "street": {
+          "odd" : {"first": 1, "end": 15},
+          "even": {"first": 2, "end": 20}
+        }
+      },
+      {"name": "Stevana Mokranjca", "type": "all", "street": null},
+      {"name": "Pasterova", "type": "all", "street": null},
+      {"name": "Braće Popović", "type": "all", "street": null},
+      {
+        "name": "Branka Bajića",
+        "type": "all",
+        "text": "parni brojevi od 2 do 34",
+        "street": { "even": {"first": 2, "end": 34} }
+      },
+      {
+        "name": "Bulevar Jaše Tomića",
+        "type": "all",
+        "text": "neparni brojevi od 19 do kraja ulice i parni brojevi",
+        "street": {
+          "odd" : {"first": 1, "end":  19},
+          "even": {"first": 2, "end": 100}
+        }
+      },
+      {"name": "Pariske komune", "type": "all", "street": "neparni brojevi"},
+      {"name": "Stevana Doronjskog", "type": "all", "street": null},
+      {"name": "Jovana Hranilovića", "type": "all", "street": null},
+      {"name": "Bačka", "type": "all", "street": null},
+      {"name": "Stjepana Mitrova Ljubiše", "type": "all", "street": null},
+      {
+        "name": "Filipa Filipovića.Područje Osnovne škole Dositej Obradović obuhvata",
+        "type": "all",
+        "street": null
+      },
+      {
+        "name"  : "Veljka Radenovića (Sajlovo 31)",
+        "type"  : "all",
+        "street": null
+      },
+      {"name": "Donje Sajlovo", "type": "all", "street": null},
+      {"name": "Sajlovo 19", "type": "all", "street": null},
+      {"name": "Spomenka Gostića (Sajlovo 18)", "type": "all", "street": null},
+      {"name": "Grofa Đorđa Brankovića", "type": "all", "street": null},
+      {"name": "Stevana Neštickog", "type": "all", "street": null},
+      {"name": "Blagoja Brančića (Sajlovo 17)", "type": "all", "street": null},
+      {"name": "Sajlovo 37", "type": "all", "street": null},
+      {"name": "Jefte Tešića (Sajlovo 12)", "type": "all", "street": null},
+      {
+        "name"  : "Stefana Vujanovskog (Sajlovo 38)",
+        "type"  : "all",
+        "street": null
+      },
+      {"name": "Ilije Pantelića (Sajlovo 23)", "type": "all", "street": null},
+      {"name": "Jovanke Stojković (Sajlovo 11", "type": "all", "street": null},
+      {
+        "name"  : "Božidara Grujovića (Sajlovo 10)",
+        "type"  : "all",
+        "street": null
+      },
+      {"name": "Siniše Lauševića", "type": "all", "street": null},
+      {"name": "Saše Krstića", "type": "all", "street": null},
+      {
+        "name"  : "Mihaila Petrovića Alasa (Sajlovo 15)",
+        "type"  : "all",
+        "street": null
+      },
+      {"name": "Kornelije Rakić (Sajlovo 9", "type": "all", "street": null},
+      {"name": "Jove Vučerića", "type": "all", "street": null},
+      {"name": "Dr Miloša Krne", "type": "all", "street": null},
+      {
+        "name"  : "Dafine Nane Natošević (Sajlovo 26)",
+        "type"  : "all",
+        "street": null
+      },
+      {"name": "Sajlovo 28", "type": "all", "street": null},
+      {"name": "Sajlovo 25", "type": "all", "street": null},
+      {"name": "Gornje Sajlovo", "type": "all", "street": null},
+      {"name": "Vladimira Grandića", "type": "all", "street": null},
+      {
+        "name"  : "Dimitrija Mihajlovića (Sajlovo 36)",
+        "type"  : "all",
+        "street": null
+      },
+      {"name": "Sajlovo 14", "type": "all", "street": null},
+      {"name": "Katarine Milovuk (Sajlovo 13)", "type": "all", "street": null},
+      {"name": "Sime Ćirkovića (Sajlovo 21)", "type": "all", "street": null},
+      {"name": "Sajlovo 27", "type": "all", "street": null},
+      {"name": "Božidara Kovačeka (Sajlovo 22", "type": "all", "street": null},
+      {"name": "Eustahije Arsić (Sajlovo 20)", "type": "all", "street": null},
+      {"name": "Dragana Bandića", "type": "all", "street": null},
+      {"name": "Milana Janića", "type": "all", "street": null},
+      {"name": "Ilije Smiljanića", "type": "all", "street": null},
+      {"name": "Nikole Begovića", "type": "all", "street": null},
+      {"name": "Sajlovo 33", "type": "all", "street": null},
+      {"name": "Borivoja Bore Todorovića", "type": "all", "street": null},
+      {
+        "name"  : "Veselina Masleše",
+        "type"  : "all",
+        "street": "neparni brojevi od 11 do 15"
+      },
+      {"name": "Dragana Lakovića", "type": "all", "street": null},
+      {
+        "name"  : "Nikole Milutinovića (Sajlovo 34)",
+        "type"  : "all",
+        "street": null
+      },
+      {"name": "Milenka Pavlovića.", "type": "all", "street": null},
+      {
+        "name"  : "Branislava Crnčevića (Sajlovo 32)",
+        "type"  : "all",
+        "street": null
+      }
+    ]
+  },
+  {
+    "id": 209,
+    "district": null,
+    "streets": [
+      {
+        "name": "Sentandrejski put",
+        "type": "all",
+        "text": "neparni brojevi i parni od broja 60 do kraja ulice",
+        "street": {
+          "odd" : {"first":  1, "end":  100},
+          "even": {"first": 60, "end": null}
+        }
+      },
+      {"name": "Olge Penavin", "type": "all", "street": null},
+      {"name": "Vitomira Koraća", "type": "all", "street": null},
+      {"name": "Jegrička", "type": "all", "street": null},
+      {"name": "Proleterska", "type": "all", "street": null},
+      {"name": "Drage Garašanin", "type": "all", "street": null},
+      {"name": "Šaljapinova", "type": "all", "street": null},
+      {"name": "Dr Mirka Stojakovića", "type": "all", "street": null},
+      {"name": "Todora Manojlovića", "type": "all", "street": null},
+      {"name": "Naše sokače", "type": "all", "street": null},
+      {"name": "Pantelije Milankovića", "type": "all", "street": null},
+      {"name": "Milana Moge", "type": "all", "street": null},
+      {"name": "Jelene Anžujske", "type": "all", "street": null},
+      {"name": "Angela Vlatkovića", "type": "all", "street": null},
+      {"name": "Miloja M. Vasića", "type": "all", "street": null},
+      {"name": "Gavrila Polzovića", "type": "all", "street": null},
+      {"name": "Alimpija Popovića", "type": "all", "street": null},
+      {"name": "Vase Jovanovića Čiče", "type": "all", "street": null},
+      {"name": "Anastasa Jovanovića", "type": "all", "street": null},
+      {"name": "Ljubomira Stefanovića", "type": "all", "street": null},
+      {"name": "Marije Petrović", "type": "all", "street": null},
+      {"name": "Đorđa Nedeljkovića", "type": "all", "street": null},
+      {"name": "Vladimira Demetrovića", "type": "all", "street": null},
+      {"name": "Svetlane Vranić", "type": "all", "street": null},
+      {"name": "Dobre Jovanovića", "type": "all", "street": null},
+      {"name": "Milice Tomić", "type": "all", "street": null},
+      {"name": "Stanislava Majoraša", "type": "all", "street": null},
+      {"name": "Vojislava Jovanovića Maramba", "type": "all", "street": null},
+      {"name": "9. maja", "type": "all", "street": null},
+      {"name": "Eržebet Berček", "type": "all", "street": null},
+      {"name": "Todora Manojlovića", "type": "all", "street": null},
+      {"name": "Stevana Goldmana", "type": "all", "street": null},
+      {"name": "Jadranska", "type": "all", "street": null},
+      {"name": "Koviljska", "type": "all", "street": null},
+      {"name": "Radoslava Prodanovića", "type": "all", "street": null},
+      {"name": "Dragiše Lapčevića", "type": "all", "street": null},
+      {"name": "Eme Goldman", "type": "all", "street": null},
+      {"name": "Dr Milorada Pavlovića", "type": "all", "street": null},
+      {"name": "Svetozara Markovića Toze", "type": "all", "street": null},
+      {"name": "Imre Milera", "type": "all", "street": null},
+      {"name": "Episkopa Danila Krstića", "type": "all", "street": null},
+      {"name": "Radivoja Milina Kairca", "type": "all", "street": null},
+      {"name": "Milice Nikolić", "type": "all", "street": null},
+      {"name": "Save Vla", "type": "all", "street": null},
+      {"name": "Zdravka Erdevika", "type": "all", "street": null},
+      {"name": "Ilije Nešina", "type": "all", "street": null},
+      {"name": "Dr Janka Buljika", "type": "all", "street": null},
+      {"name": "Mileve Simić", "type": "all", "street": null},
+      {"name": "Miroslava Prodanovića Micka", "type": "all", "street": null},
+      {"name": "Ljubomira Nenadovića", "type": "all", "street": null},
+      {"name": "Apatinska", "type": "all", "street": null},
+      {"name": "Josifa Pančića", "type": "all", "street": null},
+      {"name": "Primorska", "type": "all", "street": null},
+      {"name": "Klisanski put", "type": "all", "street": null},
+      {"name": "Velebitska", "type": "all", "street": null},
+      {"name": "Zelengorska", "type": "all", "street": null},
+      {"name": "Liparska", "type": "all", "street": null},
+      {"name": "Omladinska", "type": "all", "street": null},
+      {"name": "Paje Radosavljevića", "type": "all", "street": null},
+      {"name": "Paje Krstića", "type": "all", "street": null},
+      {"name": "Zadružna", "type": "all", "street": null},
+      {"name": "Durmitorska", "type": "all", "street": null},
+      {"name": "Barska", "type": "all", "street": null},
+      {"name": "Dolinska", "type": "all", "street": null},
+      {"name": "Jevrema Markovića", "type": "all", "street": null},
+      {"name": "Nizijska", "type": "all", "street": null},
+      {"name": "Otokara Keršovanija", "type": "all", "street": null},
+      {"name": "Svetozara Savkovića", "type": "all", "street": null},
+      {"name": "Radivoja Vrhovca", "type": "all", "street": null},
+      {"name": "Šangajska", "type": "all", "street": null},
+      {"name": "Dimitrija Davidovića", "type": "all", "street": null},
+      {"name": "Prote Matije Nenadovića", "type": "all", "street": null},
+      {"name": "Đoke Mijatovića", "type": "all", "street": null},
+      {"name": "Sekule Vitkovića", "type": "all", "street": null},
+      {"name": "Dr Jovana Andrejevića", "type": "all", "street": null},
+      {"name": "Avalska", "type": "all", "street": null},
+      {"name": "Svetozara Markovića", "type": "all", "street": null},
+      {"name": "Igmanska", "type": "all", "street": null},
+      {"name": "Bore Stankovića", "type": "all", "street": null},
+      {"name": "Jana Husa", "type": "all", "street": null},
+      {"name": "Vidovdanska", "type": "all", "street": null},
+      {"name": "Javorova", "type": "all", "street": null},
+      {"name": "Srbobranska", "type": "all", "street": null},
+      {"name": "Sečanjska", "type": "all", "street": null},
+      {"name": "Bihaćka", "type": "all", "street": null},
+      {"name": "Tjentište", "type": "all", "street": null},
+      {"name": "Fočanska", "type": "all", "street": null},
+      {"name": "Bečejska", "type": "all", "street": null},
+      {"name": "Draginje Ružić", "type": "all", "street": null},
+      {"name": "Bosutska", "type": "all", "street": null},
+      {"name": "Titelska", "type": "all", "street": null},
+      {"name": "Svetozara Vukmanovića Čike", "type": "all", "street": null},
+      {"name": "Bože Kuzmanovića", "type": "all", "street": null},
+      {"name": "Zmajevački put", "type": "all", "street": null},
+      {"name": "Savska", "type": "all", "street": null},
+      {"name": "Mišarska", "type": "all", "street": null},
+      {"name": "Orahova", "type": "all", "street": null},
+      {"name": "Vase Pušibrke", "type": "all", "street": null},
+      {"name": "Rade Smiljanova", "type": "all", "street": null},
+      {"name": "Milke Marković", "type": "all", "street": null},
+      {"name": "Siriška", "type": "all", "street": null},
+      {"name": "Omladinskih akcija", "type": "all", "street": null},
+      {"name": "Čenejska", "type": "all", "street": null},
+      {"name": "Aksentija Maksimovića", "type": "all", "street": null},
+      {"name": "Anice Savić Rebac", "type": "all", "street": null},
+      {"name": "Ritska", "type": "all", "street": null},
+      {"name": "Svetozara Džanića", "type": "all", "street": null},
+      {"name": "Dušana Šućova", "type": "all", "street": null},
+      {"name": "Vuka Mandušića", "type": "all", "street": null},
+      {"name": "Crveni čot", "type": "all", "street": null},
+      {"name": "Povrtarska", "type": "all", "street": null},
+      {"name": "Milana Džanića", "type": "all", "street": null},
+      {"name": "Milana Simina", "type": "all", "street": null},
+      {"name": "Petra Dobrovića", "type": "all", "street": null},
+      {"name": "Stevana Aleksića", "type": "all", "street": null},
+      {"name": "Temerinski put", "type": "all", "street": null},
+      {
+        "name": "Temerinska",
+        "type": "all",
+        "text": "parni brojevi od broja 124 do 128 i neparni od 131 do kraja ulice",
+        "street": {
+          "odd" : {"first": 131, "end": null},
+          "even": {"first": 124, "end":  128}
+        }
+      },
+      {"name": "Vase Ostojića", "type": "all", "street": null},
+      {"name": "Stojana Jankovića", "type": "all", "street": null},
+      {"name": "Ivana Senkovića", "type": "all", "street": null},
+      {"name": "Mojkovačka", "type": "all", "street": null},
+      {"name": "Baja Pivljanina", "type": "all", "street": null},
+      {"name": "Kralja Vukašina", "type": "all", "street": null},
+      {"name": "Janka Halkozovića", "type": "all", "street": null},
+      {"name": "Dečanska", "type": "all", "street": null},
+      {"name": "Kolubarska", "type": "all", "street": null},
+      {"name": "Arkadija Varađanina", "type": "all", "street": null},
+      {"name": "Starog Vujadina", "type": "all", "street": null},
+      {"name": "Alekse Nenadovića", "type": "all", "street": null},
+      {"name": "Majke Jugovića", "type": "all", "street": null},
+      {"name": "Stefana Dečanskog", "type": "all", "street": null},
+      {"name": "Despota Uglješe", "type": "all", "street": null},
+      {"name": "Hristofa Žefarovića", "type": "all", "street": null},
+      {"name": "Kralja Uroša Prvog", "type": "all", "street": null},
+      {"name": "Stojana Čupića", "type": "all", "street": null},
+      {"name": "Mladena Leskovca", "type": "all", "street": null},
+      {"name": "Nikanora Grujića", "type": "all", "street": null},
+      {"name": "Živojina Ćuluma", "type": "all", "street": null},
+      {"name": "Stevana Todorovića", "type": "all", "street": null},
+      {"name": "Šišatovačka", "type": "all", "street": null},
+      {"name": "Vrdnička", "type": "all", "street": null},
+      {"name": "Tri dobra junaka", "type": "all", "street": null},
+      {"name": "Vojvode Prijezde", "type": "all", "street": null},
+      {"name": "Prizrenska", "type": "all", "street": null},
+      {"name": "Malobeogradska", "type": "all", "street": null},
+      {"name": "Jovana Kosovca", "type": "all", "street": null},
+      {"name": "Miloša Pocerca", "type": "all", "street": null},
+      {"name": "Simonidina", "type": "all", "street": null},
+      {"name": "Milenka Stojkovića", "type": "all", "street": null},
+      {"name": "Koče Vasiljevića", "type": "all", "street": null},
+      {"name": "Sofije Vujić", "type": "all", "street": null},
+      {"name": "Nova 11", "type": "all", "street": null},
+      {"name": "Nova 12", "type": "all", "street": null},
+      {"name": "Nova 13", "type": "all", "street": null},
+      {"name": "Nova 14", "type": "all", "street": null},
+      {"name": "Emanuela Jankovića", "type": "all", "street": null},
+      {"name": "Aleksandra Nevskog", "type": "all", "street": null},
+      {"name": "Marije Kiri", "type": "all", "street": null},
+      {"name": "Laze Dunđerskog", "type": "all", "street": null},
+      {"name": "Nikole Tanurdžića", "type": "all", "street": null},
+      {"name": "Đorđa Kratovca", "type": "all", "street": null},
+      {"name": "Zidarska", "type": "all", "street": null},
+      {"name": "Baštovanska", "type": "all", "street": null},
+      {"name": "Gazimestanska", "type": "all", "street": null},
+      {"name": "Kikindska", "type": "all", "street": null},
+      {"name": "Čuruška", "type": "all", "street": null},
+      {"name": "Zemunska", "type": "all", "street": null},
+      {"name": "Boška Novakovića", "type": "all", "street": null},
+      {"name": "Đakona Avakuma", "type": "all", "street": null},
+      {"name": "Jovana Vilovca", "type": "all", "street": null},
+      {"name": "Laze Atanackovića", "type": "all", "street": null},
+      {"name": "Koste Mirosavljevića", "type": "all", "street": null},
+      {"name": "Vase Jovanovića", "type": "all", "street": null},
+      {"name": "Alekse Gavrilovića", "type": "all", "street": null},
+      {"name": "Trifuna Dimića", "type": "all", "street": null},
+      {"name": "Jovana Mikića Spartaka", "type": "all", "street": null},
+      {"name": "Omladinskih radnih akcija", "type": "all", "street": null},
+      {"name": "Profesora Grčića", "type": "all", "street": null},
+      {"name": "Prote Mateje", "type": "all", "street": null},
+      {"name": "Episkopa Nenada Krstića", "type": "all", "street": null},
+      {"name": "Vladimira Ležimirca", "type": "all", "street": null},
+      {"name": "Nova 4", "type": "all", "street": null},
+      {"name": "Žabaljska", "type": "all", "street": null},
+      {"name": "Dimitrija Bugarskog", "type": "all", "street": null},
+      {"name": "Ivana Kneževića", "type": "all", "street": null},
+      {"name": "Moravska", "type": "all", "street": null},
+      {"name": "Vase Jovanovića", "type": "all", "street": null},
+      {"name": "Skopljanska", "type": "all", "street": null},
+      {"name": "Peđe Milosavljevića", "type": "all", "street": null},
+      {"name": "Ilije Vrsajkova", "type": "all", "street": null},
+      {"name": "Stevana Šalajića", "type": "all", "street": null},
+      {"name": "Miodraga Pavlovića.", "type": "all", "street": null}
+    ]
+  },
+  {"id": 210, "district": "Čenej", "type": "all_streets"},
+  {
+    "id": 210,
+    "district": null,
+    "streets": [
+      {"name": "Venizelosova", "type": "all", "street": null},
+      {
+        "name": "Tekelijina",
+        "type": "all",
+        "text": "parni brojevi od 2 do 36 i neparni od 1 do 33",
+        "street": {
+          "odd" : {"first": 1, "end": 33},
+          "even": {"first": 2, "end": 36}
+        }
+      },
+      {
+        "name": "Filipa Višnjića",
+        "type": "all",
+        "text": "parni brojevi i neparni od broja 7 do kraja ulice",
+        "street": {
+          "odd" : {"first": 7, "end": null},
+          "even": {"first": 6, "end": null}
+        }
+      },
+      {
+        "name": "Marka Miljanova",
+        "type": "all",
+        "text": "neparni brojevi i parni brojevi 2 i 4",
+        "street": {
+          "odd" : {"first": 1, "end": null},
+          "even": {"first": 2, "end": null}
+        }
+      },
+      {"name": "Pavla Stamatovića", "type": "all", "street": null},
+      {
+        "name": "Kosovska",
+        "type": "all",
+        "text": "parni brojevi od 24 do 36 i neparni brojevi od 17 do 45",
+        "street": {
+          "odd" : {"first": 17, "end": 45},
+          "even": {"first": 24, "end": 36}
+        }
+      },
+      {"name": "Milovana Glišića", "type": "all", "street": null},
+      {
+        "name": "Đorđa Jovanovića",
+        "type": "all",
+        "text": "parni brojevi od 2 do 6 i neparni od 1 do 9",
+        "street": {
+          "odd" : {"first": 1, "end": 9},
+          "even": {"first": 2, "end": 6}
+        }
+      },
+      {"name": "Zlatne grede", "type": "all", "street": null},
+      {"name": "Nikole Pašića", "type": "all", "street": null},
+      {"name": "Grčkoškolska", "type": "all", "street": null},
+      {"name": "Grozde Gajšin", "type": "all", "street": null},
+      {"name": "Dr Miladina Veličkovića", "type": "all", "street": null},
+      {"name": "Natoševićeva", "type": "all", "street": null},
+      {"name": "Nikolajevska", "type": "all", "street": null},
+      {"name": "Đure Jakšića", "type": "all", "street": null},
+      {"name": "Trg Marije Trandafil", "type": "all", "street": null},
+      {
+        "name": "Jovana Subotića",
+        "type": "all",
+        "text": "parni brojevi",
+        "street": { "even": {"first": 2, "end": null} }
+      },
+      {
+        "name": "Temerinska",
+        "type": "all",
+        "text": "parni brojevi od broja 2 do 64",
+        "street": { "even": {"first": 2, "end": 64} }
+      },
+      {"name": "Milana Vidakovića", "type": "all", "street": null},
+      {"name": "Skerlićeva", "type": "all", "street": null},
+      {"name": "Matice srpske", "type": "all", "street": null},
+      {"name": "Hadži Svetića", "type": "all", "street": null},
+      {"name": "Baranjska", "type": "all", "street": null},
+      {"name": "Koste Hadži mlađeg", "type": "all", "street": null},
+      {"name": "Zemljane ćuprije", "type": "all", "street": null},
+      {"name": "Sterijina", "type": "all", "street": null},
+      {"name": "Petra Kočića", "type": "all", "street": null},
+      {"name": "Pećka", "type": "all", "street": null},
+      {"name": "Svetosavska", "type": "all", "street": null},
+      {"name": "Miloša Obilića", "type": "all", "street": null},
+      {"name": "Almaška", "type": "all", "street": null},
+      {"name": "Save Vukovića", "type": "all", "street": null},
+      {"name": "Laćarska", "type": "all", "street": null},
+      {"name": "Milana Rakića", "type": "all", "street": null},
+      {"name": "Marka Nešića", "type": "all", "street": null},
+      {"name": "Đorđa Rajkovića", "type": "all", "street": null},
+      {"name": "Jaše Ignjatovića", "type": "all", "street": null},
+      {"name": "Koče Kolarova", "type": "all", "street": null},
+      {"name": "Gundulićeva", "type": "all", "street": null},
+      {"name": "Trg Save Vukosavljeva", "type": "all", "street": null},
+      {"name": "Bele njive", "type": "all", "street": null},
+      {"name": "Jug Bogdana", "type": "all", "street": null},
+      {"name": "Patrijarha Čarnojevića", "type": "all", "street": null},
+      {"name": "Ekonomija Vrbak", "type": "all", "street": null},
+      {"name": "Pejićeve salaše", "type": "all", "street": null},
+      {"name": "Nemanovce", "type": "all", "street": null}
+    ]
+  },
+  {
+    "id": 211,
+    "district": null,
+    "streets": [
+      {
+        "name": "Bulevar kralja Petra I",
+        "type": "all",
+        "text": "neparni brojevi od 1 do 17",
+        "street": { "odd": {"first": 1, "end": 17} }
+      },
+      {
+        "name": "Bulevar oslobođenja",
+        "type": "all",
+        "text": "neparni brojevi od 33 do 77",
+        "street": { "odd": {"first": 33, "end": 77} }
+      },
+      {"name": "Braće Jovandić", "type": "all", "street": null},
+      {
+        "name": "Kraljevića Marka",
+        "type": "all",
+        "text": "parni brojevi od 2 do 18 i neparni od 1 do 29",
+        "street": {
+          "odd" : {"first": 1, "end": 29},
+          "even": {"first": 2, "end": 18}
+        }
+      },
+      {
+        "name": "Kisačka",
+        "type": "all",
+        "text": "neparni brojevi od 1 do 29",
+        "street": { "odd": {"first": 1, "end": 29} }
+      },
+      {"name": "Đurđa Brankovića", "type": "all", "street": null},
+      {"name": "Vojvode Šupljikca", "type": "all", "street": null},
+      {"name": "Svetojovanska", "type": "all", "street": null},
+      {"name": "Lukijana Mušickog", "type": "all", "street": null},
+      {"name": "Vuka Karadžića", "type": "all", "street": null},
+      {"name": "Arhimandrita Jovana Rajića", "type": "all", "street": null},
+      {"name": "Đorđa Markovića Kodera", "type": "all", "street": null},
+      {
+        "name": "Jovana Subotića",
+        "type": "all",
+        "text": "neparni brojevi",
+        "street": { "odd": {"first": 1, "end": null} }
+      },
+      {"name": "Josifa Runjanina", "type": "all", "street": null},
+      {"name": "Žitni trg", "type": "all", "street": null},
+      {"name": "Vojvode Bojovića", "type": "all", "street": null},
+      {"name": "Dimitrija Avramovića", "type": "all", "street": null},
+      {"name": "Dostojevskog", "type": "all", "street": null},
+      {"name": "Hilandarska", "type": "all", "street": null},
+      {"name": "Slovačka", "type": "all", "street": null},
+      {"name": "Masarikova", "type": "all", "street": null},
+      {"name": "Arse Teodorovića", "type": "all", "street": null},
+      {"name": "Stevana Sremca", "type": "all", "street": null},
+      {"name": "Valentina Vodnika", "type": "all", "street": null},
+      {"name": "Pap Pavla", "type": "all", "street": null},
+      {"name": "Gajeva", "type": "all", "street": null},
+      {
+        "name": "Jevrejska",
+        "type": "all",
+        "text": "parni brojevi",
+        "street": { "even": {"first": 2, "end": null} }
+      },
+      {"name": "Šafarikova", "type": "all", "street": null},
+      {"name": "Uspenska", "type": "all", "street": null},
+      {"name": "Pozorišni trg", "type": "all", "street": null},
+      {"name": "Stefana Stefanovića", "type": "all", "street": null},
+      {"name": "Svetozara Miletića", "type": "all", "street": null},
+      {"name": "Katolička porta", "type": "all", "street": null},
+      {"name": "Njegoševa", "type": "all", "street": null},
+      {"name": "Trifkovićev trg", "type": "all", "street": null},
+      {"name": "Laze Telečkog", "type": "all", "street": null},
+      {"name": "Mite Ružića.", "type": "all", "street": null}
+    ]
+  },
+  {
+    "id": 212,
+    "district": null,
+    "streets": [
+      {
+        "name": "Bulevar patrijarha Pavla",
+        "type": "all",
+        "text": "neparni brojevi od broja 31 do kraja ulice",
+        "street": { "odd": {"first": 31, "end": null} }
+      },
+      {"name": "Petefi Šandor", "type": "all", "street": null},
+      {"name": "Santeleki Kornela", "type": "all", "street": null},
+      {"name": "Milana Savića", "type": "all", "street": null},
+      {"name": "Kapetana Berića", "type": "all", "street": null},
+      {"name": "Gorana Kovačića", "type": "all", "street": null},
+      {"name": "Varga Đule", "type": "all", "street": null},
+      {"name": "Prvomajska", "type": "all", "street": null},
+      {"name": "Kružna", "type": "all", "street": null},
+      {"name": "Anta Staničića", "type": "all", "street": null},
+      {"name": "Braće Nemet", "type": "all", "street": null},
+      {"name": "Miloša Bebića", "type": "all", "street": null},
+      {"name": "Aleksandra Belića", "type": "all", "street": null},
+      {"name": "Ćirila", "type": "all", "street": null},
+      {
+        "name": "Metodija",
+        "type": "all",
+        "text": "neparni brojevi od 11 do kraja ulice i parni od 60 do kraja ulice",
+        "street": {
+          "odd" : {"first": 11, "end": null},
+          "even": {"first": 60, "end": null}
+        }
+      },
+      {"name": "Sime Matavulja", "type": "all", "street": null},
+      {"name": "Laze Lazarevića", "type": "all", "street": null},
+      {"name": "Jerneja Kopitara", "type": "all", "street": null},
+      {"name": "Mornarska", "type": "all", "street": null},
+      {"name": "Vatroslava Jagića", "type": "all", "street": null},
+      {"name": "Bolmanska", "type": "all", "street": null},
+      {"name": "Prešernova", "type": "all", "street": null},
+      {"name": "Ohridska", "type": "all", "street": null},
+      {"name": "Heroja Pinkija", "type": "all", "street": null},
+      {"name": "Imrea Borija", "type": "all", "street": null},
+      {"name": "Jovana Orosa", "type": "all", "street": null},
+      {"name": "Otona Župančiča", "type": "all", "street": null},
+      {"name": "Pavla Beljanskog", "type": "all", "street": null},
+      {"name": "Đorđa Mikeša", "type": "all", "street": null},
+      {"name": "Senteleki Kornela", "type": "all", "street": null},
+      {"name": "Pitagorina", "type": "all", "street": null},
+      {"name": "Stanoja Glavaša", "type": "all", "street": null},
+      {"name": "Dinarska", "type": "all", "street": null},
+      {"name": "Šarplaninska", "type": "all", "street": null},
+      {"name": "Izvidnička", "type": "all", "street": null},
+      {"name": "Rakovačka", "type": "all", "street": null},
+      {"name": "Karas Pala", "type": "all", "street": null},
+      {"name": "Rudnička", "type": "all", "street": null},
+      {"name": "Feješ Klare", "type": "all", "street": null},
+      {"name": "Kozaračka", "type": "all", "street": null},
+      {"name": "Mitrovačka", "type": "all", "street": null},
+      {"name": "Kotorska", "type": "all", "street": null},
+      {"name": "Janošikova", "type": "all", "street": null},
+      {"name": "Braće Miladinov", "type": "all", "street": null},
+      {"name": "Lazara Stojkovića", "type": "all", "street": null},
+      {"name": "Slavka Rodića", "type": "all", "street": null},
+      {
+        "name": "Marije Bursać",
+        "type": "all",
+        "text": "od broja 43 do kraja ulice i od broja 56 do kraja ulice",
+        "street": {
+          "odd" : {"first": 43, "end": null},
+          "even": {"first": 56, "end": null}
+        }
+      },
+      {"name": "Smederevska", "type": "all", "street": null},
+      {"name": "Banjalučka", "type": "all", "street": null},
+      {"name": "Jorgovanska", "type": "all", "street": null},
+      {"name": "Žikice Jovanovića", "type": "all", "street": null},
+      {"name": "Sime Šolaje", "type": "all", "street": null},
+      {"name": "Kamenička", "type": "all", "street": null},
+      {"name": "Mladena Stojanovića", "type": "all", "street": null},
+      {"name": "Jesenjinova", "type": "all", "street": null},
+      {"name": "Rahele Ferari", "type": "all", "street": null},
+      {"name": "Studenička", "type": "all", "street": null},
+      {"name": "Žička", "type": "all", "street": null},
+      {"name": "Maršala Žukova", "type": "all", "street": null},
+      {"name": "Gračanička", "type": "all", "street": null},
+      {"name": "Vaska Pope", "type": "all", "street": null},
+      {"name": "Mila Milunovića", "type": "all", "street": null},
+      {"name": "Desanke Maksimović", "type": "all", "street": null},
+      {"name": "Jovana Ristića", "type": "all", "street": null},
+      {"name": "Zetska", "type": "all", "street": null},
+      {"name": "Kneza Vlastimira", "type": "all", "street": null},
+      {"name": "Branka Ćopića", "type": "all", "street": null},
+      {"name": "Šumska", "type": "all", "street": null},
+      {"name": "Mihaila Lalića", "type": "all", "street": null},
+      {"name": "Ljubice Ravasi", "type": "all", "street": null},
+      {"name": "Bogdana Popovića", "type": "all", "street": null},
+      {"name": "Danila Medakovića", "type": "all", "street": null},
+      {"name": "Kralja Milana", "type": "all", "street": null},
+      {"name": "Pavla Bakića", "type": "all", "street": null},
+      {"name": "Marije Kalas", "type": "all", "street": null},
+      {"name": "Čerevićka", "type": "all", "street": null},
+      {"name": "Viteška", "type": "all", "street": null},
+      {"name": "Ilije Garašanina", "type": "all", "street": null},
+      {"name": "Milene Dravić", "type": "all", "street": null},
+      {"name": "Lovačka", "type": "all", "street": null},
+      {"name": "Save Vukosavljeva", "type": "all", "street": null},
+      {"name": "Sokolska", "type": "all", "street": null},
+      {"name": "Janike Balaža", "type": "all", "street": null},
+      {"name": "Slavujeva", "type": "all", "street": null},
+      {"name": "Avrama Mrazovića", "type": "all", "street": null},
+      {"name": "Zlatiborska", "type": "all", "street": null},
+      {"name": "Tome Rosandića", "type": "all", "street": null},
+      {"name": "Sime Milutinovića Sarajlije", "type": "all", "street": null},
+      {"name": "Drage Dejanović", "type": "all", "street": null},
+      {"name": "Ibarska", "type": "all", "street": null},
+      {"name": "Laze Pačua", "type": "all", "street": null},
+      {"name": "Kijevska", "type": "all", "street": null},
+      {"name": "Kosmajska", "type": "all", "street": null},
+      {"name": "Beočinska", "type": "all", "street": null},
+      {"name": "Begečka", "type": "all", "street": null},
+      {
+        "name": "Podunavska",
+        "type": "all",
+        "text": "od Veterničke do Sunčanog keja"
+      },
+      {"name": "Kamenjar", "type": "all", "street": null},
+      {"name": "Kamenjar 2", "type": "all", "street": null},
+      {"name": "Nova 67", "type": "all", "street": null},
+      {"name": "Stevana Baje Gardinovačkog", "type": "all", "street": null},
+      {"name": "Đorđa Lebovića", "type": "all", "street": null},
+      {"name": "Stare cigle", "type": "all", "street": null},
+      {"name": "Nikole Aleksića", "type": "all", "street": null},
+      {"name": "Bogoljuba Stankovića", "type": "all", "street": null},
+      {"name": "Milana Jovanovića Batuta", "type": "all", "street": null},
+      {"name": "Rafaila Šišatovačkog", "type": "all", "street": null},
+      {"name": "Milana A. Jovanovića Babe.", "type": "all", "street": null}
+    ]
+  },
+  {
+    "id": 213,
+    "district": null,
+    "streets": [
+      {
+        "name": "Narodnog fronta",
+        "type": "all",
+        "text": "parni brojevi od 2 do 12 i neparni od 1 do 19",
+        "street": {
+          "odd" : {"first": 1, "end": 19},
+          "even": {"first": 2, "end": 12}
+        }
+      },
+      {"name": "Dr Ivana Ribara", "type": "all", "street": null},
+      {"name": "Blagoja Parovića", "type": "all", "street": null},
+      {
+        "name": "Bulevar cara Lazara",
+        "type": "all",
+        "text": "neparni brojevi od 5 do 17",
+        "street": { "odd": {"first": 5, "end": 17} }
+      },
+      {"name": "Boška Buhe", "type": "all", "street": null},
+      {"name": "Milice Stojadinović Srpkinje", "type": "all", "street": null},
+      {
+        "name": "Bulevar oslobođenja",
+        "type": "all",
+        "text": "neparni brojevi od 127 do kraja ulice",
+        "street": { "odd": {"first": 127, "end": null} }
+      },
+      {"name": "Dragiše Brašovana", "type": "all", "street": null},
+      {"name": "Ravanička", "type": "all", "street": null},
+      {"name": "Resavska", "type": "all", "street": null},
+      {"name": "Fruškogorska", "type": "all", "street": null},
+      {"name": "Drage Spasić", "type": "all", "street": null},
+      {"name": "Strumička", "type": "all", "street": null},
+      {"name": "Sunčani kej", "type": "all", "street": null},
+      {"name": "Dajane Bekli", "type": "all", "street": null},
+      {"name": "Vladislava Kaćanskog", "type": "all", "street": null},
+      {"name": "Milke Grgurove", "type": "all", "street": null},
+      {"name": "Jirečekova", "type": "all", "street": null},
+      {"name": "Dr Vase Savića", "type": "all", "street": null},
+      {"name": "Veljka Petrovića", "type": "all", "street": null},
+      {"name": "Dr Ilije Đuričića", "type": "all", "street": null},
+      {"name": "Dr Sime Miloševića", "type": "all", "street": null},
+      {
+        "name"  : "Vladimira Perića Valtera и Trg Dositeja Obradovića.",
+        "type"  : "all",
+        "street": null
+      }
+    ]
+  },
+  {
+    "id": 214,
+    "district": null,
+    "streets": [
+      {
+        "name": "Bulevar Jaše Tomića",
+        "type": "all",
+        "text": "neparni brojevi od 1 do 15/b",
+        "street": { "odd": {"first": 1, "end": "15\\b"} }
+      },
+      {"name": "Omladinskog pokreta", "type": "all", "street": null},
+      {"name": "Bogoboja Atanackovića", "type": "all", "street": null},
+      {"name": "Paje Markovića", "type": "all", "street": null},
+      {"name": "Gagarinova", "type": "all", "street": null},
+      {
+        "name": "Bulevar oslobođenja",
+        "type": "all",
+        "text": "parni brojevi od 2 do 16 и neparni brojevi od 1 do 25",
+        "street": {
+          "odd" : {"first": 1, "end": 25},
+          "even": {"first": 2, "end": 16}
+        }
+      },
+      {"name": "Save Kovačevića", "type": "all", "street": null},
+      {"name": "Felegi Tivadora", "type": "all", "street": null},
+      {"name": "Save Ljubojeva", "type": "all", "street": null},
+      {"name": "Berislava Berića", "type": "all", "street": null},
+      {
+        "name": "Kisačka",
+        "type": "all",
+        "text": "neparni brojevi od 31 do kraja ulice",
+        "street": { "odd": {"first": 31, "end": null} }
+      },
+      {
+        "name": "Kraljevića Marka",
+        "type": "all",
+        "text": "parni brojevi od 20 do kraja ulice i neparni brojevi od 31 do kraja ulice",
+        "street": {
+          "odd" : {"first":  31, "end": null},
+          "even": {"first": 206, "end": null}
+        }
+      },
+      {"name": "Zmaj Ognjena Vuka", "type": "all", "street": null},
+      {
+        "name": "Bulevar kralja Petra I",
+        "type": "all",
+        "text": "parni brojevi od 2 do 38",
+        "street": { "even": {"first": 2, "end": 38} }
+      }
+    ]
+  },
+  {
+    "id": 215,
+    "district": null,
+    "streets": [
+      {"name": "Miodraga Petrovića Čkalje", "type": "all", "street": null},
+      {"name": "Save Mrkalja", "type": "all", "street": null},
+      {"name": "Milice Rakić", "type": "all", "street": null},
+      {"name": "Branka Vukosavljevića", "type": "all", "street": null},
+      {"name": "Vase Jagazovića", "type": "all", "street": null},
+      {"name": "Arona Zagorice", "type": "all", "street": null},
+      {"name": "Milivoja Živanovića", "type": "all", "street": null},
+      {"name": "Milutina Miće Tatića", "type": "all", "street": null},
+      {"name": "Mije Aleksića", "type": "all", "street": null},
+      {"name": "Zorana Radmilovića", "type": "all", "street": null},
+      {"name": "Pavla Vujisića", "type": "all", "street": null},
+      {"name": "Aleksandra Popovića", "type": "all", "street": null},
+      {"name": "Radivoja Lole Đukića", "type": "all", "street": null},
+      {"name": "Aleksandra Petrovića", "type": "all", "street": null},
+      {"name": "Kamendinska", "type": "all", "street": null},
+      {
+        "name": "Somborska rampa",
+        "type": "all",
+        "text": "parni brojevi od 2 do 18a i neparni brojevi od 1 do 31",
+        "street": {
+          "odd" : {"first": 1, "end": 31   },
+          "even": {"first": 2, "end": "18a"}
+        }
+      },
+      {"name": "Borislava Pekića", "type": "all", "street": null},
+      {"name": "Rivička", "type": "all", "street": null},
+      {
+        "name": "Novosadski put",
+        "type": "all",
+        "text": "parni brojevi od 132 do kraja ulice i neparni od 81 do kraja ulice",
+        "street": {
+          "odd" : {"first":  81, "end": null},
+          "even": {"first": 132, "end": null}
+        }
+      },
+      {"name": "Stanoja Stanojevića", "type": "all", "street": null},
+      {"name": "Momčila Tapavice", "type": "all", "street": null},
+      {"name": "Dušana Danilovića", "type": "all", "street": null},
+      {
+        "name": "Bulevar kneza Miloša",
+        "type": "all",
+        "text": "parni brojevi od 2 do 4a",
+        "street": { "even": {"first": 2, "end": "4f"} }
+      },
+      {
+        "name": "Bulevar Jovana Dučića",
+        "type": "all",
+        "text": "neparni brojevi od 1 do 47 i parni brojevi od 14 do 36",
+        "street": {
+          "odd" : {"first":  1, "end": 47},
+          "even": {"first": 14, "end": 36}
+        }
+      },
+      {
+        "name": "Bate Brkića",
+        "type": "all",
+        "text": "parni brojevi od 2 do 10b i neparni brojevi od 3 do 7",
+        "street": {
+          "odd" : {"first": 3, "end": 7    },
+          "even": {"first": 2, "end": "10b"}
+        }
+      },
+      {"name": "Stevana Momčilovića", "type": "all", "street": null},
+      {"name": "Stevana Čalenića", "type": "all", "street": null},
+      {"name": "Anđe Ranković", "type": "all", "street": null},
+      {"name": "Antona Urbana", "type": "all", "street": null},
+      {"name": "Stevana Hladnog", "type": "all", "street": null},
+      {"name": "Miloja Čiplića", "type": "all", "street": null},
+      {"name": "Đorđa Krstića", "type": "all", "street": null},
+      {"name": "Isidore Sekulić", "type": "all", "street": null},
+      {"name": "Stevana Petrovića Brila", "type": "all", "street": null},
+      {"name": "Živka Radovanovića", "type": "all", "street": null},
+      {
+        "name": "Braće Dronjak",
+        "type": "all",
+        "text": "neparni brojevi od 1 do 7i parni brojevi od 2 do 18",
+        "street": {
+          "odd" : {"first": 1, "end": "7i"},
+          "even": {"first": 2, "end": 18  }
+        }
+      },
+      {"name": "Partizanskih baza", "type": "all", "street": null},
+      {"name": "Ložionička", "type": "all", "street": null},
+      {"name": "Svetozara Ćorovića", "type": "all", "street": null},
+      {"name": "Stevana Hristića", "type": "all", "street": null},
+      {"name": "Iva Ćipika", "type": "all", "street": null},
+      {"name": "Stevana Dejanova", "type": "all", "street": null},
+      {
+        "name": "Futoški put",
+        "type": "all",
+        "text": "parni brojevi od broja 18 do kraja ulice",
+        "street": { "even": {"first": 18, "end": null} }
+      },
+      {"name": "Cetinska", "type": "all", "street": null},
+      {"name": "Petra Lubarde", "type": "all", "street": null},
+      {"name": "Jovana Bijelića", "type": "all", "street": null},
+      {"name": "Svetolika Rankovića", "type": "all", "street": null},
+      {"name": "Somborska.", "type": "all", "street": null}
+    ]
+  },
+  {
+    "id": 216,
+    "district": null,
+    "streets": [
+      {"name": "Koči Ivana", "type": "all", "street": null},
+      {"name": "Melhiora Erdujheljija", "type": "all", "street": null},
+      {"name": "Drvarska", "type": "all", "street": null},
+      {"name": "Banijska", "type": "all", "street": null},
+      {"name": "Ticanova", "type": "all", "street": null},
+      {"name": "Ilariona Ruvarca", "type": "all", "street": null},
+      {"name": "Jastrebačka", "type": "all", "street": null},
+      {"name": "Kiš Ernea", "type": "all", "street": null},
+      {"name": "Ilirska", "type": "all", "street": null},
+      {"name": "Koste Abraševića", "type": "all", "street": null},
+      {"name": "Panonska", "type": "all", "street": null},
+      {"name": "Jermenska", "type": "all", "street": null},
+      {"name": "Jovana Popovića", "type": "all", "street": null},
+      {"name": "Neimarova", "type": "all", "street": null},
+      {"name": "Vršačka", "type": "all", "street": null},
+      {"name": "Dubrovačka", "type": "all", "street": null},
+      {"name": "Milana Koma", "type": "all", "street": null},
+      {"name": "Adi Endrea", "type": "all", "street": null},
+      {"name": "Rejmontova", "type": "all", "street": null},
+      {"name": "Bogdana Šuputa", "type": "all", "street": null},
+      {"name": "Jablanička", "type": "all", "street": null},
+      {"name": "Subotička", "type": "all", "street": null},
+      {"name": "Pavleka Miškina", "type": "all", "street": null},
+      {"name": "Geri Karolja", "type": "all", "street": null},
+      {"name": "Cvećarska", "type": "all", "street": null},
+      {"name": "Romanijska", "type": "all", "street": null},
+      {"name": "Milutina Bojića", "type": "all", "street": null},
+      {"name": "Tihomira Ostojića", "type": "all", "street": null},
+      {"name": "Vardarska", "type": "all", "street": null},
+      {"name": "Telepska", "type": "all", "street": null},
+      {"name": "Dalmatinska", "type": "all", "street": null},
+      {"name": "Ilke Marković", "type": "all", "street": null},
+      {
+        "name": "Bulevar Patrijarha Pavla",
+        "type": "all",
+        "text": "parni brojevi od broja 2c do kraja ulice i neparni od 1 do 29",
+        "street": {
+          "odd" : {"first": 1,    "end":   29},
+          "even": {"first": "2c", "end": null}
+        }
+      },
+      {"name": "Jožefa Atile", "type": "all", "street": null},
+      {"name": "Ćirila", "type": "all", "street": null},
+      {
+        "name": "Metodija",
+        "type": "all",
+        "text": "parni brojevi od 2 do 58",
+        "street": { "even": {"first": 2, "end": 58} }
+      },
+      {
+        "name": "Bulevar Evrope",
+        "type": "all",
+        "text": "neparni brojevi od 1 do 39",
+        "street": { "odd": {"first": 1, "end": 39} }
+      },
+      {"name": "Polgar Andraša", "type": "all", "street": "parni brojevi"},
+      {
+        "name": "Futoški put",
+        "type": "all",
+        "text": "neparni brojevi i parni od 2 do 16c",
+        "street": {
+          "odd" : {"first": 1, "end": "16c"},
+          "even": {"first": 2, "end": "16c"}
+        }
+      },
+      {
+        "name": "Bulevar Slobodana Jovanovića",
+        "type": "all",
+        "text": "neparni brojevi od 1 do 19 i parni brojevi od 2 do 12",
+        "street": {
+          "odd" : {"first": 1, "end": 19},
+          "even": {"first": 2, "end": 12}
+        }
+      },
+      {"name": "Simeona Piščevića", "type": "all", "street": null},
+      {"name": "Branislava Borote", "type": "all", "street": null},
+      {"name": "Karela Čapeka", "type": "all", "street": null},
+      {"name": "Gavrila Principa", "type": "all", "street": null},
+      {"name": "Cara Jovana Nenada", "type": "all", "street": null},
+      {"name": "Železničke kolonije.", "type": "all", "street": null}
+    ]
+  },
+  {
+    "id": 217,
+    "district": null,
+    "streets": [
+      {"name": "Hajduk Veljkova", "type": "all", "street": null},
+      {
+        "name": "Rumenačka",
+        "type": "all",
+        "text": "parni brojevi od 92 do 110",
+        "street": { "even": {"first": 92, "end": 110} }
+      },
+      {
+        "name": "Bulevar kralja Petra I",
+        "type": "all",
+        "text": "parni brojevi od broja 40 do kraja ulice i neparni od 19 do kraja ulice",
+        "street": {
+          "odd" : {"first": 19, "end": null},
+          "even": {"first": 40, "end": null}
+        }
+      },
+      {
+        "name": "Pariske komune",
+        "type": "all",
+        "text": "parni brojevi",
+        "street": { "even": {"first": 2, "end": null} }
+      },
+      {
+        "name": "Bulevar oslobođenja",
+        "type": "all",
+        "text": "parni brojevi od 20 do 68",
+        "street": { "even": {"first": 20, "end": 68} }
+      },
+      {"name": "Ognjena Price", "type": "all", "street": null},
+      {
+        "name": "Futoška",
+        "type": "all",
+        "text": "parni brojevi od 68 do 106",
+        "street": { "even": {"first": 68, "end": 106} }
+      },
+      {"name": "Ledinačka", "type": "all", "street": null},
+      {"name": "Prištinska", "type": "all", "street": null},
+      {"name": "Mikole Kočiša", "type": "all", "street": null},
+      {"name": "Drinska", "type": "all", "street": null},
+      {"name": "Nevesinjska", "type": "all", "street": null},
+      {"name": "Luja Braja", "type": "all", "street": null},
+      {"name": "Paje Marganovića", "type": "all", "street": null},
+      {"name": "Branislava Nušića", "type": "all", "street": null},
+      {"name": "Dr Hempta", "type": "all", "street": null},
+      {"name": "Nikole Tesle", "type": "all", "street": null},
+      {"name": "Đorđa Bešlina", "type": "all", "street": null},
+      {"name": "Pere Dobrinovića", "type": "all", "street": null},
+      {"name": "Dr Milana Petrovića", "type": "all", "street": null},
+      {"name": "Branislava Nušića", "type": "all", "street": null},
+      {"name": "Takovska", "type": "all", "street": null},
+      {"name": "Žike Popovića", "type": "all", "street": null},
+      {"name": "Bem Lilike", "type": "all", "street": null},
+      {"name": "Ćirpanova", "type": "all", "street": null},
+      {"name": "Devet Jugovića", "type": "all", "street": null},
+      {"name": "Kosančić Ivana", "type": "all", "street": null},
+      {"name": "Toplice Milana", "type": "all", "street": null},
+      {"name": "Bore Prodanovića", "type": "all", "street": null},
+      {"name": "Nenada Mitrova", "type": "all", "street": null},
+      {"name": "Paje Jovanovića", "type": "all", "street": null},
+      {"name": "Uroša Predića", "type": "all", "street": null},
+      {"name": "Novosadskog sajma", "type": "all", "street": null},
+      {"name": "Turgenjeva", "type": "all", "street": null},
+      {"name": "Branimira Ćosića", "type": "all", "street": null},
+      {"name": "Mileševska", "type": "all", "street": null},
+      {"name": "Zaharija Orfelina", "type": "all", "street": null},
+      {"name": "Mičurinova", "type": "all", "street": null},
+      {"name": "Marodićeva", "type": "all", "street": null},
+      {"name": "Trg 1. maja", "type": "all", "street": null},
+      {"name": "Sestara Ninković", "type": "all", "street": null},
+      {"name": "Slobodana Bajića", "type": "all", "street": null},
+      {"name": "Bogdana Garabantina", "type": "all", "street": null},
+      {"name": "Majevička", "type": "all", "street": null},
+      {"name": "Cara Uroša.", "type": "all", "street": null}
+    ]
+  },
+  {
+    "id": 218,
+    "district": null,
+    "streets": [
+      {
+        "name": "Dragoslava Srejovića",
+        "type": "all",
+        "text": "parni brojevi od 2 do 36 i neparni od 1 do 49",
+        "street": {
+          "odd" : {"first": 1, "end": 49},
+          "even": {"first": 2, "end": 36}
+        }
+      },
+      {
+        "name"  : "Danice Jovanović (Veternička rampa)",
+        "type"  : "all",
+        "street": null
+      },
+      {"name": "Aleksandre Serđukove ", "type": "all", "street": null},
+      {
+        "name"  : "Adela Nemešanjija",
+        "type"  : "all",
+        "street": "(Veternička rampa)"
+      },
+      {
+        "name"  : "Jaroslave Jaroši (Veternička rampa)",
+        "type"  : "all",
+        "street": " "
+      },
+      {
+        "name"  : "Marte Jorgović (Veternička rampa)",
+        "type"  : "all",
+        "street": " "
+      },
+      {
+        "name"  : "Paule Šosberger (Veternička rampa)",
+        "type"  : "all",
+        "street": " "
+      },
+      {
+        "name"  : "Judite Šalgo (Veternička rampa)",
+        "type"  : "all",
+        "street": " "
+      },
+      {
+        "name"  : "Sofije Pasković (Veternička rampa)",
+        "type"  : "all",
+        "street": " "
+      },
+      {"name": "Slobodana Selenića", "type": "all", "street": null},
+      {"name": "Miće Popovića", "type": "all", "street": null},
+      {
+        "name": "Somborska rampa",
+        "type": "all",
+        "text": "neparni brojevi od broja 35 do kraja ulice i parni od 20 do kraja ulice",
+        "street": {
+          "odd" : {"first": 35, "end": null},
+          "even": {"first": 20, "end": null}
+        }
+      },
+      {"name": "Dr Jovana Raškovića", "type": "all", "street": null},
+      {"name": "Karolja Seleša", "type": "all", "street": null},
+      {"name": "Bulevar vojvode Stepe", "type": "all", "street": null},
+      {"name": "Boška Petrovića", "type": "all", "street": null},
+      {"name": "Aleksandra Benjaka", "type": "all", "street": null},
+      {"name": "Lenke Dunđerski", "type": "all", "street": null},
+      {"name": "Milutina Milankovića", "type": "all", "street": null},
+      {"name": "Dr Đure Jovanovića Kindera", "type": "all", "street": null},
+      {"name": "Mileve Marić", "type": "all", "street": null},
+      {"name": "Seljačkih buna", "type": "all", "street": null},
+      {
+        "name": "Đorđa Nikšića Johana",
+        "type": "all",
+        "text": "neparni brojevi do broja 11 i parni brojevi",
+        "street": {
+          "odd" : {"first": 11, "end": null},
+          "even": {"first": 12, "end": null}
+        }
+      },
+      {
+        "name": "Stojana Novakovića",
+        "type": "all",
+        "text": "neparni brojevi do broja 27",
+        "street": { "odd": {"first": 27, "end": null} }
+      },
+      {"name": "Todora Toze Jovanovića", "type": "all", "street": null},
+      {"name": "Radomira Raše Radujkova", "type": "all", "street": null},
+      {"name": "Vladike Ćirića", "type": "all", "street": null},
+      {
+        "name": "Bulevar Slobodana Jovanovića",
+        "type": "all",
+        "text": "neparni brojevi od 21 do kraja ulice i parni brojevi od 14 do kraja ulice",
+        "street": {
+          "odd" : {"first": 21, "end": null},
+          "even": {"first": 14, "end": null}
+        }
+      },
+      {
+        "name": "Bulevar Jovana Dučića",
+        "type": "all",
+        "text": "parni brojevi od 2 do broja 12",
+        "street": {
+          "odd" : {"first": 12, "end": null},
+          "even": {"first":  2, "end": null}
+        }
+      },
+      {
+        "name": "Bulevar kneza Miloša",
+        "type": "all",
+        "text": "neparni brojevi od 13 do 35 i parni brojevi od 12 do 34",
+        "street": {
+          "odd" : {"first": 13, "end": 35},
+          "even": {"first": 12, "end": 34}
+        }
+      },
+      {
+        "name": "Bate Brkića",
+        "type": "all",
+        "text": "neparni brojevi od 9 do 17 i parni brojevi od 12 do 32",
+        "street": {
+          "odd" : {"first":  9, "end": 17},
+          "even": {"first": 12, "end": 32}
+        }
+      },
+      {
+        "name": "Braće Dronjak",
+        "type": "all",
+        "text": "neparni brojevi od 11 do 17",
+        "street": { "odd": {"first": 11, "end": 17} }
+      },
+      {"name": "Kaće Dejanović", "type": "all", "street": null},
+      {"name": "Manasijska", "type": "all", "street": null},
+      {"name": "Olje Ivanjicki.", "type": "all", "street": null}
+    ]
+  },
+  {
+    "id": 219,
+    "district": null,
+    "streets": [
+      {"name": "Franje Kluza", "type": "all", "street": null},
+      {
+        "name": "Avijatičarska",
+        "type": "all",
+        "text": "parni brojevi od 2 do 24 i neparni od 25 do 45",
+        "street": {
+          "odd" : {"first": 25, "end": 45},
+          "even": {"first":  2, "end": 24}
+        }
+      },
+      {
+        "name": "Milete Protića",
+        "type": "all",
+        "text": "parni brojevi od 2 do 12 i neparni od 1 do 11",
+        "street": {
+          "odd" : {"first": 1, "end": 11},
+          "even": {"first": 2, "end": 12}
+        }
+      },
+      {
+        "name": "Đorđa Radujkova",
+        "type": "all",
+        "text": "parni brojevi od 2 do 12 i neparni od 1 do 11",
+        "street": {
+          "odd" : {"first": 1, "end": 11},
+          "even": {"first": 2, "end": 12}
+        }
+      },
+      {
+        "name": "Nikole Mirkova",
+        "type": "all",
+        "text": "parni brojevi od 26 do 38",
+        "street": { "even": {"first": 26, "end": 38} }
+      },
+      {
+        "name": "Oblačića Rada",
+        "type": "all",
+        "text": "parni brojevi od 26 do 36 i neparni od 19 do 25",
+        "street": {
+          "odd" : {"first": 19, "end": 25},
+          "even": {"first": 26, "end": 36}
+        }
+      },
+      {"name": "Tarasa Ševčenka", "type": "all", "street": null},
+      {
+        "name": "Orlovića Pavla",
+        "type": "all",
+        "text": "neparni brojevi od 35 do kraja ulice i parni od 36 do kraja ulice",
+        "street": {
+          "odd" : {"first": 35, "end": null},
+          "even": {"first": 36, "end": null}
+        }
+      },
+      {
+        "name": "Kornelija Stankovića",
+        "type": "all",
+        "text": "neparni brojevi od broja 31 do kraja ulice i parni broj 44",
+        "street": {
+          "odd" : {"first": 3135, "end": null},
+          "even": {"first":   44, "end": null}
+        }
+      },
+      {
+        "name": "Janka Veselinovića",
+        "type": "all",
+        "text": "neparni brojevi od 17 do 29 i parni brojevi od 24 do 40b",
+        "street": {
+          "odd" : {"first": 17, "end": 29   },
+          "even": {"first": 24, "end": "40b"}
+        }
+      },
+      {"name": "Koste Racina", "type": "all", "street": null},
+      {"name": "Cankareva", "type": "all", "street": null},
+      {"name": "Hadži Ruvimova", "type": "all", "street": null},
+      {"name": "Kopernikova", "type": "all", "street": null},
+      {
+        "name": "Branka Bajića",
+        "type": "all",
+        "text": "neparni brojevi od 1 do 13 i parni brojevi od 36 do 94",
+        "street": {
+          "odd" : {"first":  1, "end": 13},
+          "even": {"first": 36, "end": 94}
+        }
+      },
+      {"name": "Pasterova", "type": "all", "street": null},
+      {"name": "Dr Đorđa Joanovića", "type": "all", "street": null},
+      {"name": "Veselina Masleše", "type": "all", "street": "parni brojevi"},
+      {"name": "Janka Čmelika", "type": "all", "street": null},
+      {"name": "Milenka Grčića", "type": "all", "street": "neparni brojevi"},
+      {"name": "Ilije Birčanina", "type": "all", "street": null},
+      {"name": "Molnar Đule", "type": "all", "street": null},
+      {"name": "Stevana Divnina Babe", "type": "all", "street": null},
+      {"name": "Teodora Kračuna", "type": "all", "street": null},
+      {"name": "Katarine Ivanović", "type": "all", "street": null},
+      {"name": "Nadežde Petrović", "type": "all", "street": null},
+      {"name": "Trg majke Jevrosime", "type": "all", "street": null},
+      {"name": "Dr Svetislava Kasapinovića", "type": "all", "street": null},
+      {
+        "name": "Rumenačka",
+        "type": "all",
+        "text": "neparni brojevi od 1 do broja 97",
+        "street": { "odd": {"first": 1, "end": 97} }
+      },
+      {"name": "Rodoljuba Čolakovića", "type": "all", "street": null},
+      {
+        "name": "Đorđa Nikšića Johana",
+        "type": "all",
+        "text": "neparni brojevi od 13 do broja 35",
+        "street": { "odd": {"first": 13, "end": 35} }
+      },
+      {
+        "name": "Stojana Novakovića",
+        "type": "all",
+        "text": "neparni brojevi od 29 do 33 i parni brojevi od 4 do 8",
+        "street": {
+          "odd" : {"first": 29, "end": 31},
+          "even": {"first":  4, "end":  8}
+        }
+      },
+      {"name": "Milana Ješića Ibre", "type": "all", "street": null},
+      {"name": "Pavla Ivića", "type": "all", "street": null},
+      {"name": "Olge Hadžić", "type": "all", "street": null},
+      {"name": "Draška Ređepa", "type": "all", "street": null},
+      {"name": "Gorana Jojića.", "type": "all", "street": null}
+    ]
+  },
+  {
+    "id": 220,
+    "district": null,
+    "streets": [
+      {"name": "Vojvode Knićanina", "type": "all", "street": null},
+      {"name": "Sarajevska", "type": "all", "street": null},
+      {"name": "Pajevićeva", "type": "all", "street": null},
+      {"name": "Stratimirovićeva", "type": "all", "street": null},
+      {"name": "Pere Segedinca", "type": "all", "street": null},
+      {"name": "Černiševskog", "type": "all", "street": null},
+      {"name": "Trg 27. marta", "type": "all", "street": null},
+      {"name": "Atanasija Gereckog", "type": "all", "street": null},
+      {"name": "Kolo srpskih sestara", "type": "all", "street": null},
+      {"name": "Đorđa Servickog", "type": "all", "street": null},
+      {"name": "Krilova", "type": "all", "street": null},
+      {
+        "name": "Miše Dimitrijevića",
+        "type": "all",
+        "text": "parni brojevi od 52 do 80 i neparni brojevi od 55 do 89",
+        "street": {
+          "odd" : {"first": 55, "end": 89},
+          "even": {"first": 52, "end": 80}
+        }
+      },
+      {
+        "name": "Banović Strahinje",
+        "type": "all",
+        "text": "neparni brojevi i parni od broja 2 do 14 i od 22 do kraja ulice",
+        "street": {
+          "odd" : {"first":  2, "end":   14},
+          "even": {"first": 22, "end": null}
+        }
+      },
+      {
+        "name": "Bulevar cara Lazara",
+        "type": "all",
+        "text": "parni brojevi od 64 do 126 i neparni od 81 do 85",
+        "street": {
+          "odd" : {"first": 81, "end":  85},
+          "even": {"first": 64, "end": 126}
+        }
+      },
+      {"name": "Cara Dušana", "type": "all", "street": null},
+      {
+        "name": "Futoška",
+        "type": "all",
+        "text": "neparni brojevi od 41 do 125",
+        "street": { "odd": {"first": 41, "end": 125} }
+      },
+      {"name": "Ruđera Boškovića", "type": "all", "street": null},
+      {"name": "Laze Nančića", "type": "all", "street": null},
+      {"name": "Servo Mihalja", "type": "all", "street": null},
+      {"name": "Braće Krkljuš", "type": "all", "street": null},
+      {"name": "Đorđa Magaraševića", "type": "all", "street": null},
+      {"name": "Olge Petrov", "type": "all", "street": null},
+      {"name": "Teodora Pavlovića", "type": "all", "street": null},
+      {"name": "Braće Lučić", "type": "all", "street": null},
+      {"name": "Tone Hadžića", "type": "all", "street": null},
+      {"name": "Braće Grulović", "type": "all", "street": null},
+      {"name": "Aranj Janoša", "type": "all", "street": null},
+      {
+        "name": "Bulevar Evrope",
+        "type": "all",
+        "text": "parni brojevi od 2 do 50.",
+        "street": { "even": {"first": 2, "end": 50} }
+      }
+    ]
+  },
+  {
+    "id": 221,
+    "district": null,
+    "streets": [
+      {"name": "Partizanska", "type": "all", "street": null},
+      {"name": "Radoja Domanovića", "type": "all", "street": null},
+      {"name": "Ustanička", "type": "all", "street": null},
+      {"name": "Karađorđeva", "type": "all", "street": null},
+      {"name": "Koste Šokice", "type": "all", "street": null},
+      {"name": "Branka Radičevića", "type": "all", "street": null},
+      {"name": "Save Đisalova", "type": "all", "street": null},
+      {"name": "Jovana Cvijića", "type": "all", "street": null},
+      {"name": "Dositejeva", "type": "all", "street": null},
+      {
+        "name": "Temerinska",
+        "type": "all",
+        "text": "od broja 1 do 123 i od broja 66 do 116 a",
+        "street": {"first": 1, "end": 123}
+      },
+      {
+        "name": "Temerinska",
+        "type": "all",
+        "text": "od broja 1 do 123 i od broja 66 do 116 a",
+        "street": {"first": 66, "end": "116a"}
+      },
+      {"name": "Kisačka", "type": "all", "street": "parni brojevi"},
+      {
+        "name": "Sentandrejski put",
+        "type": "all",
+        "text": "od broja 8 do 44",
+        "street": {"first": 8, "end": 44}
+      },
+      {"name": "Nemanjina", "type": "all", "street": null},
+      {"name": "Raška", "type": "all", "street": null},
+      {"name": "Hadži Đerina", "type": "all", "street": null},
+      {"name": "Trg mira", "type": "all", "street": null},
+      {"name": "Davida Rackovića", "type": "all", "street": null},
+      {"name": "Vojislava Ilića", "type": "all", "street": null},
+      {"name": "Đorđa Dere", "type": "all", "street": null},
+      {"name": "Stanka Paunovića", "type": "all", "street": null},
+      {"name": "Rusinska", "type": "all", "street": null},
+      {"name": "Užička", "type": "all", "street": null},
+      {"name": "Graničarska", "type": "all", "street": null},
+      {"name": "Save Šumanovića", "type": "all", "street": null},
+      {"name": "Đorđa Zličića", "type": "all", "street": null},
+      {"name": "Vlade Živanovića", "type": "all", "street": null},
+      {"name": "Plitvička", "type": "all", "street": null},
+      {"name": "Šajkaška", "type": "all", "street": null},
+      {"name": "Put Šajkaškog odreda", "type": "all", "street": null},
+      {"name": "Petra Drezgića", "type": "all", "street": null},
+      {"name": "Teodora Mandića", "type": "all", "street": null},
+      {"name": "Balkanska", "type": "all", "street": null},
+      {"name": "Đerdapska", "type": "all", "street": null},
+      {"name": "Trg 23. oktobra", "type": "all", "street": null},
+      {"name": "Josifa Marinkovića", "type": "all", "street": null},
+      {"name": "Pere Popadića", "type": "all", "street": null},
+      {"name": "Industrijska", "type": "all", "street": null},
+      {
+        "name"  : "Put Novosadskog partizanskog odreda",
+        "type"  : "all",
+        "street": null
+      },
+      {"name": "Kisački put", "type": "all", "street": null},
+      {
+        "name": "Tekelijina",
+        "type": "all",
+        "text": "parni brojevi od 46 do 58 i neparni brojevi 39 do 39/a",
+        "street": {
+          "odd" : {"first": 39, "end": "39\\a"},
+          "even": {"first": 46, "end": 58     }
+        }
+      },
+      {"name": "Branka Žeželja.", "type": "all", "street": null}
+    ]
+  },
+  {"id": 222, "district": "Rumenka", "type": "all_street"},
+  {
+    "id": 223,
+    "district": null,
+    "streets": [
+      {"name": "Atar 19", "type": "all", "street": null},
+      {"name": "Školska", "type": "all", "street": null},
+      {"name": "Duška Trifunovića", "type": "all", "street": null},
+      {"name": "Karinska", "type": "all", "street": null},
+      {"name": "Miloša Obilića", "type": "all", "street": null},
+      {"name": "Ravnogorska", "type": "all", "street": null},
+      {"name": "Lička", "type": "all", "street": null},
+      {"name": "Velebitska", "type": "all", "street": null},
+      {"name": "Krajiška", "type": "all", "street": null},
+      {"name": "Abadžijska", "type": "all", "street": null},
+      {"name": "Ruzmarinova", "type": "all", "street": null},
+      {"name": "Ljutice Bogdana", "type": "all", "street": null},
+      {"name": "Kosovke devojke", "type": "all", "street": null},
+      {"name": "Milića Barjaktara", "type": "all", "street": null},
+      {"name": "Ivana Senkovića", "type": "all", "street": null},
+      {"name": "Radivoja Koraća", "type": "all", "street": null},
+      {"name": "Adiđarska", "type": "all", "street": null},
+      {"name": "Žrtava fašizma", "type": "all", "street": null},
+      {"name": "Dalmatinska", "type": "all", "street": null},
+      {"name": "Vojvode Stepe", "type": "all", "street": null},
+      {"name": "Omladinska", "type": "all", "street": null},
+      {"name": "Železnička", "type": "all", "street": null},
+      {"name": "Vuka Karadžića", "type": "all", "street": null},
+      {"name": "Vladike Maksima", "type": "all", "street": null},
+      {"name": "Nova 2", "type": "all", "street": null},
+      {"name": "Nova 3", "type": "all", "street": null},
+      {"name": "Kajmakčalanska", "type": "all", "street": null},
+      {"name": "Vojvode Putnika", "type": "all", "street": null},
+      {"name": "Atar 1", "type": "all", "street": null},
+      {"name": "Nova 80", "type": "all", "street": null},
+      {"name": "Bogdana Čiplića", "type": "all", "street": null},
+      {"name": "Veternički breg", "type": "all", "street": null},
+      {"name": "Zuzane Halupove", "type": "all", "street": null},
+      {"name": "Savke Subotić", "type": "all", "street": null},
+      {"name": "Poenkareova", "type": "all", "street": null},
+      {"name": "Jovana Obrenovića", "type": "all", "street": null},
+      {"name": "Cara Dušana Silnog", "type": "all", "street": null},
+      {"name": "Devet Jugovića", "type": "all", "street": null},
+      {"name": "Svetozara Miletića", "type": "all", "street": null},
+      {"name": "Isidore Sekulić", "type": "all", "street": null},
+      {"name": "Cetinjska Radnička", "type": "all", "street": null},
+      {"name": "Partizanska", "type": "all", "street": null},
+      {"name": "Avalska", "type": "all", "street": null},
+      {"name": "Solunskog fronta", "type": "all", "street": null},
+      {"name": "Pionirska", "type": "all", "street": null},
+      {"name": "19. maja", "type": "all", "street": null},
+      {"name": "Fruškogorska", "type": "all", "street": null},
+      {"name": "Vojvode Bojovića", "type": "all", "street": null},
+      {"name": "Kralja Aleksandra", "type": "all", "street": null},
+      {"name": "Dobrovoljačka", "type": "all", "street": null},
+      {"name": "Nikole Tesle", "type": "all", "street": null},
+      {"name": "Ive Andrića", "type": "all", "street": null},
+      {"name": "Mihajla Pupina", "type": "all", "street": null},
+      {"name": "Ratnih vojnih invalida", "type": "all", "street": null},
+      {"name": "Braće Tokin", "type": "all", "street": null},
+      {"name": "Ive Lole Ribara", "type": "all", "street": null},
+      {"name": "Kninska", "type": "all", "street": null},
+      {"name": "Nova 108", "type": "all", "street": null},
+      {"name": "Kod groblja", "type": "all", "street": null},
+      {"name": "Dodolska", "type": "all", "street": null},
+      {"name": "Koledarska", "type": "all", "street": null},
+      {"name": "Kralja Petra Prvog", "type": "all", "street": null},
+      {"name": "Donska", "type": "all", "street": null},
+      {"name": "Nova 59", "type": "all", "street": null},
+      {"name": "Olge Ilić", "type": "all", "street": null},
+      {"name": "Vase Eškićevića", "type": "all", "street": null},
+      {"name": "Pavla Julinca", "type": "all", "street": null},
+      {"name": "Proke Jovkića", "type": "all", "street": null},
+      {"name": "Beogradska", "type": "all", "street": null},
+      {"name": "Zrmanjska", "type": "all", "street": null},
+      {"name": "Petra Kočića", "type": "all", "street": null},
+      {"name": "Sportska", "type": "all", "street": null},
+      {"name": "Tome Maksimovića", "type": "all", "street": null},
+      {"name": "Svetozara Markovića Toze", "type": "all", "street": null},
+      {"name": "Save Kovačevića", "type": "all", "street": null},
+      {"name": "Sremska", "type": "all", "street": null},
+      {"name": "Vojvode Mišića", "type": "all", "street": null},
+      {"name": "Cara Lazara", "type": "all", "street": null},
+      {"name": "Milana Tepića", "type": "all", "street": null},
+      {"name": "Sonje Marinković", "type": "all", "street": null},
+      {"name": "Emila Čakre", "type": "all", "street": null},
+      {"name": "Popovića Komoraša", "type": "all", "street": null},
+      {"name": "Cerska", "type": "all", "street": null},
+      {"name": "Gorana Maletića", "type": "all", "street": null},
+      {"name": "Dr Dušana Popovića", "type": "all", "street": null},
+      {"name": "Olge Ilić", "type": "all", "street": null},
+      {"name": "Marka Serviljskog", "type": "all", "street": null},
+      {"name": "Danila Lazovića", "type": "all", "street": null},
+      {"name": "Drage Dejanović", "type": "all", "street": null},
+      {"name": "Nova 67", "type": "all", "street": null},
+      {
+        "name": "Dragoslava Srejovića",
+        "type": "all",
+        "text": "od broja 38 do kraja ulice i od broja 51 do kraja ulice",
+        "street": {"first": 38, "end": null}
+      },
+      {
+        "name": "Dragoslava Srejovića",
+        "type": "all",
+        "text": "od broja 38 do kraja ulice i od broja 51 do kraja ulice",
+        "street": {"first": 51, "end": null}
+      },
+      {"name": "Novosadski put", "type": "all", "street": null},
+      {"name": "Hanelore Lamhe", "type": "all", "street": null}
+    ]
+  },
+  {"id": 224, "district": "Bukovac", "type": "all_street"},
+  {"id": 225, "district": "Kisač", "type": "all_street"},
+  {"id": 226, "district": "Kovilj", "type": "all_street"},
+  {"id": 228, "district": "Rumenka", "type": "all_street"},
+  {
+    "id": 232,
+    "district": null,
+    "streets": [
+      {"name": "Tri bagrema", "type": "all", "street": null},
+      {"name": "Stevana Peci Popovića", "type": "all", "street": null},
+      {"name": "Nova 14", "type": "all", "street": null},
+      {"name": "Jovana Kalembera", "type": "all", "street": null},
+      {"name": "Justina Popovića", "type": "all", "street": null},
+      {"name": "Vladimira Matijevića", "type": "all", "street": null},
+      {"name": "Nova 9", "type": "all", "street": null},
+      {"name": "Dobre Jovanovića", "type": "all", "street": null},
+      {"name": "Gige Geršića", "type": "all", "street": null},
+      {
+        "name"  : "Svetozara Mihajlovića (Nova 91)",
+        "type"  : "all",
+        "street": null
+      },
+      {"name": "Petra Bige", "type": "all", "street": null},
+      {"name": "Generala Vasića", "type": "all", "street": null},
+      {"name": "Živorada Petrovića", "type": "all", "street": null},
+      {"name": "Đurđevdanska (Nova 40)", "type": "all", "street": null},
+      {"name": "Nova 18", "type": "all", "street": null},
+      {
+        "name"  : "Vitomira Kuzmanovića (Nova 22)",
+        "type"  : "all",
+        "street": null
+      },
+      {"name": "Nova 54", "type": "all", "street": null},
+      {
+        "name": "Novosadski put",
+        "type": "all",
+        "text": "neparni brojevi od 5 do broja 75 i parni brojevi od 48 do broja 130",
+        "street": {
+          "odd" : {"first":  5, "end":  75},
+          "even": {"first": 48, "end": 130}
+        }
+      },
+      {"name": "Nova 101", "type": "all", "street": null},
+      {"name": "Nova 102", "type": "all", "street": null},
+      {"name": "Nova 103", "type": "all", "street": null},
+      {"name": "Blagoja Jovovića (Nova 104)", "type": "all", "street": null},
+      {"name": "Nova 93", "type": "all", "street": null},
+      {"name": "Nova 94", "type": "all", "street": null},
+      {"name": "Nova 95", "type": "all", "street": null},
+      {"name": "Nova 92", "type": "all", "street": null},
+      {"name": "Joksima Novića", "type": "all", "street": null},
+      {"name": "Lovorova", "type": "all", "street": null},
+      {"name": "Baštenska", "type": "all", "street": null},
+      {"name": "Kedrova", "type": "all", "street": null},
+      {"name": "Zvezdarska", "type": "all", "street": null},
+      {"name": "Vetrovita", "type": "all", "street": null},
+      {"name": "Mesečeva", "type": "all", "street": null},
+      {"name": "Miloša Petrovića", "type": "all", "street": null},
+      {"name": "Ljubena Karavelova", "type": "all", "street": null},
+      {"name": "Leptirova", "type": "all", "street": null},
+      {"name": "Dragiše Živkovića", "type": "all", "street": null},
+      {"name": "Uroša Stefana Nestorovića", "type": "all", "street": null},
+      {"name": "Jovana Apostolovića", "type": "all", "street": null},
+      {"name": "Ilije Rajačića Mirona", "type": "all", "street": null},
+      {"name": "Sibinjanin Janka", "type": "all", "street": null},
+      {"name": "Mihajla Vitkovića", "type": "all", "street": null},
+      {"name": "Tomija Josefa Lapida", "type": "all", "street": null},
+      {"name": "Aleksandra Saše Popovića", "type": "all", "street": null},
+      {"name": "Pavla Vuisića", "type": "all", "street": null},
+      {"name": "Mije Aleksića", "type": "all", "street": null},
+      {"name": "Zorana Radmilovića", "type": "all", "street": null},
+      {"name": "Vase Čarapića", "type": "all", "street": null},
+      {"name": "Sanska", "type": "all", "street": null},
+      {"name": "Osnivača Veternika", "type": "all", "street": null},
+      {"name": "Svetih arhanđela", "type": "all", "street": null},
+      {"name": "Rodina", "type": "all", "street": null},
+      {"name": "Lastina", "type": "all", "street": null},
+      {"name": "Golubova", "type": "all", "street": null},
+      {"name": "Dunavska", "type": "all", "street": null},
+      {"name": "Paunova", "type": "all", "street": null},
+      {"name": "Kosova", "type": "all", "street": null},
+      {"name": "Srpskih junaka", "type": "all", "street": null},
+      {"name": "Kralja Milutina", "type": "all", "street": null},
+      {"name": "Sevastopoljska", "type": "all", "street": null},
+      {"name": "Dalmatinska bukovica", "type": "all", "street": null},
+      {"name": "Nova 20", "type": "all", "street": null},
+      {"name": "Despota Jovana", "type": "all", "street": null},
+      {"name": "Jelene Kon", "type": "all", "street": null},
+      {"name": "Nikole Mihajlovića", "type": "all", "street": null},
+      {"name": "Jovana Muškatirovića", "type": "all", "street": null},
+      {"name": "Obrovačka", "type": "all", "street": null},
+      {"name": "Nova 1 (Novosadska)", "type": "all", "street": null},
+      {"name": "Veternička", "type": "all", "street": null},
+      {"name": "Dežea Kostolanjija", "type": "all", "street": null},
+      {"name": "Dr Miodraga Lazića (Nova 36)", "type": "all", "street": ""},
+      {"name": "Nova 39 (Novosadska)", "type": "all", "street": null},
+      {"name": "Nova 38 (Novosadska)", "type": "all", "street": null},
+      {"name": "Nova 43 (Novosadska)", "type": "all", "street": null},
+      {"name": "Niška", "type": "all", "street": null},
+      {"name": "Đorđa Karađorđevića", "type": "all", "street": null},
+      {"name": "Luke Dotlića", "type": "all", "street": null},
+      {"name": "Kupina", "type": "all", "street": null},
+      {"name": "Atar", "type": "all", "street": null},
+      {
+        "name"  : "Sremskog dobrovoljačkog odreda (Nova 34)",
+        "type"  : "all",
+        "street": null
+      },
+      {"name": "Nova 35", "type": "all", "street": null},
+      {"name": "Olivere Marković", "type": "all", "street": null},
+      {
+        "name"  : "Vitomira Kuzmanovića (Nova 22)",
+        "type"  : "all",
+        "street": null
+      },
+      {"name": "Jelisavete Načić", "type": "all", "street": null},
+      {"name": "Kragujevačka", "type": "all", "street": null},
+      {"name": "Nova 29 (Novosadska)", "type": "all", "street": ""},
+      {"name": "Nova 31 (Novosadska)", "type": "all", "street": null},
+      {"name": "Milunka Savić (Nova 33)", "type": "all", "street": null},
+      {"name": "Nova 21 (Novosadska)", "type": "all", "street": null},
+      {"name": "Nova 32 (Novosadska)", "type": "all", "street": null},
+      {"name": "Nova 4 (Novosadska)", "type": "all", "street": null},
+      {"name": "Branka Ćopića", "type": "all", "street": null},
+      {"name": "Ratarska", "type": "all", "street": null},
+      {"name": "Alaska", "type": "all", "street": null},
+      {"name": "Medena", "type": "all", "street": null},
+      {"name": "Kamenjar 3", "type": "all", "street": null},
+      {"name": "Kamenjar 4", "type": "all", "street": null},
+      {"name": "Kamenjar 5", "type": "all", "street": null},
+      {
+        "name"  : "Podunavska",
+        "type"  : "all",
+        "street": "od Nove 1 do Veterničke"
+      },
+      {"name": "Nova 78", "type": "all", "street": null},
+      {"name": "Sime Pandurovića", "type": "all", "street": null},
+      {"name": "Ivana Boldižara", "type": "all", "street": null},
+      {"name": "Rastka Petrovića", "type": "all", "street": null},
+      {"name": "Milana Konjovića", "type": "all", "street": null},
+      {"name": "Rajka Mamuzića", "type": "all", "street": null},
+      {"name": "Branka Ilića", "type": "all", "street": null},
+      {"name": "Unska", "type": "all", "street": null},
+      {"name": "Momčila Nastasijevića", "type": "all", "street": null},
+      {"name": "Vladana Đorđevića", "type": "all", "street": null},
+      {"name": "Stevana Sinđelića", "type": "all", "street": null},
+      {"name": "Svetolika Pašćana", "type": "all", "street": null},
+      {"name": "Profesora Šuvakovića", "type": "all", "street": null},
+      {"name": "Domentijanova", "type": "all", "street": null},
+      {"name": "Marka Maletina", "type": "all", "street": null},
+      {"name": "Milana Ajvaza", "type": "all", "street": null},
+      {"name": "Stanoja Dušanovića", "type": "all", "street": null},
+      {"name": "Stefana Prvovenčanog", "type": "all", "street": null},
+      {"name": "Mačvanska", "type": "all", "street": null},
+      {"name": "Suvoborska", "type": "all", "street": null},
+      {"name": "Sopoćanska", "type": "all", "street": null},
+      {"name": "Vojislava Despotova", "type": "all", "street": null},
+      {
+        "name": "Marije Bursać",
+        "type": "all",
+        "text": "neparni brojevi od 1 do 41 i parni brojevi od 2 do 54",
+        "street": {
+          "odd" : {"first": 1, "end": 41},
+          "even": {"first": 2, "end": 54}
+        }
+      },
+      {"name": "Jefimijina", "type": "all", "street": null},
+      {"name": "Atinska", "type": "all", "street": null},
+      {"name": "Palićka", "type": "all", "street": null},
+      {"name": "Milenka Šerbana", "type": "all", "street": null},
+      {"name": "Jovana Konjovića", "type": "all", "street": null},
+      {"name": "Nikole Aleksića", "type": "all", "street": null},
+      {"name": "Zoje Mirosavljević", "type": "all", "street": null},
+      {"name": "Mirona Đorđevića", "type": "all", "street": null},
+      {"name": "Prote Veljka Mirosavljevića", "type": "all", "street": null},
+      {"name": "Jadranke Stojaković", "type": "all", "street": null},
+      {"name": "Velje Ribara", "type": "all", "street": null},
+      {"name": "Nedeljka Rajića", "type": "all", "street": null},
+      {"name": "Vuja Milanovića", "type": "all", "street": null},
+      {"name": "Heroja sa Košara", "type": "all", "street": null},
+      {"name": "Mire Stupice", "type": "all", "street": null},
+      {"name": "Vojislava Marića", "type": "all", "street": null},
+      {"name": "Dragana Nikolića", "type": "all", "street": null},
+      {"name": "Braće Grim (Nova 35)", "type": "all", "street": null},
+      {"name": "Svetogorska", "type": "all", "street": null},
+      {
+        "name"  : "Steva Čuturila и Jovana Tucakova (Nova 29)",
+        "type"  : "all",
+        "street": null
+      }
+    ]
+  }
+]

@@ -1,0 +1,274 @@
+{
+  "schoolActivitiesReport": {
+    "schools": [
+      {"id": 217, "name": "OŠ \"Petefi Šandor\" (Novi Sad)"               },
+      {"id": 216, "name": "OŠ \"Nikola Tesla\" (Novi Sad)"                },
+      {"id": 226, "name": "OŠ \"Laza Kostić\" (Kovilj, Novi Sad)"         },
+      {"id": 214, "name": "OŠ \"Kosta Trifković\" (Novi Sad)"             },
+      {"id": 219, "name": "OŠ \"Svetozar Marković Toza\" (Novi Sad)"      },
+      {"id": 212, "name": "OŠ \"Jožef Atila\" (Novi Sad)"                 },
+      {"id": 222, "name": "OŠ \"Sveti Sava\" (Rumenka, Novi Sad)"         },
+      {"id": 223, "name": "OŠ \"Mihajlo Pupin\" (Veternik, Novi Sad)"     },
+      {"id": 213, "name": "OŠ \"Jovan Popović\" (Novi Sad)"               },
+      {"id": 221, "name": "OŠ \"Vuk Karadžić\" (Novi Sad)"                },
+      {"id": 204, "name": "OŠ \"Jovan Jovanović Zmaj\" (Sremska Kamenica)"},
+      {"id": 220, "name": "OŠ \"Vasa Stajić\" (Novi Sad)"                 },
+      {"id": 232, "name": "OŠ \"Marija Trandafil\" (Veternik, Novi Sad)"  },
+      {"id": 205, "name": "OŠ \"Đorđe Natošević\" (Novi Sad)"             },
+      {"id": 208, "name": "OŠ \"Dositej Obradović\" (Novi Sad)"           },
+      {"id": 210, "name": "OŠ \"Ivan Gundulić\" (Novi Sad)"               },
+      {"id": 218, "name": "OŠ \"Prva vojvođanska brigada\" (Novi Sad)"    },
+      {"id": 202, "name": "OŠ \"Sonja Marinković\" (Novi Sad)"            },
+      {"id": 215, "name": "OŠ \"Miloš Crnjanski\" (Novi Sad)"             },
+      {"id": 224, "name": "OŠ \"22. avgust\" (Bukovac, Novi Sad)"         },
+      {"id": 209, "name": "OŠ \"Dušan Radović\" (Novi Sad)"               },
+      {"id": 211, "name": "OŠ \"Ivo Lola Ribar\" (Novi Sad)"              },
+      {"id": 203, "name": "OŠ \"Veljko Vlahović\" (Šangaj, Novi Sad)"     },
+      {"id": 206, "name": "OŠ \"Đura Daničić\" (Novi Sad)"                },
+      {"id": 200, "name": "OŠ \"IVO ANDRIĆ\""                             },
+      {"id": 201, "name": "OŠ \"ŽARKO ZRENJANIN\""                        },
+      {"id": 199, "name": "OŠ \"ĐURA JAKŠIĆ\""                            },
+      {"id": 194, "name": "OŠ \"Jovan Dučić\" (Petrovaradin)"             },
+      {"id": 198, "name": "OŠ \"Desanka Maksimović\" (Futog)"             },
+      {"id": 225, "name": "OŠ \"Ljudovit Štur\" (Kisač)"                  },
+      {"id": 196, "name": "OŠ \"Aleksa Šantić\" (Stepanovićevo)"          },
+      {"id": 207, "name": "OŠ \"Branko Radičević\" (Novi Sad)"            },
+      {"id": 197, "name": "OŠ \"Miroslav Antić\" (Futog)"                 },
+      {"id": 195, "name": "OŠ \"Veljko Petrović\" (Begeč)"                }
+    ],
+    "activityCategories": [
+      {
+        "categoryId": 1,
+        "categoryName": "Интеллектуальная деятельность",
+        "activities": [
+          {
+            "activityId": 1,
+            "activityName": "Шахматная секция",
+            "participatingSchoolIds": [
+              217, 216, 226, 214, 219, 212, 223, 213, 221, 204, 205, 208, 210,
+              218, 202, 215, 209, 211, 206
+            ]
+          },
+          {
+            "activityId": 2,
+            "activityName": "Журналистика",
+            "participatingSchoolIds": [
+              217, 216, 226, 214, 219, 212, 222, 223, 213, 221, 204, 220, 208,
+              218, 202, 215, 224, 209, 203, 206, 199, 198
+            ]
+          },
+          {
+            "activityId": 3,
+            "activityName": "Научные группы",
+            "participatingSchoolIds": [
+              217, 216, 226, 214, 219, 212, 222, 223, 213, 221, 204, 220, 232,
+              205, 208, 210, 218, 202, 215, 224, 209, 211, 203, 206, 199, 225,
+              196, 207, 197
+            ]
+          },
+          {
+            "activityId": 4,
+            "activityName": "Математическая олимпиада/конкурсы",
+            "participatingSchoolIds": [
+              217, 216, 226, 214, 219, 212, 222, 223, 213, 221, 204, 220, 232,
+              205, 210, 218, 202, 215, 224, 209, 211, 203, 206, 200, 201, 199,
+              225, 196, 207, 197
+            ]
+          },
+          {
+            "activityId": 5,
+            "activityName": "Экологический кружок",
+            "participatingSchoolIds": [
+              217, 216, 226, 214, 219, 212, 222, 223, 213, 221, 204, 220, 232,
+              205, 208, 210, 218, 202, 215, 224, 209, 211, 203, 206, 199, 225,
+              196
+            ]
+          },
+          {
+            "activityId": 6,
+            "activityName": "Библиотечная секция",
+            "participatingSchoolIds": [
+              217, 216, 226, 214, 219, 212, 222, 223, 213, 221, 204, 220, 232,
+              205, 208, 210, 218, 202, 215, 224, 209, 211, 203, 206, 199, 225,
+              196, 207, 197
+            ]
+          }
+        ]
+      },
+      {
+        "categoryId": 2,
+        "categoryName": "Креативная деятельность",
+        "activities": [
+          {
+            "activityId": 7,
+            "activityName": "Креативная секция",
+            "participatingSchoolIds": [
+              200, 201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212,
+              213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 226,
+              232
+            ]
+          },
+          {
+            "activityId": 8,
+            "activityName": "Концерты/Музыкальные выступления",
+            "participatingSchoolIds": [
+              194, 198, 200, 201, 203, 204, 205, 206, 208, 209, 210, 211, 212,
+              213, 214, 215, 216, 217, 219, 220, 221, 222, 223, 224, 225, 226,
+              232
+            ]
+          },
+          {
+            "activityId": 9,
+            "activityName": "Ученический парламент",
+            "participatingSchoolIds": [
+              194, 199, 202, 203, 204, 205, 206, 208, 209, 210, 211, 212, 213,
+              214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 226, 232
+            ]
+          },
+          {
+            "activityId": 10,
+            "activityName": "Драмская секция",
+            "participatingSchoolIds": [
+              198, 200, 202, 204, 205, 206, 208, 209, 210, 212, 213, 214, 215,
+              216, 217, 218, 219, 220, 221, 222, 223, 226, 232
+            ]
+          },
+          {
+            "activityId": 11,
+            "activityName": "Хор",
+            "participatingSchoolIds": [
+              194, 200, 202, 204, 205, 206, 208, 209, 210, 212, 213, 214, 216,
+              217, 218, 219, 220, 221, 222, 223, 225, 226, 232
+            ]
+          },
+          {
+            "activityId": 12,
+            "activityName": "Литературная секция",
+            "participatingSchoolIds": [
+              198, 200, 202, 203, 204, 205, 206, 208, 209, 210, 211, 212, 213,
+              214, 215, 216, 217, 219, 220, 221, 222, 223, 224, 226, 232
+            ]
+          },
+          {
+            "activityId": 13,
+            "activityName": "Изобразительная секция",
+            "participatingSchoolIds": [
+              203, 204, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217,
+              218, 219, 220, 221, 222, 223, 224, 226
+            ]
+          },
+          {
+            "activityId": 14,
+            "activityName": "Пчеловодство",
+            "participatingSchoolIds": [205, 210, 216, 217, 226, 232]
+          },
+          {
+            "activityId": 15,
+            "activityName": "STEM-клуб/Эксперименты",
+            "participatingSchoolIds": [
+              196, 198, 199, 200, 201, 203, 204, 205, 208, 210, 212, 213, 214,
+              216, 217, 218, 219, 220, 221, 222, 223, 224, 226, 232
+            ]
+          },
+          {
+            "activityId": 16,
+            "activityName": "Цветоводство",
+            "participatingSchoolIds": [205, 210, 211, 216, 217, 226, 232]
+          },
+          {
+            "activityId": 17,
+            "activityName": "Читательская секция",
+            "participatingSchoolIds": [
+              202, 203, 206, 209, 216, 217, 218, 222, 223, 226
+            ]
+          },
+          {
+            "activityId": 18,
+            "activityName": "Фото/Мультимедиа секция",
+            "participatingSchoolIds": [
+              199, 204, 205, 208, 212, 213, 214, 215, 216, 217, 219, 220, 221,
+              222, 224, 226, 232
+            ]
+          },
+          {
+            "activityId": 19,
+            "activityName": "Керамика",
+            "participatingSchoolIds": [
+              199, 201, 203, 210, 211, 216, 217, 220, 223, 226
+            ]
+          }
+        ]
+      },
+      {
+        "categoryId": 3,
+        "categoryName": "Международная деятельность",
+        "activities": [
+          {
+            "activityId": 20,
+            "activityName": "eTwinning",
+            "participatingSchoolIds": [194, 196, 201, 211, 214, 217, 220, 222]
+          },
+          {
+            "activityId": 21,
+            "activityName": "ERASMUS+",
+            "participatingSchoolIds": [
+              196, 201, 202, 203, 204, 205, 206, 208, 209, 210, 212, 213, 214,
+              215, 216, 217, 218, 219, 221, 222, 223, 224, 226, 232, 207
+            ]
+          },
+          {
+            "activityId": 22,
+            "activityName": "Двуязычное обучение",
+            "participatingSchoolIds": []
+          }
+        ]
+      },
+      {
+        "categoryId": 4,
+        "categoryName": "Спортивная деятельность",
+        "activities": [
+          {
+            "activityId": 23,
+            "activityName": "Дзюдо",
+            "participatingSchoolIds": [202, 219]
+          },
+          {
+            "activityId": 24,
+            "activityName": "Футбол",
+            "participatingSchoolIds": [
+              202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214,
+              216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 232
+            ]
+          },
+          {
+            "activityId": 25,
+            "activityName": "Лёгкая атлетика",
+            "participatingSchoolIds": [
+              195, 197, 199, 200, 202, 204, 205, 207, 208, 212, 213, 214, 216,
+              217, 218, 221, 222, 223, 232
+            ]
+          },
+          {
+            "activityId": 26,
+            "activityName": "Баскетбол",
+            "participatingSchoolIds": [
+              194, 195, 196, 197, 198, 199, 200, 201, 202, 203, 206, 209, 210,
+              211, 212, 213, 214, 217, 218, 219, 220, 221, 222, 223, 224, 225,
+              226, 232
+            ]
+          },
+          {
+            "activityId": 27,
+            "activityName": "Спортивная гимнастика",
+            "participatingSchoolIds": [202, 212, 214, 219]
+          },
+          {
+            "activityId": 28,
+            "activityName": "Карате",
+            "participatingSchoolIds": [202, 215, 219]
+          }
+        ]
+      }
+    ]
+  }
+}

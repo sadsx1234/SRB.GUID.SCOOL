@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Поступление в 1 класс в Нови-Саде — инструкция, документы, сроки</title>
+    <meta name="description" content="Пошаговая инструкция по упису (записи) у први разред в Нови-Саду: какие документы, сроки, запись на тестирование и советы для родителей. Актуально для 2025/2026." />
+    <link rel="canonical" href="https://guidshool.atwebpages.com/enrollment" />
+    <meta name="keywords" content="поступление в 1 класс нови сад, упис у први разред, документы за упис, запись у школу" />
+    <meta property="og:title" content="Поступление в 1 класс — GuidSchool (Нови-Сад)" />
+    <meta property="og:description" content="Узнайте сроки и документы для уписа у први разред, как записаться онлайн и что приготовить на встречу с психологом." />
+    <meta property="og:url" content="https://guidshool.atwebpages.com/enrollment" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <style>
+        :root {
+            --primary-color: #007bff;
+            --secondary-color: #f0f4f8;
+            --text-color: #333;
+            --light-gray: #e9ecef;
+            --card-border: #dee2e6;
+            --accent-green: #28a745;
+            --accent-blue: #17a2b8;
+        }
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+        }
+        .container {
+            max-width: 1300px;
+            margin: 20px auto;
+            background-color: #fff;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+        }
+        .lang-switcher {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 5px;
+            z-index: 10;
+        }
+        .lang-switcher button {
+            background-color: #f0f4f8;
+            border: 1px solid #dee2e6;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .lang-switcher button.active {
+            background-color: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+        h1 {
+            text-align: center;
+            padding: 20px 0;
+            color: var(--primary-color);
+            margin: 0;
+        }
+        .tabs { display: flex; justify-content: center; border-bottom: 2px solid var(--light-gray); flex-wrap: wrap; }
+        .tab { padding: 15px 20px; cursor: pointer; font-weight: 600; color: var(--text-color); transition: background-color 0.3s ease, color 0.3s ease; white-space: nowrap; text-decoration: none; }
+        .tab.active { color: var(--primary-color); border-bottom: 3px solid var(--primary-color); }
+        .tab:hover { background-color: var(--light-gray); }
+        .tab-content { display: block; padding: 20px; }
+        .enrollment-tab h2 { color: var(--primary-color); margin-bottom: 1rem; font-size: 1.8rem; padding: 0 20px; }
+        .enrollment-tab h3 { color: var(--primary-color); margin-bottom: 1rem; display: flex; align-items: center; }
+        .enrollment-tab .section { padding: 20px; border-bottom: 1px solid var(--light-gray); }
+        .enrollment-tab .section:last-child { border-bottom: none; }
+        .enrollment-tab .warning-box { background: #fff8e1; border-left: 4px solid #ffc107; padding: 1rem; margin: 1rem 0; border-radius: 0 5px 5px 0; }
+        .enrollment-tab .warning-box i { color: #ffc107; margin-right: 10px; }
+        .enrollment-tab .note-box { background: #e8f4fd; border-left: 4px solid var(--primary-color); padding: 1rem; margin: 1rem 0; border-radius: 0 5px 5px 0; }
+        .enrollment-tab .note-box i { color: var(--primary-color); margin-right: 10px; }
+        .enrollment-tab .timeline { position: relative; padding: 1rem 0; margin-top: 2rem; }
+        .enrollment-tab .timeline::before { content: ''; position: absolute; top: 0; left: 15px; height: 100%; width: 4px; background: var(--light-gray); }
+        .enrollment-tab .timeline-item { position: relative; padding-left: 50px; margin-bottom: 2rem; }
+        .enrollment-tab .timeline-item:last-child { margin-bottom: 0; }
+        .enrollment-tab .timeline-item::before { content: ''; position: absolute; top: 0; left: 7px; width: 20px; height: 20px; border-radius: 50%; background: var(--primary-color); border: 4px solid white; box-shadow: 0 0 0 4px var(--light-gray); }
+        .enrollment-tab .timeline-content { background: var(--secondary-color); padding: 1.2rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+        .enrollment-tab .timeline-content h3 { margin-top: 0; }
+        .enrollment-tab .document-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .enrollment-tab .document-card { background-color: #fff; border: 1px solid var(--card-border); border-radius: 10px; padding: 20px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); transition: transform 0.2s ease; }
+        .enrollment-tab .document-card:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .enrollment-tab .document-card h3 { margin-top: 0; color: var(--primary-color); }
+        .enrollment-tab .document-item { display: flex; align-items: center; margin-bottom: 0.8rem; }
+        .enrollment-tab .document-item i { margin-right: 10px; color: var(--primary-color); }
+        .enrollment-tab .later-badge { background: var(--accent-blue); color: white; font-size: 0.8rem; padding: 2px 8px; border-radius: 20px; margin-left: auto; white-space: nowrap; }
+        .enrollment-tab .absence-table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .enrollment-tab .absence-table th { background: var(--primary-color); color: white; padding: 1rem; text-align: left; }
+        .enrollment-tab .absence-table td { padding: 1rem; border-bottom: 1px solid var(--light-gray); }
+        .enrollment-tab .absence-table tr:last-child td { border-bottom: none; }
+        .enrollment-tab .absence-table tr:nth-child(even) { background: var(--secondary-color); }
+        .enrollment-tab .horizontal-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 10px; }
+        .enrollment-tab .tag { display: inline-block; padding: 4px 8px; border-radius: 5px; font-size: 0.8em; margin-right: 5px; margin-bottom: 5px; font-weight: 500; }
+        .enrollment-tab .tag.program { background-color: #eaf8f5; color: #155724; }
+        .enrollment-tab .intro-text { font-size: 1.1rem; line-height: 1.6; margin-bottom: 1.5rem; padding: 0 20px; }
+        .breadcrumb-nav { display: flex; flex-wrap: wrap; gap: 10px; margin: 20px; padding: 15px; background-color: var(--secondary-color); border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .breadcrumb-step { display: flex; align-items: center; padding: 8px 15px; background-color: white; border-radius: 20px; cursor: pointer; transition: all 0.3s ease; font-weight: 500; color: var(--primary-color); border: 1px solid var(--primary-color); }
+        .breadcrumb-step:hover { background-color: var(--primary-color); color: white; transform: translateY(-2px); box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        .breadcrumb-step.active { background-color: var(--primary-color); color: white; }
+        .breadcrumb-step i { margin-right: 8px; }
+        @media (max-width: 768px) {
+             h1 { padding-right: 60px; font-size: 1.5rem; }
+            .breadcrumb-nav { justify-content: center; }
+            .breadcrumb-step { font-size: 0.9rem; padding: 6px 12px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="lang-switcher">
+            <button id="lang-ru" onclick="setLanguage('ru')">RU</button>
+            <button id="lang-en" onclick="setLanguage('en')">EN</button>
+        </div>
+        <h1 data-translate-key="mainHeader">Выбор государственной основной школы для ребенка в Нови-сад</h1>
+        <div class="tabs">
+            <a href="schools.html" class="tab" data-translate-key="tabSchools">🔍 Карта школ</a>
+            <a href="search.html" class="tab" data-translate-key="tabAddress">📍 Поиск по адресу</a>
+            <a href="enrollment.html" class="tab active" data-translate-key="tabEnrollment" style="display: none;">✅ Поступление в 1 класс</a>
+            <a href="bookstores.html" class="tab" data-translate-key="tabBookstores">📚 Где купить книги</a>
+            <a href="documents.html" class="tab" data-translate-key="tabDocuments">📝 Документы (шаблоны)</a>
+        </div>
+        <div id="enrollment-tab" class="tab-content enrollment-tab">
+            <div class="section">
+                <p class="intro-text" data-translate-key="introText">Процесс записи ребенка в школу в Сербии состоит из нескольких этапов. Следуя этой инструкции, вы сможете пройти все шаги без стресса и лишних хлопот.</p>
+                <div class="warning-box">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <span data-translate-key="introWarning"><strong>Важно:</strong> Начинайте подготовку заранее, особенно если вы не по прописке. Некоторые шаги требуют времени на ожидание.</span>
+                </div>
+            </div>
+            
+            <div class="breadcrumb-nav">
+                <div class="breadcrumb-step active" onclick="scrollToStep('step1')" data-translate-key="navStep1"><i class="fas fa-file-alt"></i> Шаг 1: Документы</div>
+                <div class="breadcrumb-step" onclick="scrollToStep('step2')" data-translate-key="navStep2"><i class="fas fa-clipboard-list"></i> Шаг 2: Запись</div>
+                <div class="breadcrumb-step" onclick="scrollToStep('step3')" data-translate-key="navStep3"><i class="fas fa-clock"></i> Шаг 3: Продленка</div>
+                <div class="breadcrumb-step" onclick="scrollToStep('step4')" data-translate-key="navStep4"><i class="fas fa-shopping-cart"></i> Шаг 4: Покупки</div>
+                <div class="breadcrumb-step" onclick="scrollToStep('step5')" data-translate-key="navStep5"><i class="fas fa-calendar-check"></i> Шаг 5: Справки</div>
+            </div>
+            
+            <div class="section" id="step1">
+                <h2 data-translate-key="step1_title">Шаг 1: Подготовка документов</h2>
+                <div class="document-grid">
+                    <div class="document-card">
+                        <div class="document-item">
+                            <i class="fas fa-home"></i><span data-translate-key="doc1_title">Справка о месте жительства</span><span class="later-badge" data-translate-key="badgeLater">Можно потом</span>
+                        </div>
+                        <p data-translate-key="doc1_desc">Что-то из по каждому родителю: Уверенье из МУП, Выписка с карточки ВНЖ или ПМЖ, Белый картон</p>
+                    </div>
+                    <div class="document-card">
+                        <div class="document-item">
+                            <i class="fas fa-graduation-cap"></i><span data-translate-key="doc2_title">Справка о прохождении подготовительной дошкольной программы</span><span class="later-badge" data-translate-key="badgeLater">Можно потом</span>
+                        </div>
+                        <p data-translate-key="doc2_desc">Не обязательно, но если есть, то хорошо. Если не по прописке могут прикопаться, но после зачисления.</p>
+                    </div>
+                    <div class="document-card">
+                        <div class="document-item">
+                            <i class="fas fa-heartbeat"></i><span data-translate-key="doc3_title">Справка о медицинском осмотре</span><span class="later-badge" data-translate-key="badgeLater">Можно потом</span>
+                        </div>
+                        <p data-translate-key="doc3_desc1">Если осмотр был пройден в государственном учреждении. У педиатора в доме здравля за 1 день, смотрят спину, внешность и выдают справку. Могут предложить вакцинацию, но можно отказаться.</p>
+                        <p data-translate-key="doc3_desc2">Если медицинский осмотр был у частного врача, справку нужно предоставить в школу.</p>
+                    </div>
+                    <div class="document-card">
+                        <div class="document-item"><i class="fas fa-baby"></i><span data-translate-key="doc4_title">Свидетельство о рождении</span></div>
+                        <p data-translate-key="doc4_desc1">Переведенное судебным переводчиком</p>
+                        <p data-translate-key="doc4_desc2">Можно отдать копию (нотариальное подтверждение не нужно)</p>
+                    </div>
+                    <div class="document-card">
+                        <div class="document-item"><i class="fas fa-id-card"></i><span data-translate-key="doc5_title">Паспорт</span></div>
+                        <p data-translate-key="doc5_desc1">Паспорт родителей</p>
+                        <p data-translate-key="doc5_desc2">Паспорт ребенка</p>
+                        <p data-translate-key="doc5_desc3">Копии паспортов первая страница (с фото)</p>
+                    </div>
+                    <div class="document-card">
+                        <div class="document-item">
+                            <i class="fas fa-address-card"></i><span data-translate-key="doc6_title">Карточка ВНЖ - ПМЖ</span><span class="later-badge" data-translate-key="badgeIfExists">При наличии</span>
+                        </div>
+                        <p data-translate-key="doc6_desc">Распечатанная бумажка с карточек</p>
+                    </div>
+                    <div class="document-card">
+                        <div class="document-item">
+                            <i class="fas fa-briefcase"></i><span data-translate-key="doc7_title">Информация о месте работы</span><span class="later-badge" data-translate-key="badgeIfExists">При наличии</span>
+                        </div>
+                        <p data-translate-key="doc7_desc">Название, адрес и телефоны</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section" id="step2">
+                <h2 data-translate-key="step2_title">Шаг 2: Процесс записи в 1 класс</h2>
+                <div class="timeline">
+                    <div class="timeline-item"><div class="timeline-content"><h3 data-translate-key="step2_1_title"><i class="fas fa-search-location"></i> Определите школу </h3><div data-translate-key="step2_1_desc"><p>Первым шагом определите школу, которая обслуживает ваш адрес:</p><ul><li>Найдите ближайшие школы от вашего дома <a href="http://guidshool.atwebpages.com/search.html" target="_blank">(вкладка "Поиск школ")</a></li><li>Уточните, в какую школу попадает ваш адрес</li><li>Посчитайте сколько полных лет ребенку на момент поступления должно быть от 6,5 до 7 лет</li></ul></div></div></div>
+                    <div class="timeline-item"><div class="timeline-content"><h3 data-translate-key="step2_2_title"><i class="fas fa-calendar-check"></i> Запись на прием</h3><div data-translate-key="step2_2_desc"><p>После определения школы запишитесь на прием:</p><ul><li>Придите в школу без ребенка к секретарю или психологу, возможно к директору до 1 февраля, если позже не страшно вас принимут особенно по прописке</li><li>Запись будет через eupravu для записи нужна карточка ВНЖ одного из родителей. Если не получилось ничего страшного идем к секретарю в школу</li></ul></div><div class="warning-box"><i class="fas fa-clock"></i><span data-translate-key="step2_2_warning">Не опаздывайте на прием! Бывают случаи, когда психологи отказывали принимать опоздавших.</span></div></div></div>
+                    <div class="timeline-item"><div class="timeline-content"><h3 data-translate-key="step2_3_title"><i class="fas fa-user-md"></i> Встреча с психологом</h3><p data-translate-key="step2_3_desc">Приходите на прием с документами, которые успели подготовить. Пока психолог общается с ребенком, вы заполняете анкету. После встречи вам дадут рекомендации или сообщат, когда прийти снова.</p></div></div>
+                    <div class="timeline-item"><div class="timeline-content"><h3 data-translate-key="step2_4_title"><i class="fas fa-exclamation-triangle"></i> Для тех, кто не по прописке</h3><div data-translate-key="step2_4_desc"><ol><li>До 1 февраля подайте заявление (мольбу) на зачисление к директору с комплектом документов. <a href="https://docs.google.com/document/d/1kw-iTtJecdmapxGJUezwV3MmegVuUGIW/edit?usp=sharing&ouid=106994598642206952631&rtpof=true&sd=true" target="_blank">Пример документа</a></li><li>В июне вам позвонят с решением о наличии места, если не звонят идем ножками  школу и узнаем.</li><li>Если отказ, то лучше сходит по прописке всегда можете отказать, если не примут в другой школе</li><li>Если место есть, назначат встречу с психологом, но даже послее нее могут сказать мест нет.</li><li>Далее процесс идет как для тех, кто по прописке.</li></ol></div></div></div>
+                    <div class="timeline-item"><div class="timeline-content"><h3 data-translate-key="step2_5_title"><i class="fas fa-chalkboard-teacher"></i> Встреча перед 1 сентября</h3><div data-translate-key="step2_5_desc"><p>Дату и время смотрите за 5 дней до 1 сентября на сайте школы обычно вывешивают инфу. Еще вешают листок на входной двери</p><p>Одежда обыденная главное чтобы чистая, приходят кто в чем. Цветы не дарят.</p><p>На собрании, похожем на линейку, вы узнаете:</p></div><div class="horizontal-tags"><span class="tag program" data-translate-key="step2_5_tag1">Класс и учитель</span><span class="tag program" data-translate-key="step2_5_tag2">Расписание занятий</span><span class="tag program" data-translate-key="step2_5_tag3">Подарки и учебники</span><span class="tag program" data-translate-key="step2_5_tag4">Знакомство с детьми</span><span class="tag program" data-translate-key="step2_5_tag5">Ответы на вопросы</span></div></div></div>
+                    <div class="timeline-item"><div class="timeline-content"><h3 data-translate-key="step2_6_title"><i class="fas fa-school"></i> 1 сентября</h3><div data-translate-key="step2_6_desc"><p>Приходите на 15 минут раньше назначенного времени из-за возможной толпы у школы. Учитель заберет класс с улицы. Если опоздали, отправляйте ребенка с другой группой в класс.</p><p>Занятия 2 часа, приводите ко времени через 2 часа вам ребенка выводят</p><p>Как правило боровака первую неделю нет (но не везде утоняйте у учителя или секреторя), так что идем гулять или домой</p></div></div></div>
+                    <div class="timeline-item"><div class="timeline-content"><h3 data-translate-key="step2_7_title"><i class="fas fa-users"></i> Родительское собрание</h3><div data-translate-key="step2_7_desc"><p>В конце недели пройдет родительское собрание, где вам сообщат:</p><ul><li>Группу в Viber для общения</li><li>Список необходимых для покупки материалов</li><li>Дополнительную информацию о школьной жизни</li></ul></div></div></div>
+                </div>
+            </div>
+            
+            <div class="section" id="step3">
+                <h2 data-translate-key="step3_title">Шаг 3: Продлёнка (Боровак) с 1-4 класс</h2>
+                <div class="document-grid">
+                    <div class="document-card">
+                        <h3 data-translate-key="step3_1_title"><i class="fas fa-clock"></i> Как оформить продлёнку</h3>
+                        <div data-translate-key="step3_1_desc"><p>Если вам нужно продлёнка для ребенка:</p>
+                        <ol>
+                            <li>Обратитесь к секретарю и объясните ситуацию или к преподавателю</li>
+                            <li>Напишите заявление (мольбу) о невозможности сидеть с ребенком дома, "Все работают"</li>
+                            <li>Оплата составляет 1330 динар (5320 динаров) в неделю (Для многодетных бесплатно если есть ПМЖ, также есть и иные условия для получения бесплатного боравака)</li>
+                            Оплата начинается с момента записи, даже если ребенок не посещает. Т.е. если записались и не ходили все равно заплатить придется. (от школы могу быть другие условия, скажут когда зачислят в боравак)<br><br>
+                            <strong>Бывает 3 вида продлёнки:</strong> целодненик, полудневник, гибрид.<br>
+                            1. целодненик с 7.00 до 17.00 (предупреждаем когда придет ребенок)<br>
+                            2. полудневник или с 7.00 до 13.30 или с 13.30 до 17.00<br>
+                            3. гибрид можете или в первой или во второй по согласованию с педагогом продлёнки.<br>
+                            После того как вы напишите мольбу, через некотрое время вас добавят в группу boravaka в viber где уже будет проводится коммуникация<br>
+                            Обычно расписание следующее
+                        </ol></div>
+                        <div class="note-box"><i class="fas fa-info-circle"></i><span data-translate-key="step3_1_note1"><strong>Важно:</strong> Боровак нужно оформлять заранее, так как места могут быть ограничены.</span></div>
+                        <div class="note-box"><i class="fas fa-info-circle"></i><span data-translate-key="step3_1_note2"><strong>Пример:</strong> MOLBA<br>Ja, ИМЯ ФАМИЛИЯ - родителя, podnosim molbu da se mojoj ćerki ИМЯ ФАМИЛИЯ - ребенка odobri dnevni boravak zbog moje radne angažovanosti.<br>U Novom Sadu, dana ___ __________ 2025. Godine<br>Номер телефона</span></div>
+                    </div>
+                    <div class="document-card">
+                        <h3 data-translate-key="step3_2_title"><i class="fas fa-utensils"></i> Питание</h3>
+                        <p data-translate-key="step3_2_desc1">Питание предоставляется (булки и перекусы), но дети часто от него отказываются.</p>
+                        <p data-translate-key="step3_2_desc2">Питание платное - примерно 5000 динар в месяц по желанию</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section" id="step4">
+                <h2 data-translate-key="step4_title">Шаг 4: Приобрести необходимое</h2>
+                <table class="absence-table">
+                    <thead><tr><th data-translate-key="table1_th1">Тип</th><th data-translate-key="table1_th2">Список</th><th data-translate-key="table1_th3">Где это можно приобрести</th></tr></thead>
+                    <tbody>
+                        <tr>
+                            <td data-translate-key="table1_r1_c1"><strong>Канцелярия</strong></td>
+                            <td data-translate-key="table1_r1_c2">Тетрадь А4 в клетку 1 шт.<br>Тетрадь А4 в линейку (комбо-линейка) 1 шт.<br>Тетрадь А5 в клетку 5 шт.<br>Тетрадь А4 в клетку Дополнительно<br>Карандаши простые 4 шт.<br>Карандаши цветные Набор<br>Фломастеры Набор<br>Краски Набор для рисования<br>Подстилка На стол для рисования<br>Стерки (ластики)<br>Точилка<br>Обложки</td>
+                            <td data-translate-key="table1_r1_c3">https://kengur.rs/ , https://www.dexy.co.rs/, https://www.knjizare-vulkan.rs/, oktopus на бульваре ослобождения</td>
+                        </tr>
+                        <tr>
+                            <td data-translate-key="table1_r2_c1"><strong>Одежда/спорт</strong></td>
+                            <td data-translate-key="table1_r2_c2">Рюкзак<br>Пенал<br>Шорты Черные, для физкультуры<br>Майка / футболка Белая, для физкультуры<br>Сменная обувь</td>
+                            <td data-translate-key="table1_r2_c3">https://kengur.rs/ , https://www.dexy.co.rs/, https://www.knjizare-vulkan.rs/, oktopus на бульваре ослобождения, можно посмотреть рюкзаки в декатлоне</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="section" id="step5">
+                <h2 data-translate-key="step5_title">Шаг 5: О справках и пропусках</h2>
+                <table class="absence-table">
+                     <thead><tr><th data-translate-key="table2_th1">Тип пропуска</th><th data-translate-key="table2_th2">Условия</th><th data-translate-key="table2_th3">Последствия</th></tr></thead>
+                     <tbody>
+                        <tr>
+                            <td data-translate-key="table2_r1_c1"><strong>Оправданные пропуски</strong></td>
+                            <td data-translate-key="table2_r1_c2">- Болезнь (справка от врача)<br>- Смерть члена семьи (документальное подтверждение)<br>- Участие в соревнованиях (официальное приглашение)<br>- До 3 дней: письменное заявление от родителей количество таких заявлений в год ограничено регламентом школы в которой вы будете уточняйте<br>- Более 3 дней: справка от врача<br>- Более 20 дней: справка от школьного врача<br>Иногда учительная просит писать в viber что не придете, но заранее, узнаете на родитеском собрании<div class="note-box"><i class="fas fa-info-circle"></i><strong>Пример:</strong> MOLBA<br>Molim Vas da opravdate izostanke<br>od _____ do___________za ___________________(ime i prezime deteta). Odsustvovao je zbog bolesti.<br>Data<br>Ime Prezime roditelja</div></td>
+                            <td data-translate-key="table2_r1_c3">Без последствий</td>
+                        </tr>
+                        <tr>
+                            <td data-translate-key="table2_r2_c1"><strong>Неоправданные пропуски</strong></td>
+                            <td data-translate-key="table2_r2_c2">Все пропуски без подтверждения в установленный срок</td>
+                            <td data-translate-key="table2_r2_c3">- 1-7 часов: воспитательная беседа<br>- 8-15 часов: беседа с директором, строгий выговор<br>- Более 16 часов: уведомление Центра социальной работы, снижение оценки по поведению</td>
+                        </tr>
+                     </tbody>
+                </table>
+                <div class="warning-box">
+                    <i class="fas fa-exclamation-circle"></i><span data-translate-key="step5_warning"><strong>Важно:</strong> Школа ведет строгий учет всех пропусков. Своевременно предоставляйте оправдательные документы!</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // --- TRANSLATION LOGIC ---
+        const currentLang = localStorage.getItem('language') || 'ru';
+
+        const translations = {
+            meta_title: { ru: 'Поступление в 1 класс в Нови-Саде — инструкция, документы, сроки', en: 'First Grade Enrollment in Novi Sad — Instructions, Documents, Deadlines' },
+            meta_desc: { ru: 'Пошаговая инструкция по упису (записи) у први разред в Нови-Саду: какие документы, сроки, запись на тестирование и советы для родителей. Актуально для 2025/2026.', en: 'Step-by-step guide for first-grade enrollment (upis u prvi razred) in Novi Sad: required documents, deadlines, scheduling tests, and tips for parents. Updated for 2025/2026.'},
+            meta_keys: { ru: 'поступление в 1 класс нови сад, упис у први разред, документы за упис, запись у школу', en: 'first grade enrollment novi sad, upis u prvi razred, enrollment documents, school registration' },
+            mainHeader: { ru: 'Выбор государственной основной школы для ребенка в Нови-сад', en: 'Choosing a Public Elementary School for Your Child in Novi Sad' },
+            tabSchools: { ru: '🔍 Карта школ', en: '🔍 Map Search' },
+            tabAddress: { ru: '📍 Поиск по адресу', en: '📍 Search by Address' },
+            tabEnrollment: { ru: '✅ Поступление в 1 класс', en: '✅ 1st Grade Enrollment' },
+            tabBookstores: { ru: '📚 Где купить книги', en: '📚 Where to Buy Books' },
+            tabDocuments: { ru: '📝 Документы (шаблоны)', en: '📝 Documents (templates)' },
+            introText: { ru: 'Процесс записи ребенка в школу в Сербии состоит из нескольких этапов. Следуя этой инструкции, вы сможете пройти все шаги без стресса и лишних хлопот.', en: 'The process of enrolling a child in school in Serbia consists of several stages. By following these instructions, you can complete all the steps without stress and hassle.' },
+            introWarning: { ru: '<strong>Важно:</strong> Начинайте подготовку заранее, особенно если вы не по прописке. Некоторые шаги требуют времени на ожидание.', en: '<strong>Important:</strong> Start preparing in advance, especially if you are not enrolling based on your registered address. Some steps require waiting time.' },
+            navStep1: { ru: '<i class="fas fa-file-alt"></i> Шаг 1: Документы', en: '<i class="fas fa-file-alt"></i> Step 1: Documents' },
+            navStep2: { ru: '<i class="fas fa-clipboard-list"></i> Шаг 2: Запись', en: '<i class="fas fa-clipboard-list"></i> Step 2: Enrollment' },
+            navStep3: { ru: '<i class="fas fa-clock"></i> Шаг 3: Продленка', en: '<i class="fas fa-clock"></i> Step 3: After-School Care' },
+            navStep4: { ru: '<i class="fas fa-shopping-cart"></i> Шаг 4: Покупки', en: '<i class="fas fa-shopping-cart"></i> Step 4: Purchases' },
+            navStep5: { ru: '<i class="fas fa-calendar-check"></i> Шаг 5: Справки', en: '<i class="fas fa-calendar-check"></i> Step 5: Absence Notes' },
+            step1_title: { ru: 'Шаг 1: Подготовка документов', en: 'Step 1: Document Preparation' },
+            badgeLater: { ru: 'Можно потом', en: 'Can be provided later' },
+            badgeIfExists: { ru: 'При наличии', en: 'If available' },
+            doc1_title: { ru: 'Справка о месте жительства', en: 'Proof of Residence' },
+            doc1_desc: { ru: 'Что-то из по каждому родителю: Уверенье из МУП, Выписка с карточки ВНЖ или ПМЖ, Белый картон', en: 'One of the following for each parent: Certificate from MUP (police), printout from residence permit card (temporary or permanent), or the "white card" (bela karta).' },
+            doc2_title: { ru: 'Справка о прохождении подготовительной дошкольной программы', en: 'Certificate of Completed Preschool Program' },
+            doc2_desc: { ru: 'Не обязательно, но если есть, то хорошо. Если не по прописке могут прикопаться, но после зачисления.', en: 'Not mandatory, but good to have. They might ask for it if you are not enrolling by address, but usually after the enrollment is confirmed.' },
+            doc3_title: { ru: 'Справка о медицинском осмотре', en: 'Medical Examination Certificate' },
+            doc3_desc1: { ru: 'Если осмотр был пройден в государственном учреждении. У педиатора в доме здравля за 1 день, смотрят спину, внешность и выдают справку. Могут предложить вакцинацию, но можно отказаться.', en: 'If the examination was done at a public health facility. It takes one day at the pediatrician in the local Dom Zdravlja; they check the child\'s back, general appearance, and issue the certificate. They may offer vaccination, which you can decline.' },
+            doc3_desc2: { ru: 'Если медицинский осмотр был у частного врача, справку нужно предоставить в школу.', en: 'If the medical examination was done by a private doctor, you must provide the certificate to the school.' },
+            doc4_title: { ru: 'Свидетельство о рождении', en: 'Birth Certificate' },
+            doc4_desc1: { ru: 'Переведенное судебным переводчиком', en: 'Translated by a certified court interpreter' },
+            doc4_desc2: { ru: 'Можно отдать копию (нотариальное подтверждение не нужно)', en: 'A copy is sufficient (notarization is not required)' },
+            doc5_title: { ru: 'Паспорт', en: 'Passport' },
+            doc5_desc1: { ru: 'Паспорт родителей', en: 'Parents\' passports' },
+            doc5_desc2: { ru: 'Паспорт ребенка', en: 'Child\'s passport' },
+            doc5_desc3: { ru: 'Копии паспортов первая страница (с фото)', en: 'Copies of the first page (with photo) of the passports' },
+            doc6_title: { ru: 'Карточка ВНЖ - ПМЖ', en: 'Residence Permit Card (Temporary/Permanent)' },
+            doc6_desc: { ru: 'Распечатанная бумажка с карточек', en: 'A printout/copy of the cards' },
+            doc7_title: { ru: 'Информация о месте работы', en: 'Workplace Information' },
+            doc7_desc: { ru: 'Название, адрес и телефоны', en: 'Name, address, and phone numbers' },
+            step2_title: { ru: 'Шаг 2: Процесс записи в 1 класс', en: 'Step 2: The First Grade Enrollment Process' },
+            step2_1_title: { ru: '<h3><i class="fas fa-search-location"></i> Определите школу</h3>', en: '<h3><i class="fas fa-search-location"></i> Identify Your School</h3>' },
+            step2_1_desc: { ru: '<p>Первым шагом определите школу, которая обслуживает ваш адрес:</p><ul><li>Найдите ближайшие школы от вашего дома <a href="http://guidshool.atwebpages.com/search.html" target="_blank">(вкладка "Поиск школ")</a></li><li>Уточните, в какую школу попадает ваш адрес</li><li>Посчитайте сколько полных лет ребенку на момент поступления должно быть от 6,5 до 7 лет</li></ul>', en: '<p>First, determine the school assigned to your address:</p><ul><li>Find schools near your home <a href="http://guidshool.atwebpages.com/search.html" target="_blank">(use the "School Search" tab)</a></li><li>Verify which school your address is zoned for</li><li>The child should be between 6.5 and 7 years old at the time of enrollment</li></ul>' },
+            step2_2_title: { ru: '<h3><i class="fas fa-calendar-check"></i> Запись на прием</h3>', en: '<h3><i class="fas fa-calendar-check"></i> Schedule an Appointment</h3>' },
+            step2_2_desc: { ru: '<p>После определения школы запишитесь на прием:</p><ul><li>Go to the school without the child to see the secretary, psychologist, or possibly the principal before February 1st. If you go later, it\'s usually not a problem, especially if you live in the school district.</li><li>Registration is done through the eUprava portal, which requires a residence permit card of one parent. If this doesn\'t work, don\'t worry, just go to the school secretary.</li></ul>', en: '<p>Once you\'ve identified the school, schedule an appointment:</p><ul><li>Visit the school in person (without the child) to speak with the secretary, psychologist, or principal. It\'s best to do this before February 1st, but later is usually fine, especially if enrolling by address.</li><li>Official registration is often via the eUprava portal, requiring one parent\'s residence permit card. If you face issues, simply go to the school secretary for assistance.</li></ul>' },
+            step2_2_warning: { ru: 'Не опаздывайте на прием! Бывают случаи, когда психологи отказывали принимать опоздавших.', en: 'Do not be late for the appointment! There have been cases where psychologists refused to see families who were late.' },
+            step2_3_title: { ru: '<h3><i class="fas fa-user-md"></i> Встреча с психологом</h3>', en: '<h3><i class="fas fa-user-md"></i> Meeting with the Psychologist</h3>' },
+            step2_3_desc: { ru: 'Приходите на прием с документами, которые успели подготовить. Пока психолог общается с ребенком, вы заполняете анкету. После встречи вам дадут рекомендации или сообщат, когда прийти снова.', en: 'Bring the documents you have prepared to the appointment. While the psychologist talks with your child, you will fill out a questionnaire. After the meeting, they will give you recommendations or tell you when to return.' },
+            step2_4_title: { ru: '<h3><i class="fas fa-exclamation-triangle"></i> Для тех, кто не по прописке</h3>', en: '<h3><i class="fas fa-exclamation-triangle"></i> For Those Not Enrolling by Address</h3>' },
+            step2_4_desc: { ru: '<ol><li>До 1 февраля подайте заявление (мольбу) на зачисление к директору с комплектом документов. <a href="https://docs.google.com/document/d/1kw-iTtJecdmapxGJUezwV3MmegVuUGIW/edit?usp=sharing&ouid=106994598642206952631&rtpof=true&sd=true" target="_blank">Пример документа</a></li><li>В июне вам позвонят с решением о наличии места, если не звонят идем ножками  школу и узнаем.</li><li>Если отказ, то лучше сходит по прописке всегда можете отказать, если не примут в другой школе</li><li>Если место есть, назначат встречу с психологом, но даже послее нее могут сказать мест нет.</li><li>Далее процесс идет как для тех, кто по прописке.</li></ol>', en: '<ol><li>Before February 1st, submit a written request (molba) to the principal with your set of documents. <a href="https://docs.google.com/document/d/1kw-iTtJecdmapxGJUezwV3MmegVuUGIW/edit?usp=sharing&ouid=106994598642206952631&rtpof=true&sd=true" target="_blank">Document Example</a></li><li>In June, they should call you with a decision on whether a spot is available. If they don\'t call, visit the school in person to inquire.</li><li>If your request is denied, it\'s best to enroll in your designated school. You can always withdraw if you are accepted elsewhere.</li><li>If there is a spot, they will schedule a meeting with the psychologist, but even after this, they might inform you that there are no spots left.</li><li>From here, the process is the same as for those enrolling by address.</li></ol>' },
+            step2_5_title: { ru: '<h3><i class="fas fa-chalkboard-teacher"></i> Встреча перед 1 сентября</h3>', en: '<h3><i class="fas fa-chalkboard-teacher"></i> Meeting Before September 1st</h3>' },
+            step2_5_desc: { ru: '<p>Дату и время смотрите за 5 дней до 1 сентября на сайте школы обычно вывешивают инфу. Еще вешают листок на входной двери</p><p>Одежда обыденная главное чтобы чистая, приходят кто в чем. Цветы не дарят.</p><p>На собрании, похожем на линейку, вы узнаете:</p>', en: '<p>Check the school\'s website for the date and time about 5 days before September 1st. Information is also usually posted on the front door.</p><p>Dress code is casual, just make sure clothes are clean. People come in various outfits. Giving flowers is not customary.</p><p>At the assembly-like meeting, you will find out:</p>' },
+            step2_5_tag1: { ru: 'Класс и учитель', en: 'Class and teacher' },
+            step2_5_tag2: { ru: 'Расписание занятий', en: 'Class schedule' },
+            step2_5_tag3: { ru: 'Подарки и учебники', en: 'Gifts and textbooks' },
+            step2_5_tag4: { ru: 'Знакомство с детьми', en: 'Meeting the children' },
+            step2_5_tag5: { ru: 'Ответы на вопросы', en: 'Answers to questions' },
+            step2_6_title: { ru: '<h3><i class="fas fa-school"></i> 1 сентября</h3>', en: '<h3><i class="fas fa-school"></i> September 1st</h3>' },
+            step2_6_desc: { ru: '<p>Приходите на 15 минут раньше назначенного времени из-за возможной толпы у школы. Учитель заберет класс с улицы. Если опоздали, отправляйте ребенка с другой группой в класс.</p><p>Занятия 2 часа, приводите ко времени через 2 часа вам ребенка выводят</p><p>Как правило боровака первую неделю нет (но не везде утоняйте у учителя или секреторя), так что идем гулять или домой</p>', en: '<p>Arrive 15 minutes before the scheduled time due to potential crowds. The teacher will gather the class outside. If you are late, send your child with another group to the classroom.</p><p>Classes last for 2 hours. Bring your child on time, and they will be brought out to you after 2 hours.</p><p>Usually, there is no after-school care (boravak) during the first week (but check with the teacher or secretary), so you will need to take your child home or for a walk.</p>' },
+            step2_7_title: { ru: '<h3><i class="fas fa-users"></i> Родительское собрание</h3>', en: '<h3><i class="fas fa-users"></i> Parent-Teacher Meeting</h3>' },
+            step2_7_desc: { ru: '<p>В конце недели пройдет родительское собрание, где вам сообщат:</p><ul><li>Группу в Viber для общения</li><li>Список необходимых для покупки материалов</li><li>Дополнительную информацию о школьной жизни</li></ul>', en: '<p>At the end of the week, there will be a parent-teacher meeting where you will be told about:</p><ul><li>The Viber group for communication</li><li>A list of necessary school supplies to buy</li><li>Additional information about school life</li></ul>' },
+            step3_title: { ru: 'Шаг 3: Продлёнка (Боровак) с 1-4 класс', en: 'Step 3: After-School Care (Boravak) for Grades 1-4' },
+            step3_1_title: { ru: '<h3><i class="fas fa-clock"></i> Как оформить продлёнку</h3>', en: '<h3><i class="fas fa-clock"></i> How to apply for after-school care</h3>' },
+            step3_1_desc: { ru: '<p>Если вам нужно продлёнка для ребенка:</p><ol><li>Обратитесь к секретарю и объясните ситуацию или к преподавателю</li><li>Напишите заявление (мольбу) о невозможности сидеть с ребенком дома, "Все работают"</li><li>Оплата составляет 1330 динар (5320 динаров) в неделю (Для многодетных бесплатно если есть ПМЖ, также есть и иные условия для получения бесплатного боравака)</li>Оплата начинается с момента записи, даже если ребенок не посещает. Т.е. если записались и не ходили все равно заплатить придется. (от школы могу быть другие условия, скажут когда зачислят в боравак)<br><br><strong>Бывает 3 вида продлёнки:</strong> целодненик, полудневник, гибрид.<br>1. целодненик с 7.00 до 17.00 (предупреждаем когда придет ребенок)<br>2. полудневник или с 7.00 до 13.30 или с 13.30 до 17.00<br>3. гибрид можете или в первой или во второй по согласованию с педагогом продлёнки.<br>После того как вы напишите мольбу, через некотрое время вас добавят в группу boravaka в viber где уже будет проводится коммуникация<br>Обычно расписание следующее</ol>', en: '<p>If you need after-school care for your child:</p><ol><li>Speak to the school secretary or teacher and explain your situation.</li><li>Write a formal request (molba) stating that you cannot be at home with the child because "Everyone is working."</li><li>The fee is 1330 RSD per week (5320 RSD per month). (It is free for families with multiple children if they have permanent residence, and other conditions for free care may apply).</li>Payment starts from the moment of enrollment, even if the child does not attend. (The school may have different terms, which they will explain upon acceptance).<br><br><strong>There are 3 types of care:</strong> full-day (celodnevnik), half-day (poludnevnik), and hybrid.<br>1. Full-day: 7:00 to 17:00 (inform them of the child\'s arrival time).<br>2. Half-day: either 7:00 to 13:30 or 13:30 to 17:00.<br>3. Hybrid: you can choose morning or afternoon in agreement with the care teacher.<br>After submitting the request, you will be added to a Viber group for communication.<br>The schedule is usually as follows:</ol>' },
+            step3_1_note1: { ru: '<strong>Важно:</strong> Боровак нужно оформлять заранее, так как места могут быть ограничены.', en: '<strong>Important:</strong> Apply for after-school care (Boravak) in advance, as spots may be limited.' },
+            step3_1_note2: { ru: '<strong>Пример:</strong> MOLBA<br>Ja, ИМЯ ФАМИЛИЯ - родителя, podnosim molbu da se mojoj ćerki ИМЯ ФАМИЛИЯ - ребенка odobri dnevni boravak zbog moje radne angažovanosti.<br>U Novom Sadu, dana ___ __________ 2025. Godine<br>Номер телефона', en: '<strong>Example:</strong> MOLBA<br>Ja, [Parent\'s Name], podnosim molbu da se mojoj ćerki [Child\'s Name] odobri dnevni boravak zbog moje radne angažovanosti.<br>U Novom Sadu, dana ___ __________ 2025. Godine<br>[Phone Number]' },
+            step3_2_title: { ru: '<h3><i class="fas fa-utensils"></i> Питание</h3>', en: '<h3><i class="fas fa-utensils"></i> Meals</h3>' },
+            step3_2_desc1: { ru: 'Питание предоставляется (булки и перекусы), но дети часто от него отказываются.', en: 'Meals are provided (pastries and snacks), but children often refuse them.' },
+            step3_2_desc2: { ru: 'Питание платное - примерно 5000 динар в месяц по желанию', en: 'Meals are optional and cost approximately 5000 RSD per month.' },
+            step4_title: { ru: 'Шаг 4: Приобрести необходимое', en: 'Step 4: Purchase Necessary Supplies' },
+            table1_th1: { ru: 'Тип', en: 'Type' },
+            table1_th2: { ru: 'Список', en: 'List' },
+            table1_th3: { ru: 'Где это можно приобрести', en: 'Where to Buy' },
+            table1_r1_c1: { ru: '<strong>Канцелярия</strong>', en: '<strong>Stationery</strong>' },
+            table1_r1_c2: { ru: 'Тетрадь А4 в клетку 1 шт.<br>Тетрадь А4 в линейку (комбо-линейка) 1 шт.<br>Тетрадь А5 в клетку 5 шт.<br>Тетрадь А4 в клетку Дополнительно<br>Карандаши простые 4 шт.<br>Карандаши цветные Набор<br>Фломастеры Набор<br>Краски Набор для рисования<br>Подстилка На стол для рисования<br>Стерки (ластики)<br>Точилка<br>Обложки', en: 'A4 grid notebook x1<br>A4 lined notebook (combo-lined) x1<br>A5 grid notebook x5<br>Extra A4 grid notebook<br>Graphite pencils x4<br>Colored pencils set<br>Felt-tip pens set<br>Paints set<br>Desk mat for drawing<br>Erasers<br>Pencil sharpener<br>Book covers' },
+            table1_r1_c3: { ru: 'https://kengur.rs/ , https://www.dexy.co.rs/, https://www.knjizare-vulkan.rs/, oktopus на бульваре ослобождения', en: 'Kengur, Dexy Co, Vulkan bookstores, Oktopus on Bulevar Oslobođenja' },
+            table1_r2_c1: { ru: '<strong>Одежда/спорт</strong>', en: '<strong>Clothing/Sport</strong>' },
+            table1_r2_c2: { ru: 'Рюкзак<br>Пенал<br>Шорты Черные, для физкультуры<br>Майка / футболка Белая, для физкультуры<br>Сменная обувь', en: 'Backpack<br>Pencil case<br>Black shorts for physical education<br>White T-shirt for physical education<br>Indoor shoes (sneakers)' },
+            table1_r2_c3: { ru: 'https://kengur.rs/ , https://www.dexy.co.rs/, https://www.knjizare-vulkan.rs/, oktopus на бульваре ослобождения, можно посмотреть рюкзаки в декатлоне', en: 'Kengur, Dexy Co, Vulkan, Oktopus on Bulevar Oslobođenja. You can also check for backpacks at Decathlon.' },
+            step5_title: { ru: 'Шаг 5: О справках и пропусках', en: 'Step 5: About Absence Notes' },
+            table2_th1: { ru: 'Тип пропуска', en: 'Type of Absence' },
+            table2_th2: { ru: 'Условия', en: 'Conditions' },
+            table2_th3: { ru: 'Последствия', en: 'Consequences' },
+            table2_r1_c1: { ru: '<strong>Оправданные пропуски</strong>', en: '<strong>Excused Absences</strong>' },
+            table2_r1_c2: { ru: '- Болезнь (справка от врача)<br>- Смерть члена семьи (документальное подтверждение)<br>- Участие в соревнованиях (официальное приглашение)<br>- До 3 дней: письменное заявление от родителей количество таких заявлений в год ограничено регламентом школы в которой вы будете уточняйте<br>- Более 3 дней: справка от врача<br>- Более 20 дней: справка от школьного врача<br>Иногда учительная просит писать в viber что не придете, но заранее, узнаете на родитеском собрании<div class="note-box"><i class="fas fa-info-circle"></i><strong>Пример:</strong> MOLBA<br>Molim Vas da opravdate izostanke<br>od _____ do___________za ___________________(ime i prezime deteta). Odsustvovao je zbog bolesti.<br>Data<br>Ime Prezime roditelja</div>', en: '- Illness (doctor\'s note)<br>- Death in the family (documentary proof)<br>- Participation in competitions (official invitation)<br>- Up to 3 days: written statement from parents (the number of such statements per year is limited by school regulations, please clarify)<br>- More than 3 days: doctor\'s note<br>- More than 20 days: school doctor\'s note<br>Sometimes the teacher may ask you to notify them in advance via Viber; you will learn about this at the parent-teacher meeting.<div class="note-box"><i class="fas fa-info-circle"></i><strong>Example:</strong> MOLBA (Request)<br>Molim Vas da opravdate izostanke<br>od _____ do___________za ___________________(child\'s name). Odsustvovao je zbog bolesti.<br>Date<br>Parent\'s Name</div>' },
+            table2_r1_c3: { ru: 'Без последствий', en: 'No consequences' },
+            table2_r2_c1: { ru: '<strong>Неоправданные пропуски</strong>', en: '<strong>Unexcused Absences</strong>' },
+            table2_r2_c2: { ru: 'Все пропуски без подтверждения в установленный срок', en: 'Any absence without timely justification' },
+            table2_r2_c3: { ru: '- 1-7 hours: disciplinary conversation<br>- 8-15 hours: meeting with the principal, official warning<br>- More than 16 hours: notification to the Center for Social Work, reduced grade for conduct', en: '- 1-7 hours: disciplinary talk<br>- 8-15 hours: meeting with the principal, a formal reprimand<br>- More than 16 hours: notification to the Center for Social Work, lower grade in conduct' },
+            step5_warning: { ru: '<strong>Важно:</strong> Школа ведет строгий учет всех пропусков. Своевременно предоставляйте оправдательные документы!', en: '<strong>Important:</strong> The school strictly tracks all absences. Provide justifying documents promptly!' },
+        };
+        
+        function setLanguage(lang) {
+            localStorage.setItem('language', lang);
+            document.documentElement.lang = lang;
+
+            document.getElementById('lang-ru').classList.toggle('active', lang === 'ru');
+            document.getElementById('lang-en').classList.toggle('active', lang === 'en');
+
+            document.title = translations.meta_title[lang];
+            document.querySelector('meta[name="description"]').setAttribute('content', translations.meta_desc[lang]);
+            document.querySelector('meta[name="keywords"]').setAttribute('content', translations.meta_keys[lang]);
+
+            document.querySelectorAll('[data-translate-key]').forEach(el => {
+                const key = el.getAttribute('data-translate-key');
+                if (translations[key] && translations[key][lang]) {
+                    el.innerHTML = translations[key][lang];
+                }
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            setLanguage(currentLang);
+        });
+
+        // --- SCROLL & NAVIGATION LOGIC ---
+        function scrollToStep(stepId) {
+            const stepElement = document.getElementById(stepId);
+            if (stepElement) {
+                stepElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                document.querySelectorAll('.breadcrumb-step').forEach(step => {
+                    step.classList.remove('active');
+                });
+                const activeStep = document.querySelector(`.breadcrumb-step[onclick="scrollToStep('${stepId}')"]`);
+                if (activeStep) {
+                    activeStep.classList.add('active');
+                }
+            }
+        }
+    </script>
+</body>
+</html>
